@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Costo auto mensile: calcolatore reale spese auto</title>
+
+  <meta name="description" content="Scopri quanto costa davvero un’auto al mese tra carburante, assicurazione, bollo e manutenzione. Simulazione gratuita e realistica.">
+
+  <meta name="robots" content="index, follow">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>Costo auto mensile</h1>
+
+    <p class="subtitle">
+      Calcola quanto ti costa davvero un’auto tra carburante, assicurazione, bollo e manutenzione.
+    </p>
+
+    <input id="search" placeholder="Es. Fiat Panda, BMW, Golf" onkeypress="handleKey(event)" />
+
+    <input id="km" type="number" placeholder="Km annui (es. 12000)" onkeypress="handleKey(event)" />
+
+    <button onclick="cercaAuto()">Calcola costo</button>
+
+    <div id="result"></div>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
