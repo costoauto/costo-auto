@@ -76,3 +76,9 @@ document.addEventListener("keydown", function(event) {
     run();
   }
 });
+const kmInput = document.getElementById("km");
+const kmValue = document.getElementById("kmValue");
+
+kmInput.addEventListener("input", () => {
+  kmValue.textContent = kmInput.value + " km";
+});
