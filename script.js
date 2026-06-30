@@ -71,3 +71,8 @@ async function run() {
     <h2>Totale: ${res.total}€ / mese</h2>
   `;
 }
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Enter") {
+    run();
+  }
+});
