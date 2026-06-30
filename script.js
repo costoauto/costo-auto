@@ -76,13 +76,7 @@ document.addEventListener("keydown", function(event) {
     run();
   }
 });
-const kmInput = document.getElementById("km");
-const kmValue = document.getElementById("kmValue");
-
-kmInput.addEventListener("input", () => {
-  kmValue.textContent = kmInput.value + " km";
-});
-window.addEventListener("DOMContentLoaded", () => {
+function initKmSlider() {
   const kmInput = document.getElementById("km");
   const kmValue = document.getElementById("kmValue");
 
@@ -94,5 +88,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   kmInput.addEventListener("input", update);
 
-  update(); // mostra subito valore iniziale
-});
+  update(); // inizializza
+}
+
+initKmSlider();
