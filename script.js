@@ -14,3 +14,38 @@ const cars = {
 
   model3: { name: "Tesla Model 3", consumption: 0, kw: 208, category: "electric" }
 };
+function calculate(carKey, km) {
+  const car = cars[carKey];
+  if (!car) return null;
+
+  const fuelPrice = 1.85;
+
+  // carburante (0 per elettrica)
+  const fuelCost =
+    car.consumption === 0
+      ? 30
+      : (car.consumption / 100) * km * fuelPrice / 12;
+
+  const insuranceYear = 300 + car.kw * 3.2;
+  const insurance = insuranceYear / 12;
+
+  const taxYear =
+    car.category === "electric" ? 0 : car.kw * 2.3;
+
+  const tax = taxYear / 12;
+
+  let maintenance = 35;
+  if (car.category === "suv") maintenance = 60;
+  if (car.category === "electric") maintenance = 25;
+
+  const total = fuelCost + insurance + tax + maintenance;
+
+  return {
+    name: car.name,
+    fuel: fuelCost.toFixed(0),
+    insurance: insurance.toFixed(0),
+    tax: tax.toFixed(0),
+    maintenance: maintenance.toFixed(0),
+    total: total.toFixed(0)
+  };
+}
