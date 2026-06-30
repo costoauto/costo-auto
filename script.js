@@ -3,12 +3,19 @@ function normalize(str) {
 }
 
 function findCar(input) {
-  const val = normalize(input);
+  const val = input.toLowerCase().trim();
 
-  return cars.find(c =>
-    val.includes(c.model.toLowerCase()) ||
-    val.includes(c.brand.toLowerCase())
-  );
+  return cars.find(car => {
+    const model = car.model.toLowerCase();
+    const brand = car.brand.toLowerCase();
+    const id = car.id.toLowerCase();
+
+    return (
+      val.includes(model) ||
+      val.includes(brand) ||
+      val.includes(id)
+    );
+  });
 }
 
 function calculate(car, km) {
