@@ -1,21 +1,22 @@
+let cars = [];
+
+async function loadCars() {
+  const res = await fetch("cars.json");
+  cars = await res.json();
+}
+
 function normalize(str) {
   return str.toLowerCase().trim();
 }
 
 function findCar(input) {
-  const val = input.toLowerCase().trim();
+  const val = normalize(input);
 
-  return cars.find(car => {
-    const model = car.model.toLowerCase();
-    const brand = car.brand.toLowerCase();
-    const id = car.id.toLowerCase();
-
-    return (
-      val.includes(model) ||
-      val.includes(brand) ||
-      val.includes(id)
-    );
-  });
+  return cars.find(car =>
+    val.includes(car.model.toLowerCase()) ||
+    val.includes(car.brand.toLowerCase()) ||
+    val.includes(car.id.toLowerCase())
+  );
 }
 
 function calculate(car, km) {
@@ -26,11 +27,8 @@ function calculate(car, km) {
       ? 25
       : (car.consumption / 100) * km * fuelPrice / 12;
 
-  const insuranceYear = 300 + car.kw * 3.2;
-  const insurance = insuranceYear / 12;
-
-  const taxYear = car.fuel === "electric" ? 0 : car.kw * 2.3;
-  const tax = taxYear / 12;
+  const insurance = (300 + car.kw * 3.2) / 12;
+  const tax = car.fuel === "electric" ? 0 : (car.kw * 2.3) / 12;
 
   let maintenance = 35;
   if (car.category === "suv") maintenance = 60;
@@ -48,7 +46,9 @@ function calculate(car, km) {
   };
 }
 
-function run() {
+async function run() {
+  if (cars.length === 0) await loadCars();
+
   const input = document.getElementById("car").value;
   const km = Number(document.getElementById("km").value);
 
@@ -56,7 +56,7 @@ function run() {
 
   if (!car) {
     document.getElementById("result").innerHTML =
-      "<p>Auto non trovata. Prova: panda, golf, yaris...</p>";
+      "<p>Auto non trovata</p>";
     return;
   }
 
@@ -67,7 +67,7 @@ function run() {
     <p>Carburante: ${res.fuel}€</p>
     <p>Assicurazione: ${res.insurance}€</p>
     <p>Bollo: ${res.tax}€</p>
-    <p>Manutenzione: ${res.maintenance}€</p>
+    <p>Manutenzione: ${res.maintenance}</p>
     <h2>Totale: ${res.total}€ / mese</h2>
   `;
 }
