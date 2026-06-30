@@ -82,3 +82,17 @@ const kmValue = document.getElementById("kmValue");
 kmInput.addEventListener("input", () => {
   kmValue.textContent = kmInput.value + " km";
 });
+window.addEventListener("DOMContentLoaded", () => {
+  const kmInput = document.getElementById("km");
+  const kmValue = document.getElementById("kmValue");
+
+  if (!kmInput || !kmValue) return;
+
+  const update = () => {
+    kmValue.textContent = kmInput.value + " km";
+  };
+
+  kmInput.addEventListener("input", update);
+
+  update(); // mostra subito valore iniziale
+});
