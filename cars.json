@@ -1,0 +1,83 @@
+[
+  {
+    "id": "panda",
+    "brand": "Fiat",
+    "model": "Panda",
+    "fuel": "petrol",
+    "consumption": 5.0,
+    "kw": 51,
+    "category": "city"
+  },
+  {
+    "id": "500",
+    "brand": "Fiat",
+    "model": "500",
+    "fuel": "petrol",
+    "consumption": 4.8,
+    "kw": 51,
+    "category": "city"
+  },
+  {
+    "id": "golf",
+    "brand": "Volkswagen",
+    "model": "Golf",
+    "fuel": "petrol",
+    "consumption": 6.5,
+    "kw": 90,
+    "category": "compact"
+  },
+  {
+    "id": "a3",
+    "brand": "Audi",
+    "model": "A3",
+    "fuel": "petrol",
+    "consumption": 6.8,
+    "kw": 110,
+    "category": "compact"
+  },
+  {
+    "id": "serie1",
+    "brand": "BMW",
+    "model": "Serie 1",
+    "fuel": "petrol",
+    "consumption": 7.2,
+    "kw": 120,
+    "category": "compact"
+  },
+  {
+    "id": "yaris",
+    "brand": "Toyota",
+    "model": "Yaris",
+    "fuel": "hybrid",
+    "consumption": 4.2,
+    "kw": 85,
+    "category": "city"
+  },
+  {
+    "id": "qashqai",
+    "brand": "Nissan",
+    "model": "Qashqai",
+    "fuel": "petrol",
+    "consumption": 7.0,
+    "kw": 140,
+    "category": "suv"
+  },
+  {
+    "id": "tiguan",
+    "brand": "Volkswagen",
+    "model": "Tiguan",
+    "fuel": "diesel",
+    "consumption": 7.5,
+    "kw": 150,
+    "category": "suv"
+  },
+  {
+    "id": "model3",
+    "brand": "Tesla",
+    "model": "Model 3",
+    "fuel": "electric",
+    "consumption": 0,
+    "kw": 208,
+    "category": "electric"
+  }
+]
