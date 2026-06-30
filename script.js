@@ -1,11 +1,11 @@
 const cars = {
-  "fiat panda": {
+  panda: {
     name: "Fiat Panda",
     consumption: 5,
     kw: 51,
     category: "city"
   },
-  "volkswagen golf": {
+  golf: {
     name: "Volkswagen Golf",
     consumption: 6.5,
     kw: 90,
@@ -13,8 +13,12 @@ const cars = {
   }
 };
 
+function normalize(str) {
+  return str.toLowerCase().trim();
+}
+
 function calculate(carKey, km) {
-  const car = cars[carKey.toLowerCase()];
+  const car = cars[carKey];
   if (!car) return null;
 
   const fuelPrice = 1.85;
@@ -22,11 +26,8 @@ function calculate(carKey, km) {
   const fuelCost =
     (car.consumption / 100) * km * fuelPrice / 12;
 
-  const insuranceYear = 300 + car.kw * 3.5;
-  const insurance = insuranceYear / 12;
-
-  const taxYear = car.kw * 2.5;
-  const tax = taxYear / 12;
+  const insurance = (300 + car.kw * 3.5) / 12;
+  const tax = (car.kw * 2.5) / 12;
 
   let maintenance = 30;
   if (car.category === "compact") maintenance = 45;
@@ -43,15 +44,25 @@ function calculate(carKey, km) {
   };
 }
 
+function resolveCar(input) {
+  const val = normalize(input);
+
+  if (val.includes("panda")) return "panda";
+  if (val.includes("golf")) return "golf";
+
+  return null;
+}
+
 function run() {
-  const car = document.getElementById("car").value;
+  const input = document.getElementById("car").value;
   const km = Number(document.getElementById("km").value);
 
-  const res = calculate(car, km);
+  const key = resolveCar(input);
+  const res = calculate(key, km);
 
   if (!res) {
     document.getElementById("result").innerHTML =
-      "<p>Auto non trovata. Prova: fiat panda, volkswagen golf</p>";
+      "<p>Auto non trovata. Prova: panda o golf</p>";
     return;
   }
 
