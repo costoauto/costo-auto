@@ -19,8 +19,7 @@
   <p>Scrivi il modello dell’auto e i km annui.</p>
 
   <input id="car" placeholder="Es. fiat panda, golf, bmw serie 1">
-  <input id="km" type="number" placeholder="Km annui (es. 12000)">
-
+<input id="km" type="range" min="0" max="50000" step="5000" value="12000">
   <button onclick="run()">Calcola costo</button>
 
   <div id="result"></div>
