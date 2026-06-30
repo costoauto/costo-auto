@@ -1,42 +1,33 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta name="google-site-verification" content="uKmLiGgS_j47twwk6XRMgMrG4DgWhtqoLr6EFJNpEjQ" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Costo auto mensile: calcolatore reale spese auto</title>
-
-  <meta name="description" content="Scopri quanto costa davvero un’auto al mese tra carburante, assicurazione, bollo e manutenzione. Simulazione gratuita e realistica.">
-
-  <meta name="robots" content="index, follow">
+  <title>Costo auto mensile - calcolatore reale</title>
+  <meta name="description" content="Calcola quanto costa davvero un’auto al mese in Italia. Carburante, assicurazione, bollo e manutenzione.">
 
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <div class="container">
+<div class="container">
 
-      <h1>Costo auto mensile</h1>
+  <h1>Costo auto mensile</h1>
 
-<a href="costo-auto-mensile.html">Quanto costa un’auto al mese?</a>
+  <p>Scrivi il modello dell’auto e i km annui.</p>
 
-    <p class="subtitle">
-      Calcola quanto ti costa davvero un’auto tra carburante, assicurazione, bollo e manutenzione.
-    </p>
+  <input id="car" placeholder="Es. fiat panda, golf, bmw serie 1">
+  <input id="km" type="number" placeholder="Km annui (es. 12000)">
 
-    <input id="search" placeholder="Es. Fiat Panda, BMW, Golf" onkeypress="handleKey(event)" />
+  <button onclick="run()">Calcola costo</button>
 
-    <input id="km" type="number" placeholder="Km annui (es. 12000)" onkeypress="handleKey(event)" />
+  <div id="result"></div>
 
-    <button onclick="cercaAuto()">Calcola costo</button>
+</div>
 
-    <div id="result"></div>
-
-  </div>
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>
