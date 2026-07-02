@@ -51,6 +51,7 @@ async function run() {
 
   const input = document.getElementById("car").value;
   const km = Number(document.getElementById("km").value);
+  const years = Number(document.getElementById("years").value);
 
   const car = findCar(input);
 
@@ -61,6 +62,9 @@ async function run() {
   }
 
   const res = calculate(car, km);
+  const purchaseMonthly = car.price_new
+  ? (car.price_new / (years * 12)).toFixed(0)
+  : 0;
 
   document.getElementById("result").innerHTML = `
     <h2>${res.name}</h2>
@@ -68,8 +72,9 @@ async function run() {
     <p>Assicurazione: ${res.insurance}€</p>
     <p>Bollo: ${res.tax}€</p>
     <p>Manutenzione: ${res.maintenance}</p>
-    <h2>Totale: ${res.total}€ / mese</h2>
-  `;
+<p>🚗 Costo acquisto: ${purchaseMonthly}€ / mese</p>
+
+<h2>Totale: ${Number(res.total) + Number(purchaseMonthly)}€ / mese</h2>  `;
 }
 document.addEventListener("keydown", function(event) {
   if (event.key === "Enter") {
