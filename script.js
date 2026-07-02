@@ -54,6 +54,8 @@ async function run() {
   const years = Number(document.getElementById("years").value);
 
   const car = findCar(input);
+  console.log(car);
+console.log(car.price_new);
 
   if (!car) {
     document.getElementById("result").innerHTML = "<p>Auto non trovata</p>";
