@@ -60,3 +60,9 @@ button {
 #result {
   margin-top: 20px;
 }
+.field {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
