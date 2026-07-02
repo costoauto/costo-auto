@@ -79,3 +79,8 @@ button {
   font-size: 14px;
   color: #555;
 }
+#kmValue,
+#yearsValue {
+  display: block;
+  margin-top: 4px;
+}
