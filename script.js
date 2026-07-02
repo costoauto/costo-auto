@@ -62,9 +62,10 @@ async function run() {
 
   const res = calculate(car, km);
 
-  const purchaseMonthly = car.price_new
-    ? car.price_new / (years * 12)
-    : 0;
+ const basePrice = Number(car.price_new);
+const purchaseMonthly = basePrice
+  ? basePrice / (years * 12)
+  : 0;
 
   const totalMonthly = Number(res.total) + purchaseMonthly;
 
