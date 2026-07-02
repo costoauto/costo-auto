@@ -42,7 +42,7 @@ function calculate(car, km) {
     insurance: insurance.toFixed(0),
     tax: tax.toFixed(0),
     maintenance: maintenance.toFixed(0),
-    total: total.toFixed(0)
+    total: total
   };
 }
 
@@ -71,8 +71,7 @@ const purchaseMonthly = basePrice > 0
   ? basePrice / (years * 12)
   : 0;
 
-const totalMonthly = Number(res.total) + purchaseMonthly;
-
+const totalMonthly = res.total + purchaseMonthly;
   const best = findCheapest(km);
 
   document.getElementById("result").innerHTML = `
