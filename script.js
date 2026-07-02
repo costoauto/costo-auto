@@ -51,8 +51,11 @@ async function run() {
 
   const input = document.getElementById("car").value;
   const km = Number(document.getElementById("km").value);
-  const years = Number(document.getElementById("years").value);
+const years = Number(document.getElementById("years").value);
 
+const purchaseMonthly = car.price_new
+  ? car.price_new / (years * 12)
+  : 0;
   const car = findCar(input);
 
   if (!car) {
@@ -83,6 +86,9 @@ const totalMonthly = Number(res.total) + purchaseMonthly;
 const best = findCheapest(km);
 <h2>Totale: ${Number(res.total) + Number(purchaseMonthly)}€ / mese</h2>  `;
   <h2>Totale: ${res.total}€ / mese</h2>
+    <p>🚗 Costo auto (acquisto): ${purchaseMonthly.toFixed(0)}€ / mese (${years} anni)</p>
+
+<h2>Totale: ${(Number(res.total) + purchaseMonthly).toFixed(0)}€ / mese</h2>
 
 <hr>
 
