@@ -47,6 +47,7 @@ function calculate(car, km) {
 }
 
 async function run() {
+  console.log("AUTO TROVATA:", car);
   if (cars.length === 0) await loadCars();
 
   const input = document.getElementById("car").value;
