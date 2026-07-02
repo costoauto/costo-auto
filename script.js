@@ -62,6 +62,13 @@ async function run() {
   }
 
   const res = calculate(car, km);
+  const years = Number(document.getElementById("years").value);
+
+const purchaseMonthly = car.price_new
+  ? car.price_new / (years * 12)
+  : 0;
+
+const totalMonthly = Number(res.total) + purchaseMonthly;
   const purchaseMonthly = car.price_new
   ? (car.price_new / (years * 12)).toFixed(0)
   : 0;
@@ -73,8 +80,14 @@ async function run() {
     <p>Bollo: ${res.tax}€</p>
     <p>Manutenzione: ${res.maintenance}</p>
 <p>🚗 Costo acquisto: ${purchaseMonthly}€ / mese</p>
-
+const best = findCheapest(km);
 <h2>Totale: ${Number(res.total) + Number(purchaseMonthly)}€ / mese</h2>  `;
+  <h2>Totale: ${res.total}€ / mese</h2>
+
+<hr>
+
+<p>💡 Auto più economica: <b>${best.car.brand} ${best.car.model}</b></p>
+<p>👉 ${best.cost.toFixed(0)}€ / mese</p>
 }
 document.addEventListener("keydown", function(event) {
   if (event.key === "Enter") {
@@ -113,3 +126,21 @@ function initYearsSlider() {
 initYearsSlider();
 
 initKmSlider();
+function findCheapest(km) {
+  let best = null;
+  let bestCost = Infinity;
+
+  for (const car of cars) {
+    const res = calculate(car, km);
+    const years = 5;
+    const purchase = car.price_new / (years * 12);
+    const total = Number(res.total) + purchase;
+
+    if (total < bestCost) {
+      bestCost = total;
+      best = car;
+    }
+  }
+
+  return { car: best, cost: bestCost };
+}
