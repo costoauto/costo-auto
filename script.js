@@ -121,42 +121,6 @@ function initKmSlider() {
 
   update(); // inizializza
 }
-function initYearsSlider() {
-  const yearsInput = document.getElementById("years");
-  const yearsValue = document.getElementById("yearsValue");
-
-  if (!yearsInput || !yearsValue) return;
-
-  const update = () => {
-    yearsValue.textContent = yearsInput.value + " anni";
-  };
-
-  yearsInput.addEventListener("input", update);
-
-  update();
-}
-
-initYearsSlider();
-
-initKmSlider();
-function findCheapest(km) {
-  let best = null;
-  let bestCost = Infinity;
-
-  for (const car of cars) {
-    const res = calculate(car, km);
-    const years = 5;
-    const purchase = car.price_new / (years * 12);
-    const total = Number(res.total) + purchase;
-
-    if (total < bestCost) {
-      bestCost = total;
-      best = car;
-    }
-  }
-
-  return { car: best, cost: bestCost };
-}
 window.addEventListener("DOMContentLoaded", () => {
   const kmInput = document.getElementById("km");
   const kmValue = document.getElementById("kmValue");
@@ -168,7 +132,6 @@ window.addEventListener("DOMContentLoaded", () => {
     const updateKm = () => {
       kmValue.textContent = kmInput.value + " km";
     };
-
     kmInput.addEventListener("input", updateKm);
     updateKm();
   }
@@ -177,7 +140,6 @@ window.addEventListener("DOMContentLoaded", () => {
     const updateYears = () => {
       yearsValue.textContent = yearsInput.value + " anni";
     };
-
     yearsInput.addEventListener("input", updateYears);
     updateYears();
   }
