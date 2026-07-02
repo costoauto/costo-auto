@@ -74,7 +74,7 @@ const purchaseMonthly = basePrice > 0
   ? basePrice / (years * 12)
   : 0;
 
-const totalMonthly = res.total + purchaseMonthly;
+const totalMonthly = Number(res.total) + Number(purchaseMonthly);
   const best = findCheapest(km);
 
   document.getElementById("result").innerHTML = `
