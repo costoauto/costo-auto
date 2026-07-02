@@ -66,3 +66,16 @@ button {
   flex-direction: column;
   gap: 6px;
 }
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+#kmValue,
+#yearsValue {
+  display: block;
+  font-size: 14px;
+  color: #555;
+}
