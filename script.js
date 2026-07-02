@@ -90,5 +90,21 @@ function initKmSlider() {
 
   update(); // inizializza
 }
+function initYearsSlider() {
+  const yearsInput = document.getElementById("years");
+  const yearsValue = document.getElementById("yearsValue");
+
+  if (!yearsInput || !yearsValue) return;
+
+  const update = () => {
+    yearsValue.textContent = yearsInput.value + " anni";
+  };
+
+  yearsInput.addEventListener("input", update);
+
+  update();
+}
+
+initYearsSlider();
 
 initKmSlider();
