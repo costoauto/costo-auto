@@ -64,12 +64,13 @@ console.log(car.price_new);
 
   const res = calculate(car, km);
 
- const basePrice = Number(car.price_new);
-const purchaseMonthly = basePrice
+const basePrice = Number(car.price_new) || 0;
+
+const purchaseMonthly = basePrice > 0
   ? basePrice / (years * 12)
   : 0;
 
-  const totalMonthly = Number(res.total) + purchaseMonthly;
+const totalMonthly = Number(res.total) + purchaseMonthly;
 
   const best = findCheapest(km);
 
