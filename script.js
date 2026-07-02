@@ -13,9 +13,11 @@ function findCar(input) {
   const val = normalize(input);
 
   return cars.find(car =>
-    val.includes(car.model.toLowerCase()) ||
-    val.includes(car.brand.toLowerCase()) ||
-    val.includes(car.id.toLowerCase())
+    car.id === val ||
+    car.id.includes(val) ||
+    car.model.toLowerCase() === val ||
+    car.brand.toLowerCase() === val ||
+    (car.brand + " " + car.model).toLowerCase() === val
   );
 }
 
