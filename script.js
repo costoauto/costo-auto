@@ -144,3 +144,28 @@ function findCheapest(km) {
 
   return { car: best, cost: bestCost };
 }
+window.addEventListener("DOMContentLoaded", () => {
+  const kmInput = document.getElementById("km");
+  const kmValue = document.getElementById("kmValue");
+
+  const yearsInput = document.getElementById("years");
+  const yearsValue = document.getElementById("yearsValue");
+
+  if (kmInput && kmValue) {
+    const updateKm = () => {
+      kmValue.textContent = kmInput.value + " km";
+    };
+
+    kmInput.addEventListener("input", updateKm);
+    updateKm();
+  }
+
+  if (yearsInput && yearsValue) {
+    const updateYears = () => {
+      yearsValue.textContent = yearsInput.value + " anni";
+    };
+
+    yearsInput.addEventListener("input", updateYears);
+    updateYears();
+  }
+});
