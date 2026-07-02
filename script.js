@@ -51,18 +51,45 @@ async function run() {
 
   const input = document.getElementById("car").value;
   const km = Number(document.getElementById("km").value);
-const years = Number(document.getElementById("years").value);
+  const years = Number(document.getElementById("years").value);
 
-const purchaseMonthly = car.price_new
-  ? car.price_new / (years * 12)
-  : 0;
   const car = findCar(input);
 
   if (!car) {
-    document.getElementById("result").innerHTML =
-      "<p>Auto non trovata</p>";
+    document.getElementById("result").innerHTML = "<p>Auto non trovata</p>";
     return;
   }
+
+  const res = calculate(car, km);
+
+  const purchaseMonthly = car.price_new
+    ? car.price_new / (years * 12)
+    : 0;
+
+  const totalMonthly = Number(res.total) + purchaseMonthly;
+
+  const best = findCheapest(km);
+
+  document.getElementById("result").innerHTML = `
+    <h2>${res.name}</h2>
+
+    <p>Carburante: ${res.fuel}€</p>
+    <p>Assicurazione: ${res.insurance}€</p>
+    <p>Bollo: ${res.tax}€</p>
+    <p>Manutenzione: ${res.maintenance}</p>
+
+    <hr>
+
+    <p>🚗 Costo acquisto: ${purchaseMonthly.toFixed(0)}€ / mese (${years} anni)</p>
+
+    <h2>Totale: ${totalMonthly.toFixed(0)}€ / mese</h2>
+
+    <hr>
+
+    <p>💡 Auto più economica: <b>${best.car.brand} ${best.car.model}</b></p>
+    <p>👉 ${best.cost.toFixed(0)}€ / mese</p>
+  `;
+}
 
   const res = calculate(car, km);
   const years = Number(document.getElementById("years").value);
