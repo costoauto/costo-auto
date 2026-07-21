@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Calcola il costo mensile reale di possesso di un'auto."
+  />
+  <title>Calcola il costo mensile dell'auto</title>
+  <link rel="stylesheet" href="style.css?v=20260721-5" />
+</head>
+
+<body>
+  <main class="app">
+    <header class="hero">
+      <div class="eyebrow">Costo auto</div>
+
+      <h1>Calcola il costo mensile reale della tua auto</h1>
+
+      <p class="intro">
+        Seleziona l’auto e scopri quanto costa possederla ogni mese,
+        considerando svalutazione, carburante o energia, bollo e assicurazione.
+      </p>
+    </header>
+
+    <section class="panel" aria-labelledby="vehicleTitle">
+      <div class="panelHeader">
+        <h2 id="vehicleTitle">Auto</h2>
+      </div>
+
+      <div class="field">
+        <label for="brand">Marca</label>
+        <select id="brand" disabled>
+          <option value="">Caricamento marche…</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="model">Modello</label>
+        <select id="model" disabled>
+          <option value="">Prima seleziona una marca</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="version">Versione</label>
+        <select id="version" disabled>
+          <option value="">Prima seleziona un modello</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="usageTitle">
+      <div class="panelHeader">
+        <h2 id="usageTitle">Utilizzo</h2>
+      </div>
+
+      <div class="field">
+        <div class="fieldTop">
+          <label for="km">Km annui</label>
+          <span id="kmValue" class="fieldValue">15.000 km</span>
+        </div>
+
+        <input
+          id="km"
+          type="range"
+          min="5000"
+          max="50000"
+          step="5000"
+          value="15000"
+        />
+      </div>
+
+      <div class="field">
+        <div class="fieldTop">
+          <label for="years">Anni di possesso</label>
+          <span id="yearsValue" class="fieldValue">5 anni</span>
+        </div>
+
+        <input
+          id="years"
+          type="range"
+          min="1"
+          max="10"
+          step="1"
+          value="5"
+        />
+      </div>
+
+      <div class="field">
+        <label for="region">Area di riferimento</label>
+        <select id="region" disabled>
+          <option value="italia">Tutta Italia</option>
+        </select>
+      </div>
+    </section>
+
+    <section
+      id="result"
+      class="result"
+      aria-live="polite"
+      aria-busy="false"
+    >
+      <div class="emptyState">
+        <div class="emptyIcon">€</div>
+        <h2>Seleziona marca, modello e versione</h2>
+        <p>
+          La stima verrà calcolata automaticamente usando 15.000 km annui,
+          5 anni di possesso e l’area “Tutta Italia”.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script src="app-api.js?v=20260721-5"></script>
+  <script src="script.js?v=20260721-8"></script>
+</body>
+</html>
