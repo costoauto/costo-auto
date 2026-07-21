@@ -2,10 +2,16 @@
 
 Webapp mobile-first per stimare il costo mensile reale di possesso di un’auto.
 
-La pagina consente di scegliere marca, modello e versione, quindi aggiorna
-automaticamente la stima in base a chilometri annui, anni di possesso e area
-geografica. I dati e i calcoli arrivano da PostgreSQL tramite un servizio Node.js:
-le credenziali del database non vengono mai inviate al browser.
+## Architettura
+
+- GitHub Pages pubblica esclusivamente i file statici contenuti in `public`.
+- Supabase conserva il database PostgreSQL ed espone soltanto cinque funzioni
+  RPC in sola lettura.
+- Le tabelle negli schemi `raw`, `curated` e `mvp` non sono accessibili
+  direttamente dal browser.
+- Nessuna password del database o chiave amministrativa è presente nel codice.
+- La chiave `publishable` presente in `public/config.js` è una credenziale
+  pubblica prevista per applicazioni web e opera con il ruolo limitato `anon`.
 
 ## Componenti mostrate
 
@@ -17,55 +23,24 @@ le credenziali del database non vengono mai inviate al browser.
 Una componente mancante viene dichiarata come non disponibile e non viene
 sostituita con un valore inventato.
 
-## Avvio locale
+## Configurazione Supabase
 
-1. Copiare `.env.example` in `.env`.
-2. Inserire in `.env` la connessione PostgreSQL dell’utente web di sola lettura.
-3. Eseguire `npm install`.
-4. Eseguire `npm start`.
-5. Aprire `http://localhost:3000`.
+Eseguire una sola volta `supabase/01_public_api.sql` nel SQL Editor del progetto,
+quindi abilitare la Data API lasciando disattivata l’esposizione automatica delle
+nuove tabelle.
 
-## Variabili d’ambiente
+Le sole funzioni accessibili al ruolo anonimo sono:
 
-- `DATABASE_URL`: connessione PostgreSQL completa.
-- `DATABASE_SSL`: `true` se il database remoto richiede SSL, altrimenti `false`.
-- `PORT`: porta del servizio; in hosting viene assegnata automaticamente.
-
-Il file `.env` contiene dati riservati ed è escluso da Git.
-
-## API
-
-- `GET /api/v1/health`
-- `GET /api/v1/brands`
-- `GET /api/v1/models?brand_key=ALFAROMEO`
-- `GET /api/v1/versions?model_id=<model_catalog_id>`
-- `GET /api/v1/regions`
-- `POST /api/v1/tco/estimate`
-
-Esempio della richiesta di calcolo:
-
-```json
-{
-  "vehicle_cluster_id": "<vehicle_cluster_id>",
-  "annual_km": 15000,
-  "ownership_years": 5,
-  "region_code": "italia"
-}
-```
-
-## Oggetti PostgreSQL richiesti
-
-Il servizio usa almeno questi oggetti del database Auto TCO:
-
-- `mvp.site_vehicle_catalog_eea_v2`;
-- `mvp.tax_jurisdictions`;
-- `mvp.estimate_vehicle_cluster_tco_ui_v2(...)`.
-
-Il trasferimento del database di produzione è separato dalla pubblicazione del
-codice: dump, tabelle grezze e password non devono essere caricati su GitHub.
+- `public.auto_tco_brands()`;
+- `public.auto_tco_models(text)`;
+- `public.auto_tco_versions(text)`;
+- `public.auto_tco_regions()`;
+- `public.auto_tco_estimate(text, integer, integer, text)`.
 
 ## Pubblicazione
 
-Il repository contiene `render.yaml`, che configura un servizio web Node.js.
-Durante la creazione del servizio vanno inserite in modo protetto
-`DATABASE_URL` e `DATABASE_SSL`.
+Il workflow `.github/workflows/pages.yml` pubblica la cartella `public` su
+GitHub Pages a ogni aggiornamento del ramo `main`.
+
+Dump, snapshot del database, file `.env`, password e chiavi amministrative non
+devono essere caricati nel repository.

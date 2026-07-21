@@ -7,6 +7,11 @@
     name="description"
     content="Calcola il costo mensile reale di possesso di un'auto."
   />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta
+    http-equiv="Content-Security-Policy"
+    content="default-src 'self'; base-uri 'none'; connect-src 'self' https://fcrqsmggqpmdhttqdhqh.supabase.co; font-src 'self'; form-action 'self'; img-src 'self' data:; object-src 'none'; script-src 'self'; style-src 'self'"
+  />
   <title>Calcola il costo mensile dell'auto</title>
   <link rel="stylesheet" href="style.css?v=20260721-5" />
 </head>
@@ -113,7 +118,8 @@
     </section>
   </main>
 
-  <script src="app-api.js?v=20260721-5"></script>
+  <script src="config.js?v=20260721-1"></script>
+  <script src="app-api.js?v=20260721-6"></script>
   <script src="script.js?v=20260721-8"></script>
 </body>
 </html>
