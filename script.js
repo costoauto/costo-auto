@@ -219,29 +219,42 @@ function formatVehicleName(brandValue, modelValue) {
 }
 
 function formatVersionLabel(vehicle) {
+  const representativeYear = Number(
+    vehicle.representative_year ?? vehicle.year,
+  );
+  const yearPrefix = Number.isInteger(representativeYear)
+    && representativeYear >= 1900
+    && representativeYear <= 2100
+    ? `${representativeYear} · `
+    : '';
   const powerCv = Number(vehicle.power_cv);
   const roundedCv = Number.isFinite(powerCv) ? Math.round(powerCv) : null;
   const fuel = vehicle.fuel_type;
 
   if (vehicle.hybrid_type === 'plug_in_hybrid') {
-    return roundedCv
+    const details = roundedCv
       ? `Plug-in ${fuelLabels[fuel] || ''} · ${roundedCv} CV termici`
       : `Plug-in ${fuelLabels[fuel] || ''}`.trim();
+    return `${yearPrefix}${details}`;
   }
 
   if (vehicle.hybrid_type === 'hybrid') {
-    return roundedCv
+    const details = roundedCv
       ? `Ibrida ${fuelLabels[fuel] || ''} · ${roundedCv} CV termici`
       : `Ibrida ${fuelLabels[fuel] || ''}`.trim();
+    return `${yearPrefix}${details}`;
   }
 
   const fuelLabel = fuelLabels[fuel];
 
   if (fuelLabel && roundedCv) {
-    return `${fuelLabel} · ${roundedCv} CV`;
+    return `${yearPrefix}${fuelLabel} · ${roundedCv} CV`;
   }
 
-  return vehicle.version_label || 'Versione';
+  const fallback = vehicle.version_label || 'Versione';
+  return /^\d{4}\s*·/.test(fallback)
+    ? fallback
+    : `${yearPrefix}${fallback}`;
 }
 
 function clearLoadingState() {
@@ -490,7 +503,7 @@ async function handleBrandChange() {
 
   renderEmptyState(
     'Ora seleziona il modello',
-    'Dopo il modello potrai scegliere anno, alimentazione e potenza.',
+    'Dopo il modello potrai scegliere la versione per anno, alimentazione e potenza.',
   );
 
   try {
@@ -521,14 +534,14 @@ async function handleModelChange() {
     resetSelect(elements.version, 'Prima seleziona un modello');
     renderEmptyState(
       'Ora seleziona il modello',
-      'Dopo il modello potrai scegliere anno, alimentazione e potenza.',
+      'Dopo il modello potrai scegliere la versione per anno, alimentazione e potenza.',
     );
     return;
   }
 
   renderEmptyState(
     'Ora seleziona la versione',
-    'Scegli anno, alimentazione e potenza per calcolare la stima corretta.',
+    'Scegli la combinazione di anno, alimentazione e potenza.',
   );
 
   try {
