@@ -4,7 +4,8 @@ Webapp mobile-first per stimare il costo mensile reale di possesso di un’auto.
 
 ## Architettura
 
-- GitHub Pages pubblica esclusivamente i file statici contenuti in `public`.
+- GitHub Pages pubblica i file statici presenti nella cartella principale del
+  repository, come nella precedente versione del sito.
 - Supabase conserva il database PostgreSQL ed espone soltanto cinque funzioni
   RPC in sola lettura.
 - Le tabelle negli schemi `raw`, `curated` e `mvp` non sono accessibili
@@ -39,8 +40,8 @@ Le sole funzioni accessibili al ruolo anonimo sono:
 
 ## Pubblicazione
 
-Il workflow `.github/workflows/pages.yml` pubblica la cartella `public` su
-GitHub Pages a ogni aggiornamento del ramo `main`.
+GitHub Pages pubblica direttamente il ramo `main`, usando `index.html` come
+pagina iniziale.
 
 Dump, snapshot del database, file `.env`, password e chiavi amministrative non
 devono essere caricati nel repository.
