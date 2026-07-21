@@ -6,16 +6,36 @@ import { fileURLToPath } from 'node:url';
 
 const { Pool } = pg;
 
-if (!process.env.DATABASE_URL) {
-  throw new Error('DATABASE_URL non configurata');
+const databaseUrl = process.env.DATABASE_URL?.trim();
+const databaseHost = process.env.DATABASE_HOST?.trim();
+const databaseName = process.env.DATABASE_NAME?.trim();
+const databaseUser = process.env.DATABASE_USER?.trim();
+const databasePassword = process.env.DATABASE_PASSWORD;
+
+if (
+  !databaseUrl
+  && (!databaseHost || !databaseName || !databaseUser || !databasePassword)
+) {
+  throw new Error(
+    'Configurare DATABASE_URL oppure DATABASE_HOST, DATABASE_NAME, '
+      + 'DATABASE_USER e DATABASE_PASSWORD',
+  );
 }
 
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
+  ...(databaseUrl
+    ? { connectionString: databaseUrl }
+    : {
+        host: databaseHost,
+        port: Number(process.env.DATABASE_PORT || 5432),
+        database: databaseName,
+        user: databaseUser,
+        password: databasePassword,
+      }),
   ssl: process.env.DATABASE_SSL === 'true'
     ? { rejectUnauthorized: false }
     : false,
-  max: 10,
+  max: 5,
   idleTimeoutMillis: 30_000,
   connectionTimeoutMillis: 5_000,
   statement_timeout: 10_000,
@@ -28,7 +48,97 @@ const currentDirectory = path.dirname(fileURLToPath(import.meta.url));
 const publicDirectory = path.resolve(currentDirectory, '../public');
 
 app.disable('x-powered-by');
+app.set('trust proxy', 1);
+
+app.use((_request, response, next) => {
+  response.setHeader('X-Content-Type-Options', 'nosniff');
+  response.setHeader('X-Frame-Options', 'DENY');
+  response.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
+  response.setHeader(
+    'Permissions-Policy',
+    'camera=(), microphone=(), geolocation=(), payment=()',
+  );
+  response.setHeader(
+    'Content-Security-Policy',
+    "default-src 'self'; base-uri 'none'; connect-src 'self'; "
+      + "font-src 'self'; form-action 'self'; frame-ancestors 'none'; "
+      + "img-src 'self' data:; object-src 'none'; script-src 'self'; "
+      + "style-src 'self'",
+  );
+
+  if (process.env.NODE_ENV === 'production') {
+    response.setHeader(
+      'Strict-Transport-Security',
+      'max-age=31536000; includeSubDomains',
+    );
+  }
+
+  next();
+});
+
 app.use(express.json({ limit: '32kb' }));
+
+function createRateLimiter({ windowMs, maximum }) {
+  const clients = new Map();
+
+  const cleanup = setInterval(() => {
+    const now = Date.now();
+
+    for (const [key, value] of clients) {
+      if (value.resetAt <= now) {
+        clients.delete(key);
+      }
+    }
+  }, windowMs);
+
+  cleanup.unref();
+
+  return (request, response, next) => {
+    const now = Date.now();
+    const key = request.ip || 'unknown';
+    let client = clients.get(key);
+
+    if (!client || client.resetAt <= now) {
+      client = { count: 0, resetAt: now + windowMs };
+      clients.set(key, client);
+    }
+
+    client.count += 1;
+    response.setHeader('RateLimit-Limit', String(maximum));
+    response.setHeader(
+      'RateLimit-Remaining',
+      String(Math.max(0, maximum - client.count)),
+    );
+    response.setHeader(
+      'RateLimit-Reset',
+      String(Math.ceil(client.resetAt / 1000)),
+    );
+
+    if (client.count > maximum) {
+      response.setHeader(
+        'Retry-After',
+        String(Math.ceil((client.resetAt - now) / 1000)),
+      );
+      response.status(429).json({
+        error: 'Troppe richieste. Riprova tra poco.',
+      });
+      return;
+    }
+
+    next();
+  };
+}
+
+const apiRateLimiter = createRateLimiter({
+  windowMs: 60_000,
+  maximum: 120,
+});
+const estimateRateLimiter = createRateLimiter({
+  windowMs: 60_000,
+  maximum: 30,
+});
+
+app.use('/api/v1', apiRateLimiter);
 
 function parseInteger(value, name, minimum, maximum) {
   const parsed = Number(value);
@@ -184,7 +294,10 @@ app.get('/api/v1/regions', async (_request, response, next) => {
   }
 });
 
-app.post('/api/v1/tco/estimate', async (request, response, next) => {
+app.post(
+  '/api/v1/tco/estimate',
+  estimateRateLimiter,
+  async (request, response, next) => {
   try {
     const vehicleClusterId = requireText(
       request.body.vehicle_cluster_id,
@@ -226,7 +339,8 @@ app.post('/api/v1/tco/estimate', async (request, response, next) => {
   } catch (error) {
     next(error);
   }
-});
+  },
+);
 
 app.use(express.static(publicDirectory, {
   etag: false,
