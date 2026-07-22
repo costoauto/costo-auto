@@ -406,6 +406,47 @@ function getDepreciationDescription(costs, quality) {
   return 'Perdita di valore stimata usando i dati disponibili per questa versione.';
 }
 
+function formatEnergyUnitPrice(value, unit) {
+  return `${new Intl.NumberFormat('it-IT', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 3,
+  }).format(Number(value))} ${unit}`;
+}
+
+function getFuelOrEnergyDescription(payload, regionLabel) {
+  const descriptions = payload.descriptions || {};
+  const details = payload.calculation_details?.fuel_or_energy || {};
+  const baseDescription = descriptions.fuel_or_energy
+    || costDescriptions.fuelOrEnergy;
+  const prices = [];
+
+  if (details.thermal_price_eur !== null
+      && details.thermal_price_eur !== undefined) {
+    prices.push(
+      `${formatEnergyUnitPrice(
+        details.thermal_price_eur,
+        details.thermal_price_unit || '€/l',
+      )} · ${regionLabel}, media MIMIT ultimi 12 mesi`,
+    );
+  }
+
+  if (details.electricity_price_eur_kwh !== null
+      && details.electricity_price_eur_kwh !== undefined) {
+    prices.push(
+      `${formatEnergyUnitPrice(
+        details.electricity_price_eur_kwh,
+        '€/kWh',
+      )} · Italia, riferimento domestico ARERA 2025`,
+    );
+  }
+
+  if (prices.length === 0) {
+    return baseDescription;
+  }
+
+  return `${baseDescription} Prezzo${prices.length > 1 ? 'i' : ''} utilizzat${prices.length > 1 ? 'i' : 'o'}: ${prices.join('; ')}.`;
+}
+
 function renderResult(payload) {
   const vehicle = payload.vehicle || {};
   const inputs = payload.inputs || {};
@@ -420,6 +461,10 @@ function renderResult(payload) {
   const regionLabel = elements.region.selectedOptions[0]?.textContent || '';
   const years = Number(inputs.ownership_years);
   const depreciationDescription = getDepreciationDescription(costs, quality);
+  const fuelOrEnergyDescription = getFuelOrEnergyDescription(
+    payload,
+    regionLabel,
+  );
 
   const note = ready
     ? 'La stima utilizza i dati disponibili per la versione selezionata. Non rappresenta un preventivo o un valore di rivendita garantito.'
@@ -455,7 +500,7 @@ function renderResult(payload) {
       )}
       ${createCostRow(
         'Carburante / energia',
-        descriptions.fuel_or_energy || costDescriptions.fuelOrEnergy,
+        fuelOrEnergyDescription,
         costs.fuel_or_energy_eur,
       )}
       ${createCostRow(
