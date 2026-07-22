@@ -7,6 +7,11 @@
 
 BEGIN;
 
+-- L'audit richiama il motore di calcolo migliaia di volte. Il limite viene
+-- esteso soltanto all'interno di questa transazione e torna automaticamente
+-- al valore normale quando lo script termina.
+SET LOCAL statement_timeout = '15min';
+
 CREATE TABLE IF NOT EXISTS mvp.tco_audit_results_v1 (
   vehicle_cluster_id text PRIMARY KEY,
   brand text NOT NULL,
