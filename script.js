@@ -389,6 +389,7 @@ function translateMissingComponent(component) {
     fuel_or_energy: 'carburante o energia',
     tax: 'bollo',
     insurance: 'assicurazione',
+    maintenance: 'manutenzione',
   };
 
   return labels[component] || component;
@@ -512,6 +513,12 @@ function renderResult(payload) {
         'Assicurazione',
         descriptions.insurance || costDescriptions.insurance,
         costs.insurance_eur,
+      )}
+      ${createCostRow(
+        'Manutenzione',
+        descriptions.maintenance
+          || 'Stima di tagliandi, materiali di consumo e usura prevedibile basata su chilometri, età, alimentazione e potenza.',
+        costs.maintenance_eur,
       )}
     </div>
 
