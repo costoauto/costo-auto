@@ -394,6 +394,18 @@ function translateMissingComponent(component) {
   return labels[component] || component;
 }
 
+function getDepreciationDescription(costs, quality) {
+  if (costs.depreciation_eur === null || costs.depreciation_eur === undefined) {
+    return 'Non disponibile: mancano riferimenti sufficientemente affidabili.';
+  }
+
+  if (quality.depreciation_price_method) {
+    return 'Stima ricavata da veicoli comparabili della stessa marca o dello stesso modello.';
+  }
+
+  return 'Perdita di valore stimata usando i dati disponibili per questa versione.';
+}
+
 function renderResult(payload) {
   const vehicle = payload.vehicle || {};
   const inputs = payload.inputs || {};
@@ -407,6 +419,7 @@ function renderResult(payload) {
     : costs.available_subtotal_eur;
   const regionLabel = elements.region.selectedOptions[0]?.textContent || '';
   const years = Number(inputs.ownership_years);
+  const depreciationDescription = getDepreciationDescription(costs, quality);
 
   const note = ready
     ? 'La stima utilizza i dati disponibili per la versione selezionata. Non rappresenta un preventivo o un valore di rivendita garantito.'
@@ -437,7 +450,7 @@ function renderResult(payload) {
     <div class="breakdown">
       ${createCostRow(
         'Svalutazione',
-        descriptions.depreciation || costDescriptions.depreciation,
+        depreciationDescription,
         costs.depreciation_eur,
       )}
       ${createCostRow(
