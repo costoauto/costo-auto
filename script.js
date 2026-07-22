@@ -516,7 +516,7 @@ async function handleBrandChange() {
 
   renderEmptyState(
     'Ora seleziona il modello',
-    'Dopo il modello potrai scegliere la versione per alimentazione e potenza.',
+    'Dopo il modello potrai scegliere la versione per anno, alimentazione e potenza.',
   );
 
   try {
@@ -547,14 +547,14 @@ async function handleModelChange() {
     resetSelect(elements.version, 'Prima seleziona un modello');
     renderEmptyState(
       'Ora seleziona il modello',
-      'Dopo il modello potrai scegliere la versione per alimentazione e potenza.',
+      'Dopo il modello potrai scegliere la versione per anno, alimentazione e potenza.',
     );
     return;
   }
 
   renderEmptyState(
     'Ora seleziona la versione',
-    'Scegli la combinazione di alimentazione e potenza.',
+    'Scegli la combinazione di anno, alimentazione e potenza.',
   );
 
   try {
