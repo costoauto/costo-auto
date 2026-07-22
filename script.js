@@ -16,6 +16,8 @@ const state = {
 };
 
 const costDescriptions = Object.freeze({
+  maintenance:
+    'Stima di tagliandi, materiali di consumo e usura prevedibile basata su chilometri, età, alimentazione e potenza. Sono esclusi pneumatici e interventi straordinari.',
   depreciation:
     'Perdita di valore stimata confrontando il valore attuale con quello previsto alla fine del periodo.',
   fuelOrEnergy:
@@ -516,8 +518,7 @@ function renderResult(payload) {
       )}
       ${createCostRow(
         'Manutenzione',
-        descriptions.maintenance
-          || 'Stima di tagliandi, materiali di consumo e usura prevedibile basata su chilometri, età, alimentazione e potenza.',
+        costDescriptions.maintenance,
         costs.maintenance_eur,
       )}
     </div>
