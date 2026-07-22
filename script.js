@@ -21,7 +21,7 @@ const costDescriptions = Object.freeze({
   fuelOrEnergy:
     'Costo stimato in base ai chilometri annui, al consumo della versione e al prezzo medio di carburante o energia.',
   tax:
-    'Bollo stimato in base a potenza, classe ambientale, alimentazione, età e area selezionata.',
+    'Bollo stimato con le regole fiscali oggi disponibili; eventuali modifiche legislative future non sono prevedibili.',
   insurance:
     'Premio RC Auto medio dell’area selezionata; non è un preventivo personale.',
 });
