@@ -218,9 +218,9 @@ function formatVehicleName(brandValue, modelValue) {
   return `${brand} ${model}`.trim();
 }
 
-function formatVersionLabel(vehicle) {
+function formatVersionLabel(vehicle, showYear = true) {
   const representativeYear = Number(
-    vehicle.representative_year ?? vehicle.year,
+    showYear ? vehicle.display_year : null,
   );
   const yearPrefix = Number.isInteger(representativeYear)
     && representativeYear >= 1900
@@ -516,7 +516,7 @@ async function handleBrandChange() {
 
   renderEmptyState(
     'Ora seleziona il modello',
-    'Dopo il modello potrai scegliere la versione per anno, alimentazione e potenza.',
+    'Dopo il modello potrai scegliere la versione per alimentazione e potenza.',
   );
 
   try {
@@ -547,25 +547,30 @@ async function handleModelChange() {
     resetSelect(elements.version, 'Prima seleziona un modello');
     renderEmptyState(
       'Ora seleziona il modello',
-      'Dopo il modello potrai scegliere la versione per anno, alimentazione e potenza.',
+      'Dopo il modello potrai scegliere la versione per alimentazione e potenza.',
     );
     return;
   }
 
   renderEmptyState(
     'Ora seleziona la versione',
-    'Scegli la combinazione di anno, alimentazione e potenza.',
+    'Scegli la combinazione di alimentazione e potenza.',
   );
 
   try {
     const versions = await window.AutoTcoApi.getVersions(elements.model.value);
+    const showYears = versions.length > 0 && versions.every((item) => {
+      const year = Number(item.display_year);
+      return Number.isInteger(year) && year >= 1900 && year <= 2100;
+    });
+
     replaceOptions(
       elements.version,
       'Seleziona versione',
       versions,
       (item) => ({
         value: item.vehicle_cluster_id,
-        label: formatVersionLabel(item),
+        label: formatVersionLabel(item, showYears),
       }),
     );
   } catch (error) {
