@@ -23,7 +23,9 @@
     const payload = await response.json().catch(() => ({}));
 
     if (!response.ok) {
-      throw new Error(payload.error || 'Richiesta non riuscita');
+      throw new Error(
+        payload.message || payload.error || 'Richiesta non riuscita',
+      );
     }
 
     return payload;
