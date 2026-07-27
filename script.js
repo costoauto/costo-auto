@@ -221,14 +221,21 @@ function formatVehicleName(brandValue, modelValue) {
 }
 
 function formatVersionLabel(vehicle, showYear = true) {
-  const representativeYear = Number(
-    showYear ? vehicle.display_year : null,
+  const yearFrom = Number(
+    showYear ? (vehicle.year_from ?? vehicle.display_year) : null,
   );
-  const yearPrefix = Number.isInteger(representativeYear)
-    && representativeYear >= 1900
-    && representativeYear <= 2100
-    ? `${representativeYear} · `
+  const yearTo = Number(
+    showYear ? (vehicle.year_to ?? vehicle.display_year) : null,
+  );
+  const hasValidRange = Number.isInteger(yearFrom)
+    && Number.isInteger(yearTo)
+    && yearFrom >= 1900
+    && yearTo <= 2100
+    && yearFrom <= yearTo;
+  const yearLabel = hasValidRange
+    ? (yearFrom === yearTo ? `${yearFrom}` : `${yearFrom}-${yearTo}`)
     : '';
+  const yearPrefix = yearLabel ? `${yearLabel} · ` : '';
   const powerCv = Number(vehicle.power_cv);
   const roundedCv = Number.isFinite(powerCv) ? Math.round(powerCv) : null;
   const fuel = vehicle.fuel_type;
@@ -660,8 +667,13 @@ async function handleModelChange() {
   try {
     const versions = await window.AutoTcoApi.getVersions(elements.model.value);
     const showYears = versions.length > 0 && versions.every((item) => {
-      const year = Number(item.display_year);
-      return Number.isInteger(year) && year >= 1900 && year <= 2100;
+      const yearFrom = Number(item.year_from ?? item.display_year);
+      const yearTo = Number(item.year_to ?? item.display_year);
+      return Number.isInteger(yearFrom)
+        && Number.isInteger(yearTo)
+        && yearFrom >= 1900
+        && yearTo <= 2100
+        && yearFrom <= yearTo;
     });
 
     replaceOptions(
