@@ -556,6 +556,53 @@ async function loadRegions() {
   elements.region.disabled = false;
 }
 
+function getRequestedVehicle() {
+  const params = new URLSearchParams(window.location.search);
+  const pageData = document.body.dataset;
+
+  return {
+    brand: params.get('brand') || pageData.brand || '',
+    model: params.get('model') || pageData.model || '',
+  };
+}
+
+function selectMatchingOption(select, requestedValue) {
+  const requestedKey = compactKey(requestedValue);
+
+  if (!requestedKey) {
+    return false;
+  }
+
+  const option = Array.from(select.options).find((item) => (
+    compactKey(item.value) === requestedKey
+    || compactKey(item.textContent) === requestedKey
+  ));
+
+  if (!option) {
+    return false;
+  }
+
+  select.value = option.value;
+  return true;
+}
+
+async function applyRequestedVehicle() {
+  const requested = getRequestedVehicle();
+
+  if (!requested.brand || !selectMatchingOption(elements.brand, requested.brand)) {
+    return;
+  }
+
+  await handleBrandChange();
+
+  if (!requested.model || !selectMatchingOption(elements.model, requested.model)) {
+    return;
+  }
+
+  await handleModelChange();
+  elements.version.focus({ preventScroll: true });
+}
+
 async function handleBrandChange() {
   state.requestSequence += 1;
   resetSelect(elements.model, 'Caricamento modelli…');
@@ -672,6 +719,7 @@ async function initialize() {
 
   try {
     await Promise.all([loadBrands(), loadRegions()]);
+    await applyRequestedVehicle();
   } catch (error) {
     renderError(
       `Il sito non riesce a collegarsi al servizio dati. ${error.message}`,
