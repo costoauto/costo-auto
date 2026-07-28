@@ -107,6 +107,7 @@ const fuelLabels = Object.freeze({
   petrol: 'Benzina',
   diesel: 'Diesel',
   lpg: 'GPL',
+  ng: 'Metano',
   e85: 'E85',
   electric: 'Elettrica',
   hydrogen: 'Idrogeno',
@@ -261,7 +262,7 @@ function formatVersionLabel(vehicle, showYear = true) {
   }
 
   const fallback = vehicle.version_label || 'Versione';
-  return /^\d{4}\s*·/.test(fallback)
+  return /^\d{4}(?:-\d{4})?\s*·/.test(fallback)
     ? fallback
     : `${yearPrefix}${fallback}`;
 }
