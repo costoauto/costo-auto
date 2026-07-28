@@ -45,19 +45,3 @@ pagina iniziale.
 
 Dump, snapshot del database, file `.env`, password e chiavi amministrative non
 devono essere caricati nel repository.
-
-## Pagine SEO dei modelli
-
-Le pagine modello riutilizzano `style.css`, `app-api.js` e `script.js`. Per
-preselezionare il veicolo basta impostare sul `body` le chiavi presenti nel
-catalogo:
-
-```html
-<body data-brand="FIAT" data-model="PANDA">
-```
-
-La stessa preselezione è disponibile sulla homepage tramite parametri, per
-esempio `?brand=FIAT&model=PANDA`. Ogni nuova pagina deve avere contenuti
-specifici, title, meta description, canonical e breadcrumb propri; va inoltre
-collegata dalla navigazione interna e aggiunta a `sitemap.xml` solo quando è
-pubblicata.
