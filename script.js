@@ -331,19 +331,10 @@ function updateSliderLabels() {
   elements.yearsValue.textContent = years === 1 ? '1 anno' : `${years} anni`;
 }
 
-function renderEmptyState(
-  title = 'Seleziona marca, modello e versione',
-  message = 'La stima verrà calcolata automaticamente usando 15.000 km annui, 5 anni di possesso e l’area “Tutta Italia”.',
-) {
+function renderEmptyState() {
   clearLoadingState();
   elements.result.setAttribute('aria-busy', 'false');
-  elements.result.innerHTML = `
-    <div class="emptyState">
-      <div class="emptyIcon">€</div>
-      <h2>${escapeHtml(title)}</h2>
-      <p>${escapeHtml(message)}</p>
-    </div>
-  `;
+  elements.result.replaceChildren();
 }
 
 function renderLoading() {
