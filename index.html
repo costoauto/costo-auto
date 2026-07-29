@@ -13,22 +13,25 @@
     content="default-src 'self'; base-uri 'none'; connect-src 'self' https://fcrqsmggqpmdhttqdhqh.supabase.co; font-src 'self'; form-action 'self'; img-src 'self' data:; object-src 'none'; script-src 'self'; style-src 'self'"
   />
   <title>Calcola il costo mensile dell'auto</title>
-  <link rel="stylesheet" href="style.css?v=20260728-2" />
+  <link rel="stylesheet" href="style.css?v=20260729-1" />
 </head>
 
 <body>
   <main class="app">
     <header class="hero">
       <div class="brandLogoFrame">
-        <img
-          class="brandLogo"
-          src="assets/costo-auto-logo-transparent.png"
-          alt="Costo Auto"
-          width="1229"
-          height="470"
-          decoding="async"
-          fetchpriority="high"
-        />
+        <div class="brandMarkCrop" aria-hidden="true">
+          <img
+            class="brandLogo"
+            src="assets/costo-auto-logo-transparent.png"
+            alt=""
+            width="1229"
+            height="470"
+            decoding="async"
+            fetchpriority="high"
+          />
+        </div>
+        <span class="brandWordmark">Costo Auto</span>
       </div>
 
       <h1>Calcola il costo mensile reale della tua auto</h1>
@@ -36,6 +39,7 @@
       <p class="intro">
         Seleziona l’auto e scopri quanto costa possederla ogni mese,
         considerando svalutazione, carburante o energia, bollo e assicurazione.
+        Puoi anche confrontare due modelli.
       </p>
     </header>
 
@@ -44,31 +48,102 @@
         <h2 id="vehicleTitle">Auto</h2>
       </div>
 
-      <div class="field">
-        <label for="brand">Marca</label>
-        <select id="brand" disabled>
-          <option value="">Caricamento marche…</option>
-        </select>
+      <div id="primaryVehicleSummary" class="vehicleSummary" hidden>
+        <div class="vehicleSummaryTop">
+          <span>Auto 1</span>
+          <button
+            id="togglePrimaryEdit"
+            type="button"
+            aria-expanded="false"
+            aria-controls="primaryVehicleFields"
+          >
+            Modifica
+          </button>
+        </div>
+        <div id="primarySummaryName" class="vehicleSummaryName"></div>
+        <div id="primarySummaryVersion" class="vehicleSummaryVersion"></div>
       </div>
 
-      <div class="field">
-        <label for="model">Modello</label>
-        <select id="model" disabled>
-          <option value="">Prima seleziona una marca</option>
-        </select>
+      <div id="primaryVehicleFields">
+        <div class="field">
+          <label for="brand">Marca</label>
+          <select id="brand" disabled>
+            <option value="">Caricamento marche…</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="model">Modello</label>
+          <select id="model" disabled>
+            <option value="">Prima seleziona una marca</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="version">Versione</label>
+          <select id="version" disabled>
+            <option value="">Prima seleziona un modello</option>
+          </select>
+        </div>
       </div>
 
-      <div class="field">
-        <label for="version">Versione</label>
-        <select id="version" disabled>
-          <option value="">Prima seleziona un modello</option>
-        </select>
+      <button
+        id="addComparison"
+        class="comparisonAction"
+        type="button"
+        disabled
+        aria-expanded="false"
+        aria-controls="comparisonVehicle"
+      >
+        <span aria-hidden="true">+</span>
+        Aggiungi un’auto al confronto
+      </button>
+
+      <div id="comparisonVehicle" class="comparisonVehicle" hidden>
+        <div class="comparisonVehicleHeader">
+          <h3>Auto 2</h3>
+          <button id="removeComparison" type="button">Rimuovi</button>
+        </div>
+
+        <div class="field">
+          <label for="brandCompare">Marca</label>
+          <select id="brandCompare" disabled>
+            <option value="">Caricamento marche…</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="modelCompare">Modello</label>
+          <select id="modelCompare" disabled>
+            <option value="">Prima seleziona una marca</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="versionCompare">Versione</label>
+          <select id="versionCompare" disabled>
+            <option value="">Prima seleziona un modello</option>
+          </select>
+        </div>
+
+        <button
+          id="viewComparison"
+          class="viewComparison"
+          type="button"
+          hidden
+        >
+          Vedi il confronto
+          <span aria-hidden="true">↓</span>
+        </button>
       </div>
     </section>
 
     <section class="panel" aria-labelledby="usageTitle">
       <div class="panelHeader">
         <h2 id="usageTitle">Utilizzo</h2>
+        <p id="usageComparisonHint" class="panelHint" hidden>
+          Questi parametri si applicano a entrambe le auto.
+        </p>
       </div>
 
       <div class="field">
@@ -123,6 +198,6 @@
 
   <script src="config.js?v=20260721-1"></script>
   <script src="app-api.js?v=20260722-7"></script>
-  <script src="script.js?v=20260728-1"></script>
+  <script src="script.js?v=20260729-2"></script>
 </body>
 </html>

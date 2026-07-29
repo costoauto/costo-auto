@@ -2,6 +2,21 @@ const elements = {
   brand: document.getElementById('brand'),
   model: document.getElementById('model'),
   version: document.getElementById('version'),
+  vehicleTitle: document.getElementById('vehicleTitle'),
+  primaryVehicleSummary: document.getElementById('primaryVehicleSummary'),
+  primaryVehicleFields: document.getElementById('primaryVehicleFields'),
+  togglePrimaryEdit: document.getElementById('togglePrimaryEdit'),
+  primarySummaryName: document.getElementById('primarySummaryName'),
+  primarySummaryVersion: document.getElementById('primarySummaryVersion'),
+  addComparison: document.getElementById('addComparison'),
+  comparisonVehicle: document.getElementById('comparisonVehicle'),
+  removeComparison: document.getElementById('removeComparison'),
+  brandCompare: document.getElementById('brandCompare'),
+  modelCompare: document.getElementById('modelCompare'),
+  versionCompare: document.getElementById('versionCompare'),
+  viewComparison: document.getElementById('viewComparison'),
+  usageTitle: document.getElementById('usageTitle'),
+  usageComparisonHint: document.getElementById('usageComparisonHint'),
   km: document.getElementById('km'),
   kmValue: document.getElementById('kmValue'),
   years: document.getElementById('years'),
@@ -13,6 +28,24 @@ const elements = {
 const state = {
   requestSequence: 0,
   calculationTimer: null,
+  comparisonActive: false,
+  results: {
+    primary: null,
+    comparison: null,
+  },
+};
+
+const vehicleControls = {
+  primary: {
+    brand: elements.brand,
+    model: elements.model,
+    version: elements.version,
+  },
+  comparison: {
+    brand: elements.brandCompare,
+    model: elements.modelCompare,
+    version: elements.versionCompare,
+  },
 };
 
 const costDescriptions = Object.freeze({
@@ -342,7 +375,11 @@ function renderLoading() {
 
   clearLoadingState();
 
-  if (elements.result.querySelector('.resultHeader')) {
+  if (
+    elements.result.querySelector('.resultHeader')
+    || elements.result.querySelector('.comparisonHeader')
+  ) {
+    elements.result.classList.add('isUpdating');
     const label = elements.result.querySelector('.totalLabel');
 
     if (label) {
@@ -526,17 +563,148 @@ function renderResult(payload) {
   `;
 }
 
+function getDisplayedTotal(payload) {
+  const costs = payload.monthly_costs || {};
+  const ready = payload.quality?.status === 'ready'
+    && costs.total_monthly_eur !== null;
+
+  return {
+    ready,
+    value: ready ? costs.total_monthly_eur : costs.available_subtotal_eur,
+  };
+}
+
+function createComparisonTotal(payload, label, isBest) {
+  const vehicle = payload.vehicle || {};
+  const total = getDisplayedTotal(payload);
+
+  return `
+    <div class="comparisonTotal${isBest ? ' isBest' : ''}">
+      <div class="comparisonBadgeSlot">
+        ${isBest ? '<div class="comparisonBestBadge">Più conveniente</div>' : ''}
+      </div>
+      <div class="comparisonCarLabel">${escapeHtml(label)}</div>
+      <div class="comparisonCarName">
+        ${escapeHtml(formatVehicleName(vehicle.brand, vehicle.model))}
+      </div>
+      <div class="comparisonCarVersion">
+        ${escapeHtml(formatVersionLabel(vehicle))}
+      </div>
+      <div class="comparisonCarTotal">${escapeHtml(formatEuro(total.value))}</div>
+      <div class="comparisonCarUnit">
+        ${total.ready ? 'al mese' : 'subtotale mensile'}
+      </div>
+    </div>
+  `;
+}
+
+function createComparisonRow(name, firstValue, secondValue) {
+  return `
+    <div class="comparisonBreakdownRow">
+      <div class="comparisonBreakdownName">${escapeHtml(name)}</div>
+      <div class="comparisonBreakdownValue">${escapeHtml(formatEuro(firstValue))}</div>
+      <div class="comparisonBreakdownValue">${escapeHtml(formatEuro(secondValue))}</div>
+    </div>
+  `;
+}
+
+function renderComparison(firstPayload, secondPayload) {
+  const firstTotal = getDisplayedTotal(firstPayload);
+  const secondTotal = getDisplayedTotal(secondPayload);
+  const firstVehicle = firstPayload.vehicle || {};
+  const secondVehicle = secondPayload.vehicle || {};
+  const firstCosts = firstPayload.monthly_costs || {};
+  const secondCosts = secondPayload.monthly_costs || {};
+  const years = Number(firstPayload.inputs?.ownership_years || elements.years.value);
+  const bothReady = firstTotal.ready && secondTotal.ready;
+  const difference = bothReady
+    ? Math.abs(Number(firstTotal.value) - Number(secondTotal.value))
+    : null;
+  const sameCost = bothReady && difference < 0.5;
+  const firstIsBest = bothReady
+    && !sameCost
+    && Number(firstTotal.value) < Number(secondTotal.value);
+  const secondIsBest = bothReady
+    && !sameCost
+    && Number(secondTotal.value) < Number(firstTotal.value);
+  const bestVehicle = firstIsBest ? firstVehicle : secondVehicle;
+  const bestLabel = firstIsBest ? 'Auto 1' : 'Auto 2';
+  const savingPeriod = difference === null ? null : difference * 12 * years;
+  const savingMessage = !bothReady
+    ? 'Il confronto è parziale perché per almeno una delle auto mancano alcune componenti.'
+    : sameCost
+      ? 'Le due auto hanno un costo mensile stimato sostanzialmente equivalente.'
+      : `${bestLabel} · ${formatVehicleName(bestVehicle.brand, bestVehicle.model)} costa circa ${formatEuro(difference)} in meno al mese, pari a ${formatEuro(savingPeriod)} in ${years === 1 ? '1 anno' : `${years} anni`}.`;
+  const regionLabel = elements.region.selectedOptions[0]?.textContent || '';
+
+  clearLoadingState();
+  elements.viewComparison.hidden = false;
+  elements.result.setAttribute('aria-busy', 'false');
+  elements.result.innerHTML = `
+    <div class="comparisonHeader">
+      <h2>Confronto dei costi</h2>
+      <p>
+        ${escapeHtml(formatNumber(elements.km.value))} km/anno ·
+        ${escapeHtml(years === 1 ? '1 anno' : `${years} anni`)} ·
+        ${escapeHtml(regionLabel)}
+      </p>
+    </div>
+
+    <div class="comparisonTotals">
+      ${createComparisonTotal(firstPayload, 'Auto 1', firstIsBest)}
+      ${createComparisonTotal(secondPayload, 'Auto 2', secondIsBest)}
+    </div>
+
+    <div class="comparisonSaving">${escapeHtml(savingMessage)}</div>
+
+    <div class="comparisonBreakdown">
+      <div class="comparisonBreakdownHeader" aria-hidden="true">
+        <span>Voce mensile</span>
+        <span>Auto 1</span>
+        <span>Auto 2</span>
+      </div>
+      ${createComparisonRow(
+        'Svalutazione',
+        firstCosts.depreciation_eur,
+        secondCosts.depreciation_eur,
+      )}
+      ${createComparisonRow(
+        'Carburante / energia',
+        firstCosts.fuel_or_energy_eur,
+        secondCosts.fuel_or_energy_eur,
+      )}
+      ${createComparisonRow('Bollo', firstCosts.tax_eur, secondCosts.tax_eur)}
+      ${createComparisonRow(
+        'Assicurazione',
+        firstCosts.insurance_eur,
+        secondCosts.insurance_eur,
+      )}
+      ${createComparisonRow(
+        'Manutenzione',
+        firstCosts.maintenance_eur,
+        secondCosts.maintenance_eur,
+      )}
+    </div>
+
+    <div class="note">
+      Le stime non rappresentano preventivi o valori di rivendita garantiti.
+    </div>
+  `;
+}
+
 async function loadBrands() {
   const brands = await window.AutoTcoApi.getBrands();
-  replaceOptions(
-    elements.brand,
-    'Seleziona marca',
-    brands,
-    (item) => ({
-      value: item.brand_key,
-      label: formatBrandName(item.brand, item.brand_key),
-    }),
-  );
+  [elements.brand, elements.brandCompare].forEach((select) => {
+    replaceOptions(
+      select,
+      'Seleziona marca',
+      brands,
+      (item) => ({
+        value: item.brand_key,
+        label: formatBrandName(item.brand, item.brand_key),
+      }),
+    );
+  });
 }
 
 async function loadRegions() {
@@ -555,29 +723,113 @@ async function loadRegions() {
   elements.region.disabled = false;
 }
 
-async function handleBrandChange() {
-  state.requestSequence += 1;
-  resetSelect(elements.model, 'Caricamento modelli…');
-  resetSelect(elements.version, 'Prima seleziona un modello');
+function updatePrimarySummary(payload = state.results.primary) {
+  const vehicle = payload?.vehicle;
 
-  if (!elements.brand.value) {
-    resetSelect(elements.model, 'Prima seleziona una marca');
-    renderEmptyState();
+  if (vehicle) {
+    elements.primarySummaryName.textContent = formatVehicleName(
+      vehicle.brand,
+      vehicle.model,
+    );
+    elements.primarySummaryVersion.textContent = formatVersionLabel(vehicle);
     return;
   }
 
-  renderEmptyState(
-    'Ora seleziona il modello',
-    'Dopo il modello potrai scegliere la versione per anno, alimentazione e potenza.',
+  const brand = elements.brand.selectedOptions[0]?.textContent || '';
+  const model = elements.model.selectedOptions[0]?.textContent || '';
+  const version = elements.version.selectedOptions[0]?.textContent || '';
+
+  elements.primarySummaryName.textContent = `${brand} ${model}`.trim();
+  elements.primarySummaryVersion.textContent = version;
+}
+
+function setComparisonModeUi(active) {
+  elements.vehicleTitle.textContent = active ? 'Confronto auto' : 'Auto';
+  elements.primaryVehicleSummary.hidden = !active;
+  elements.primaryVehicleFields.hidden = active;
+  elements.primaryVehicleFields.classList.remove('isComparisonEdit');
+  elements.togglePrimaryEdit.textContent = 'Modifica';
+  elements.togglePrimaryEdit.setAttribute('aria-expanded', 'false');
+  elements.usageTitle.textContent = active
+    ? 'Utilizzo per entrambe'
+    : 'Utilizzo';
+  elements.usageComparisonHint.hidden = !active;
+
+  if (active) {
+    updatePrimarySummary();
+  } else {
+    elements.viewComparison.hidden = true;
+  }
+}
+
+function togglePrimaryEdit() {
+  const shouldOpen = elements.primaryVehicleFields.hidden;
+  elements.primaryVehicleFields.hidden = !shouldOpen;
+  elements.primaryVehicleFields.classList.toggle(
+    'isComparisonEdit',
+    shouldOpen,
+  );
+  elements.togglePrimaryEdit.textContent = shouldOpen ? 'Chiudi' : 'Modifica';
+  elements.togglePrimaryEdit.setAttribute(
+    'aria-expanded',
+    String(shouldOpen),
   );
 
+  if (shouldOpen) {
+    elements.brand.focus();
+  }
+}
+
+function renderCurrentResults() {
+  if (
+    state.comparisonActive
+    && state.results.primary
+    && state.results.comparison
+  ) {
+    renderComparison(state.results.primary, state.results.comparison);
+    return;
+  }
+
+  if (state.results.primary) {
+    renderResult(state.results.primary);
+    return;
+  }
+
+  renderEmptyState();
+}
+
+async function handleBrandChange(slot) {
+  const controls = vehicleControls[slot];
+  state.requestSequence += 1;
+  state.results[slot] = null;
+  elements.viewComparison.hidden = true;
+  if (slot === 'primary') {
+    elements.addComparison.disabled = true;
+  }
+  resetSelect(controls.model, 'Caricamento modelli…');
+  resetSelect(controls.version, 'Prima seleziona un modello');
+
+  if (!controls.brand.value) {
+    resetSelect(controls.model, 'Prima seleziona una marca');
+    renderCurrentResults();
+    return;
+  }
+
+  renderCurrentResults();
+
   try {
-    const models = await window.AutoTcoApi.getModels(elements.brand.value);
+    const selectedBrand = controls.brand.value;
+    const models = await window.AutoTcoApi.getModels(selectedBrand);
+
+    if (controls.brand.value !== selectedBrand) {
+      return;
+    }
+
     const validModels = models.filter(
       (item) => !invalidModelKeys.has(compactKey(item.model_key || item.model)),
     );
     replaceOptions(
-      elements.model,
+      controls.model,
       'Seleziona modello',
       validModels,
       (item) => ({
@@ -586,31 +838,37 @@ async function handleBrandChange() {
       }),
     );
   } catch (error) {
-    resetSelect(elements.model, 'Modelli non disponibili');
+    resetSelect(controls.model, 'Modelli non disponibili');
     renderError(error.message);
   }
 }
 
-async function handleModelChange() {
+async function handleModelChange(slot) {
+  const controls = vehicleControls[slot];
   state.requestSequence += 1;
-  resetSelect(elements.version, 'Caricamento versioni…');
+  state.results[slot] = null;
+  elements.viewComparison.hidden = true;
+  if (slot === 'primary') {
+    elements.addComparison.disabled = true;
+  }
+  resetSelect(controls.version, 'Caricamento versioni…');
 
-  if (!elements.model.value) {
-    resetSelect(elements.version, 'Prima seleziona un modello');
-    renderEmptyState(
-      'Ora seleziona il modello',
-      'Dopo il modello potrai scegliere la versione per anno, alimentazione e potenza.',
-    );
+  if (!controls.model.value) {
+    resetSelect(controls.version, 'Prima seleziona un modello');
+    renderCurrentResults();
     return;
   }
 
-  renderEmptyState(
-    'Ora seleziona la versione',
-    'Scegli la combinazione di anno, alimentazione e potenza.',
-  );
+  renderCurrentResults();
 
   try {
-    const versions = await window.AutoTcoApi.getVersions(elements.model.value);
+    const selectedModel = controls.model.value;
+    const versions = await window.AutoTcoApi.getVersions(selectedModel);
+
+    if (controls.model.value !== selectedModel) {
+      return;
+    }
+
     const showYears = versions.length > 0 && versions.every((item) => {
       const yearFrom = Number(item.year_from ?? item.display_year);
       const yearTo = Number(item.year_to ?? item.display_year);
@@ -622,7 +880,7 @@ async function handleModelChange() {
     });
 
     replaceOptions(
-      elements.version,
+      controls.version,
       'Seleziona versione',
       versions,
       (item) => ({
@@ -631,15 +889,30 @@ async function handleModelChange() {
       }),
     );
   } catch (error) {
-    resetSelect(elements.version, 'Versioni non disponibili');
+    resetSelect(controls.version, 'Versioni non disponibili');
     renderError(error.message);
   }
+}
+
+function handleVersionChange(slot) {
+  state.results[slot] = null;
+  elements.viewComparison.hidden = true;
+
+  if (slot === 'primary') {
+    updatePrimarySummary();
+    elements.addComparison.disabled = !elements.version.value;
+    elements.addComparison.hidden = state.comparisonActive;
+  }
+
+  updateResult();
 }
 
 async function updateResult() {
   updateSliderLabels();
 
   if (!elements.version.value) {
+    state.results.primary = null;
+    renderCurrentResults();
     return;
   }
 
@@ -647,15 +920,32 @@ async function updateResult() {
   renderLoading();
 
   try {
-    const payload = await window.AutoTcoApi.estimate({
-      vehicleClusterId: elements.version.value,
+    const commonInputs = {
       annualKm: Number(elements.km.value),
       ownershipYears: Number(elements.years.value),
       regionCode: elements.region.value || 'italia',
+    };
+    const primaryRequest = window.AutoTcoApi.estimate({
+      vehicleClusterId: elements.version.value,
+      ...commonInputs,
     });
+    const comparisonRequest = state.comparisonActive
+      && elements.versionCompare.value
+      ? window.AutoTcoApi.estimate({
+        vehicleClusterId: elements.versionCompare.value,
+        ...commonInputs,
+      })
+      : Promise.resolve(null);
+    const [primaryPayload, comparisonPayload] = await Promise.all([
+      primaryRequest,
+      comparisonRequest,
+    ]);
 
     if (sequence === state.requestSequence) {
-      renderResult(payload);
+      state.results.primary = primaryPayload;
+      state.results.comparison = comparisonPayload;
+      updatePrimarySummary(primaryPayload);
+      renderCurrentResults();
     }
   } catch (error) {
     if (sequence === state.requestSequence) {
@@ -670,6 +960,42 @@ function scheduleCalculation() {
   state.calculationTimer = window.setTimeout(updateResult, 140);
 }
 
+function openComparison() {
+  state.comparisonActive = true;
+  setComparisonModeUi(true);
+  elements.comparisonVehicle.hidden = false;
+  elements.addComparison.hidden = true;
+  elements.addComparison.setAttribute('aria-expanded', 'true');
+  elements.brandCompare.focus();
+}
+
+function closeComparison() {
+  state.requestSequence += 1;
+  state.comparisonActive = false;
+  state.results.comparison = null;
+  setComparisonModeUi(false);
+  elements.comparisonVehicle.hidden = true;
+  elements.addComparison.hidden = false;
+  elements.addComparison.disabled = !elements.version.value;
+  elements.addComparison.setAttribute('aria-expanded', 'false');
+  elements.brandCompare.value = '';
+  resetSelect(elements.modelCompare, 'Prima seleziona una marca');
+  resetSelect(elements.versionCompare, 'Prima seleziona un modello');
+  renderCurrentResults();
+  elements.addComparison.focus();
+}
+
+function viewComparison() {
+  const reduceMotion = window.matchMedia(
+    '(prefers-reduced-motion: reduce)',
+  ).matches;
+
+  elements.result.scrollIntoView({
+    behavior: reduceMotion ? 'auto' : 'smooth',
+    block: 'start',
+  });
+}
+
 async function initialize() {
   updateSliderLabels();
   renderEmptyState();
@@ -682,9 +1008,34 @@ async function initialize() {
     );
   }
 
-  elements.brand.addEventListener('change', handleBrandChange);
-  elements.model.addEventListener('change', handleModelChange);
-  elements.version.addEventListener('change', updateResult);
+  elements.brand.addEventListener(
+    'change',
+    () => handleBrandChange('primary'),
+  );
+  elements.model.addEventListener(
+    'change',
+    () => handleModelChange('primary'),
+  );
+  elements.version.addEventListener(
+    'change',
+    () => handleVersionChange('primary'),
+  );
+  elements.brandCompare.addEventListener(
+    'change',
+    () => handleBrandChange('comparison'),
+  );
+  elements.modelCompare.addEventListener(
+    'change',
+    () => handleModelChange('comparison'),
+  );
+  elements.versionCompare.addEventListener(
+    'change',
+    () => handleVersionChange('comparison'),
+  );
+  elements.addComparison.addEventListener('click', openComparison);
+  elements.removeComparison.addEventListener('click', closeComparison);
+  elements.togglePrimaryEdit.addEventListener('click', togglePrimaryEdit);
+  elements.viewComparison.addEventListener('click', viewComparison);
   elements.km.addEventListener('input', scheduleCalculation);
   elements.years.addEventListener('input', scheduleCalculation);
   elements.region.addEventListener('change', updateResult);
