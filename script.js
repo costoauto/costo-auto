@@ -254,6 +254,47 @@ function formatVehicleName(brandValue, modelValue) {
   return `${brand} ${model}`.trim();
 }
 
+function formatCommercialVariant(value) {
+  const normalized = String(value ?? '')
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, ' ');
+
+  if (!normalized) {
+    return '';
+  }
+
+  if (/\b4x40\b/.test(normalized)) {
+    return '4x40';
+  }
+
+  const isCross = /\bcross\b/.test(normalized);
+  const isFourByFour = /\b4x4\b/.test(normalized);
+  const isFourByTwo = /\b4x2\b/.test(normalized);
+
+  if (isCross && isFourByFour) {
+    return 'Cross 4x4';
+  }
+
+  if (isCross && isFourByTwo) {
+    return 'Cross 4x2';
+  }
+
+  if (isCross) {
+    return 'Cross';
+  }
+
+  if (isFourByFour) {
+    return '4x4';
+  }
+
+  if (isFourByTwo) {
+    return '4x2';
+  }
+
+  return '';
+}
+
 function formatVersionLabel(vehicle, showYear = true) {
   const yearFrom = Number(
     showYear ? (vehicle.year_from ?? vehicle.display_year) : null,
@@ -273,31 +314,38 @@ function formatVersionLabel(vehicle, showYear = true) {
   const powerCv = Number(vehicle.power_cv);
   const roundedCv = Number.isFinite(powerCv) ? Math.round(powerCv) : null;
   const fuel = vehicle.fuel_type;
+  const commercialVariant = formatCommercialVariant(vehicle.commercial_name);
+  const withCommercialVariant = (label) => (
+    commercialVariant ? `${label} · ${commercialVariant}` : label
+  );
 
   if (vehicle.hybrid_type === 'plug_in_hybrid') {
     const details = roundedCv
       ? `Plug-in ${fuelLabels[fuel] || ''} · ${roundedCv} CV termici`
       : `Plug-in ${fuelLabels[fuel] || ''}`.trim();
-    return `${yearPrefix}${details}`;
+    return withCommercialVariant(`${yearPrefix}${details}`);
   }
 
   if (vehicle.hybrid_type === 'hybrid') {
     const details = roundedCv
       ? `Ibrida ${fuelLabels[fuel] || ''} · ${roundedCv} CV termici`
       : `Ibrida ${fuelLabels[fuel] || ''}`.trim();
-    return `${yearPrefix}${details}`;
+    return withCommercialVariant(`${yearPrefix}${details}`);
   }
 
   const fuelLabel = fuelLabels[fuel];
 
   if (fuelLabel && roundedCv) {
-    return `${yearPrefix}${fuelLabel} · ${roundedCv} CV`;
+    return withCommercialVariant(
+      `${yearPrefix}${fuelLabel} · ${roundedCv} CV`,
+    );
   }
 
   const fallback = vehicle.version_label || 'Versione';
-  return /^\d{4}(?:-\d{4})?\s*·/.test(fallback)
+  const fallbackWithYear = /^\d{4}(?:-\d{4})?\s*·/.test(fallback)
     ? fallback
     : `${yearPrefix}${fallback}`;
+  return withCommercialVariant(fallbackWithYear);
 }
 
 function clearLoadingState() {
