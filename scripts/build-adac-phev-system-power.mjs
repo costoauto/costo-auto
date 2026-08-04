@@ -9,6 +9,7 @@ const matchPath = path.join(scriptDir, 'adac-phev-model-matches.json');
 const apiCatalogPath = path.join(scriptDir, 'phev-api-catalog.json');
 const outputPath = path.join(scriptDir, 'adac-phev-system-power.json');
 const sqlDataPath = path.join(scriptDir, 'adac-phev-system-power.sql');
+const energySqlDataPath = path.join(scriptDir, 'adac-phev-energy.sql');
 const sourceLabel = 'ADAC Autokatalog, schede tecniche pubbliche';
 
 await fs.mkdir(cacheDir, { recursive: true });
@@ -218,6 +219,18 @@ function parseDetail(html) {
   const thermal = text.match(
     /Leistung\s*\/\s*Drehmoment \(Verbrennungsmotor\)\s*(\d+(?:[.,]\d+)?)\s*kW\s*\((\d+(?:[.,]\d+)?)\s*PS\)/i,
   );
+  const thermalConsumptionEmptyBattery = text.match(
+    /Verbrauch kombiniert \(WLTP\) PHEV \(Batterie leer\)\s*(\d+(?:[.,]\d+)?)\s*l\/100 km/i,
+  );
+  const weightedThermalConsumption = text.match(
+    /Verbrauch kombiniert \(WLTP\)\s*(\d+(?:[.,]\d+)?)\s*l\/100 km/i,
+  );
+  const electricConsumption = text.match(
+    /Verbrauch kombiniert \(WLTP\)\s*-\s*2\. Antrieb\s*(\d+(?:[.,]\d+)?)\s*kWh\/100 km/i,
+  );
+  const electricRange = text.match(
+    /Reichweite WLTP \(elektrisch\)\s*(\d+(?:[.,]\d+)?)\s*km/i,
+  );
 
   return {
     detail_system_power_kw: systemKw
@@ -231,6 +244,19 @@ function parseDetail(html) {
       : null,
     thermal_power_cv: thermal
       ? Number(thermal[2].replace(',', '.'))
+      : null,
+    thermal_consumption_empty_battery_l_100km:
+      thermalConsumptionEmptyBattery
+        ? Number(thermalConsumptionEmptyBattery[1].replace(',', '.'))
+        : null,
+    weighted_thermal_consumption_l_100km: weightedThermalConsumption
+      ? Number(weightedThermalConsumption[1].replace(',', '.'))
+      : null,
+    electric_consumption_kwh_100km: electricConsumption
+      ? Number(electricConsumption[1].replace(',', '.'))
+      : null,
+    electric_range_wltp_km: electricRange
+      ? Number(electricRange[1].replace(',', '.'))
       : null,
   };
 }
@@ -322,6 +348,13 @@ const enrichedRows = rawRows.map((row) => {
       detail.detail_system_power_cv ?? row.system_power_cv,
     thermal_power_kw: detail.thermal_power_kw,
     thermal_power_cv: detail.thermal_power_cv,
+    thermal_consumption_empty_battery_l_100km:
+      detail.thermal_consumption_empty_battery_l_100km,
+    weighted_thermal_consumption_l_100km:
+      detail.weighted_thermal_consumption_l_100km,
+    electric_consumption_kwh_100km:
+      detail.electric_consumption_kwh_100km,
+    electric_range_wltp_km: detail.electric_range_wltp_km,
   };
 });
 const detailParseFailures = enrichedRows.filter((row) =>
@@ -384,6 +417,13 @@ const catalogRows = [...grouped.values()]
     system_power_cv: row.system_power_cv,
     thermal_power_kw: row.thermal_power_kw,
     thermal_power_cv: row.thermal_power_cv,
+    thermal_consumption_empty_battery_l_100km:
+      row.thermal_consumption_empty_battery_l_100km,
+    weighted_thermal_consumption_l_100km:
+      row.weighted_thermal_consumption_l_100km,
+    electric_consumption_kwh_100km:
+      row.electric_consumption_kwh_100km,
+    electric_range_wltp_km: row.electric_range_wltp_km,
     list_price_eur: Number.isFinite(row.list_price_eur)
       ? row.list_price_eur
       : null,
@@ -462,6 +502,11 @@ const output = {
     unique_detail_pages: uniqueDetailUrls.length,
     curated_power_rows: catalogRows.length,
     detail_parse_failures: detailParseFailures.length,
+    energy_rows_with_both_consumptions: catalogRows.filter((row) =>
+      row.weighted_thermal_consumption_l_100km
+      && row.electric_consumption_kwh_100km).length,
+    energy_rows_with_electric_range: catalogRows.filter((row) =>
+      row.electric_range_wltp_km).length,
     api_phev_versions: apiItems.length,
     api_versions_covered: covered.length,
     api_versions_uncovered: uncovered.length,
@@ -521,9 +566,50 @@ await fs.writeFile(
   'utf8',
 );
 
+const energyRows = catalogRows.filter((row) =>
+  row.weighted_thermal_consumption_l_100km
+  || row.thermal_consumption_empty_battery_l_100km
+  || row.electric_consumption_kwh_100km
+  || row.electric_range_wltp_km);
+const energySqlValues = energyRows.map((row) => `(
+  ${sqlText(row.brand_key)},
+  ${sqlText(row.model_id)},
+  ${sqlText(row.brand)},
+  ${sqlText(row.model)},
+  ${row.year_from},
+  ${row.year_to === 2099 ? 'NULL' : row.year_to},
+  ${row.system_power_kw},
+  ${row.system_power_cv},
+  ${row.thermal_power_kw},
+  ${row.thermal_power_cv},
+  ${row.weighted_thermal_consumption_l_100km ?? 'NULL'},
+  ${row.thermal_consumption_empty_battery_l_100km ?? 'NULL'},
+  ${row.electric_consumption_kwh_100km ?? 'NULL'},
+  ${row.electric_range_wltp_km ?? 'NULL'},
+  ${sqlText(row.source_name)},
+  ${sqlText(row.source_url)},
+  ${sqlText(row.confidence)}
+)`).join(',\n');
+
+await fs.writeFile(
+  energySqlDataPath,
+  `-- Generato da scripts/build-adac-phev-system-power.mjs.\n`
+  + `-- Consumi WLTP PHEV separati: termico a batteria scarica ed elettrico.\n`
+  + `INSERT INTO mvp.phev_variant_energy_catalog_v1 (\n`
+  + `  brand_key, model_catalog_id, brand, model, year_from, year_to,\n`
+  + `  system_power_kw, system_power_cv, thermal_power_kw, thermal_power_cv,\n`
+  + `  weighted_thermal_l_100km, thermal_empty_battery_l_100km,\n`
+  + `  weighted_electric_kwh_100km, electric_range_wltp_km,\n`
+  + `  source_name, source_url, confidence\n`
+  + `) VALUES\n${energySqlValues};\n`,
+  'utf8',
+);
+
 console.log(JSON.stringify(output.counts, null, 2));
 if (uncovered.length) {
   console.log('Prime versioni API non coperte:');
   console.log(JSON.stringify(uncovered.slice(0, 20), null, 2));
 }
-console.log(`Creati:\n- ${outputPath}\n- ${sqlDataPath}`);
+console.log(
+  `Creati:\n- ${outputPath}\n- ${sqlDataPath}\n- ${energySqlDataPath}`,
+);
