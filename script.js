@@ -62,7 +62,7 @@ const costDescriptions = Object.freeze({
   tax:
     'Bollo stimato con le regole fiscali oggi disponibili; eventuali modifiche legislative future non sono prevedibili.',
   insurance:
-    'Premio RC Auto medio dell’area selezionata; non è un preventivo personale.',
+    'Media dei premi RC Auto effettivamente pagati nell’area selezionata; non è un preventivo personale né una stima specifica del modello.',
 });
 
 const brandNameOverrides = Object.freeze({
@@ -559,6 +559,27 @@ function getFuelOrEnergyDescription(payload, regionLabel) {
   return `${baseDescription} Prezzo${prices.length > 1 ? 'i' : ''} utilizzat${prices.length > 1 ? 'i' : 'o'}: ${prices.join('; ')}.`;
 }
 
+function getInsuranceDescription(payload, regionLabel) {
+  const descriptions = payload.descriptions || {};
+  const details = payload.calculation_details?.insurance || {};
+  const baseDescription = descriptions.insurance
+    || costDescriptions.insurance;
+
+  if (details.annual_average_premium_eur === null
+      || details.annual_average_premium_eur === undefined) {
+    return baseDescription;
+  }
+
+  const reference = [
+    `${formatEuro(details.annual_average_premium_eur)}/anno`,
+    details.area_name || regionLabel,
+    details.reference_period_label,
+    details.source_name || 'IVASS',
+  ].filter(Boolean);
+
+  return `${baseDescription} Riferimento utilizzato: ${reference.join(' · ')}.`;
+}
+
 function renderResult(payload) {
   const vehicle = payload.vehicle || {};
   const inputs = payload.inputs || {};
@@ -574,6 +595,10 @@ function renderResult(payload) {
   const years = Number(inputs.ownership_years);
   const depreciationDescription = getDepreciationDescription(costs, quality);
   const fuelOrEnergyDescription = getFuelOrEnergyDescription(
+    payload,
+    regionLabel,
+  );
+  const insuranceDescription = getInsuranceDescription(
     payload,
     regionLabel,
   );
@@ -621,8 +646,8 @@ function renderResult(payload) {
         costs.tax_eur,
       )}
       ${createCostRow(
-        'Assicurazione',
-        descriptions.insurance || costDescriptions.insurance,
+        'RC Auto media',
+        insuranceDescription,
         costs.insurance_eur,
       )}
       ${createCostRow(
@@ -748,7 +773,7 @@ function renderComparison(firstPayload, secondPayload) {
       )}
       ${createComparisonRow('Bollo', firstCosts.tax_eur, secondCosts.tax_eur)}
       ${createComparisonRow(
-        'Assicurazione',
+        'RC Auto media',
         firstCosts.insurance_eur,
         secondCosts.insurance_eur,
       )}
