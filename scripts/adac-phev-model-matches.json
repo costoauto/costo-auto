@@ -1,0 +1,3552 @@
+{
+  "generated_at": "2026-07-30T16:14:16.864Z",
+  "source": "https://www.adac.de/sitemaps/sitemap-autokatalog.xml",
+  "counts": {
+    "api_models": 110,
+    "matched": 110,
+    "review": 0,
+    "missing": 0,
+    "generation_pages": 435
+  },
+  "items": [
+    {
+      "brand": "Alfa Romeo",
+      "model": "Tonale",
+      "brand_key": "ALFAROMEO",
+      "model_id": "c193a53802eee237d05de19a6e149e07",
+      "normalized_brand": "alfa-romeo",
+      "normalized_model": "tonale",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "alfa-romeo",
+      "adac_model_slug": "tonale",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/alfa-romeo/tonale/965-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/alfa-romeo/tonale/965/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "tonale",
+          "score": 1
+        },
+        {
+          "model_slug": "junior",
+          "score": 0.1667
+        },
+        {
+          "model_slug": "alfasud",
+          "score": 0.1429
+        }
+      ]
+    },
+    {
+      "brand": "Audi",
+      "model": "A3",
+      "brand_key": "AUDI",
+      "model_id": "bae638c09f5142ae64b4bb925c6d8735",
+      "normalized_brand": "audi",
+      "normalized_model": "a3",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "audi",
+      "adac_model_slug": "a3",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/audi/a3/8l-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/audi/a3/8l/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/audi/a3/8p-facelift-2/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/audi/a3/8p-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/audi/a3/8p/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/audi/a3/8v-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/audi/a3/8v/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/audi/a3/8y-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/audi/a3/8y/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "a3",
+          "score": 1
+        },
+        {
+          "model_slug": "a1",
+          "score": 0.5
+        },
+        {
+          "model_slug": "a2",
+          "score": 0.5
+        }
+      ]
+    },
+    {
+      "brand": "Audi",
+      "model": "A5",
+      "brand_key": "AUDI",
+      "model_id": "205b040938ba55dd0891df4e0ec238f7",
+      "normalized_brand": "audi",
+      "normalized_model": "a5",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "audi",
+      "adac_model_slug": "a5",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/audi/a5/8f-8t-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/audi/a5/8f-8t/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/audi/a5/b10/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/audi/a5/f5-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/audi/a5/f5/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "a5",
+          "score": 1
+        },
+        {
+          "model_slug": "a1",
+          "score": 0.5
+        },
+        {
+          "model_slug": "a2",
+          "score": 0.5
+        }
+      ]
+    },
+    {
+      "brand": "Audi",
+      "model": "A6",
+      "brand_key": "AUDI",
+      "model_id": "3b5e0665a4091d40427fa1af19b4f637",
+      "normalized_brand": "audi",
+      "normalized_model": "a6",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "audi",
+      "adac_model_slug": "a6",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/audi/a6/c4/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/audi/a6/c5-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/audi/a6/c5/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/audi/a6/c6-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/audi/a6/c6/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/audi/a6/c7-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/audi/a6/c7/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/audi/a6/c8-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/audi/a6/c8/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/audi/a6/gh-c9/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "a6",
+          "score": 1
+        },
+        {
+          "model_slug": "a1",
+          "score": 0.5
+        },
+        {
+          "model_slug": "a2",
+          "score": 0.5
+        }
+      ]
+    },
+    {
+      "brand": "Audi",
+      "model": "A7",
+      "brand_key": "AUDI",
+      "model_id": "7acc4c99da5f104eeb0fc4b133428375",
+      "normalized_brand": "audi",
+      "normalized_model": "a7",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "audi",
+      "adac_model_slug": "a7",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/audi/a7/4g-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/audi/a7/4g/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/audi/a7/4k-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/audi/a7/4k/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "a7",
+          "score": 1
+        },
+        {
+          "model_slug": "a1",
+          "score": 0.5
+        },
+        {
+          "model_slug": "a2",
+          "score": 0.5
+        }
+      ]
+    },
+    {
+      "brand": "Audi",
+      "model": "A8",
+      "brand_key": "AUDI",
+      "model_id": "af4680438f84cafebc8f247877321653",
+      "normalized_brand": "audi",
+      "normalized_model": "a8",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "audi",
+      "adac_model_slug": "a8",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/audi/a8/d3-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/audi/a8/d3/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/audi/a8/d4-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/audi/a8/d4/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/audi/a8/d5-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/audi/a8/d5/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "a8",
+          "score": 1
+        },
+        {
+          "model_slug": "a1",
+          "score": 0.5
+        },
+        {
+          "model_slug": "a2",
+          "score": 0.5
+        }
+      ]
+    },
+    {
+      "brand": "Audi",
+      "model": "e-tron",
+      "brand_key": "AUDI",
+      "model_id": "f93e1b721b5556d1b9ed661616622983",
+      "normalized_brand": "audi",
+      "normalized_model": "e-tron",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "audi",
+      "adac_model_slug": "e-tron",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/audi/e-tron/ge/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "e-tron",
+          "score": 1
+        },
+        {
+          "model_slug": "e-tron-gt",
+          "score": 0.88
+        },
+        {
+          "model_slug": "q4-e-tron",
+          "score": 0.88
+        }
+      ]
+    },
+    {
+      "brand": "Audi",
+      "model": "Q3",
+      "brand_key": "AUDI",
+      "model_id": "d8f1912f6085d4dcff0531f08611b4ec",
+      "normalized_brand": "audi",
+      "normalized_model": "q3",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "audi",
+      "adac_model_slug": "q3",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/audi/q3/8u-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/audi/q3/8u/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/audi/q3/f3/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/audi/q3/fj/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "q3",
+          "score": 1
+        },
+        {
+          "model_slug": "a3",
+          "score": 0.5
+        },
+        {
+          "model_slug": "q2",
+          "score": 0.5
+        }
+      ]
+    },
+    {
+      "brand": "Audi",
+      "model": "Q5",
+      "brand_key": "AUDI",
+      "model_id": "667ce8a22f309f9caf0dfca884b223fb",
+      "normalized_brand": "audi",
+      "normalized_model": "q5",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "audi",
+      "adac_model_slug": "q5",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/audi/q5/8r-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/audi/q5/8r/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/audi/q5/fy-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/audi/q5/fy/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/audi/q5/gu/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "q5",
+          "score": 1
+        },
+        {
+          "model_slug": "a5",
+          "score": 0.5
+        },
+        {
+          "model_slug": "q2",
+          "score": 0.5
+        }
+      ]
+    },
+    {
+      "brand": "Audi",
+      "model": "Q7",
+      "brand_key": "AUDI",
+      "model_id": "1739a102194e41bb132f1bbc361af0c8",
+      "normalized_brand": "audi",
+      "normalized_model": "q7",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "audi",
+      "adac_model_slug": "q7",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/audi/q7/4l/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/audi/q7/4m-facelift-2/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/audi/q7/4m-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/audi/q7/4m/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/audi/q7/g8/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "q7",
+          "score": 1
+        },
+        {
+          "model_slug": "a7",
+          "score": 0.5
+        },
+        {
+          "model_slug": "q2",
+          "score": 0.5
+        }
+      ]
+    },
+    {
+      "brand": "Audi",
+      "model": "Q8",
+      "brand_key": "AUDI",
+      "model_id": "b80751fdb00cc362a540b983dd99bb18",
+      "normalized_brand": "audi",
+      "normalized_model": "q8",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "audi",
+      "adac_model_slug": "q8",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/audi/q8/4m-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/audi/q8/4m/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "q8",
+          "score": 1
+        },
+        {
+          "model_slug": "a8",
+          "score": 0.5
+        },
+        {
+          "model_slug": "q2",
+          "score": 0.5
+        }
+      ]
+    },
+    {
+      "brand": "BMW",
+      "model": "2 Series",
+      "brand_key": "BMW",
+      "model_id": "f57941a9df2cbc1ed54d3350c262eb0e",
+      "normalized_brand": "bmw",
+      "normalized_model": "2er-reihe",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "bmw",
+      "adac_model_slug": "2er-reihe",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/2er-reihe-active-gran-tourer/f45-f46-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/2er-reihe-active-gran-tourer/f45-f46/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/2er-reihe-active-gran-tourer/u06/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/2er-reihe/f22-f23-f87-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/2er-reihe/f22-f23-f87/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/2er-reihe/g42-g87-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/2er-reihe/g42-g87/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "2er-reihe",
+          "score": 1
+        },
+        {
+          "model_slug": "1er-reihe",
+          "score": 0.8889
+        },
+        {
+          "model_slug": "3er-reihe",
+          "score": 0.8889
+        }
+      ]
+    },
+    {
+      "brand": "BMW",
+      "model": "3 Series",
+      "brand_key": "BMW",
+      "model_id": "20af7ebd4c9c1e848bdf9a45756b2ef9",
+      "normalized_brand": "bmw",
+      "normalized_model": "3er-reihe",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "bmw",
+      "adac_model_slug": "3er-reihe",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/3er-reihe/e21-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/3er-reihe/e30-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/3er-reihe/e30/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/3er-reihe/e36/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/3er-reihe/e46-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/3er-reihe/e46/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/3er-reihe/e90-e91-e92-e93-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/3er-reihe/e90-e91-e92-e93/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/3er-reihe/f30-f31-f34-f80-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/3er-reihe/f30-f31-f34-f80/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/3er-reihe/g20-g21-g80-g81-facelift-2/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/3er-reihe/g20-g21-g80-g81-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/3er-reihe/g20-g21-g80/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "3er-reihe",
+          "score": 1
+        },
+        {
+          "model_slug": "1er-reihe",
+          "score": 0.8889
+        },
+        {
+          "model_slug": "2er-reihe",
+          "score": 0.8889
+        }
+      ]
+    },
+    {
+      "brand": "BMW",
+      "model": "5 Series",
+      "brand_key": "BMW",
+      "model_id": "286c4cb853eafc7ee2545c6316970e54",
+      "normalized_brand": "bmw",
+      "normalized_model": "5er-reihe",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "bmw",
+      "adac_model_slug": "5er-reihe",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/5er-reihe/e12-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/5er-reihe/e12/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/5er-reihe/e28-e28s/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/5er-reihe/e34-e34s-e345s/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/5er-reihe/e60-e61-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/5er-reihe/e60-e61/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/5er-reihe/f07-f10-f10m-f11-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/5er-reihe/f07-f10-f10m-f11/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/5er-reihe/g30-g31-f90-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/5er-reihe/g30-g31-f90/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/5er-reihe/g60-g61-g90-g99/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "5er-reihe",
+          "score": 1
+        },
+        {
+          "model_slug": "1er-reihe",
+          "score": 0.8889
+        },
+        {
+          "model_slug": "2er-reihe",
+          "score": 0.8889
+        }
+      ]
+    },
+    {
+      "brand": "BMW",
+      "model": "7 Series",
+      "brand_key": "BMW",
+      "model_id": "841217d9ea9b88e4aa117187164bedf6",
+      "normalized_brand": "bmw",
+      "normalized_model": "7er-reihe",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "bmw",
+      "adac_model_slug": "7er-reihe",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/7er-reihe/e32/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/7er-reihe/e38-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/7er-reihe/e38/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/7er-reihe/e65-e66-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/7er-reihe/e65-e66/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/7er-reihe/f01-f02-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/7er-reihe/f01-f02/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/7er-reihe/g11-g12-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/7er-reihe/g11-g12/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/7er-reihe/g70-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/7er-reihe/g70/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "7er-reihe",
+          "score": 1
+        },
+        {
+          "model_slug": "1er-reihe",
+          "score": 0.8889
+        },
+        {
+          "model_slug": "2er-reihe",
+          "score": 0.8889
+        }
+      ]
+    },
+    {
+      "brand": "BMW",
+      "model": "X1",
+      "brand_key": "BMW",
+      "model_id": "fb175f8f7544285e4d8d97c31ddc483e",
+      "normalized_brand": "bmw",
+      "normalized_model": "x1",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "bmw",
+      "adac_model_slug": "x1",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/x1/e84-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/x1/e84/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/x1/f48-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/x1/f48/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/x1/u11/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "x1",
+          "score": 1
+        },
+        {
+          "model_slug": "ix1",
+          "score": 0.6667
+        },
+        {
+          "model_slug": "x2",
+          "score": 0.5
+        }
+      ]
+    },
+    {
+      "brand": "BMW",
+      "model": "X2",
+      "brand_key": "BMW",
+      "model_id": "7a2677068e6da865ae6620c9cdbf2a3e",
+      "normalized_brand": "bmw",
+      "normalized_model": "x2",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "bmw",
+      "adac_model_slug": "x2",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/x2/f39/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/x2/u10/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "x2",
+          "score": 1
+        },
+        {
+          "model_slug": "ix2",
+          "score": 0.6667
+        },
+        {
+          "model_slug": "x1",
+          "score": 0.5
+        }
+      ]
+    },
+    {
+      "brand": "BMW",
+      "model": "X3",
+      "brand_key": "BMW",
+      "model_id": "1281fa01e7000f1ce7159d95865e9fb9",
+      "normalized_brand": "bmw",
+      "normalized_model": "x3",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "bmw",
+      "adac_model_slug": "x3",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/x3/e83-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/x3/e83/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/x3/f25-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/x3/f25/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/x3/g01-f97-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/x3/g01-f97/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/x3/g45/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "x3",
+          "score": 1
+        },
+        {
+          "model_slug": "ix3",
+          "score": 0.6667
+        },
+        {
+          "model_slug": "i3",
+          "score": 0.5
+        }
+      ]
+    },
+    {
+      "brand": "BMW",
+      "model": "X5",
+      "brand_key": "BMW",
+      "model_id": "bd0bd43d69107165fa7cc9e49ff11861",
+      "normalized_brand": "bmw",
+      "normalized_model": "x5",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "bmw",
+      "adac_model_slug": "x5",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/x5/e53-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/x5/e70-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/x5/f15-f85/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/x5/g05-f95-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/x5/g05-f95/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/x5/g65-g95/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "x5",
+          "score": 1
+        },
+        {
+          "model_slug": "ix5",
+          "score": 0.6667
+        },
+        {
+          "model_slug": "i5",
+          "score": 0.5
+        }
+      ]
+    },
+    {
+      "brand": "BMW",
+      "model": "XM",
+      "brand_key": "BMW",
+      "model_id": "03be61494edc00791748fe25d763f230",
+      "normalized_brand": "bmw",
+      "normalized_model": "xm",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "bmw",
+      "adac_model_slug": "xm",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/xm/g09/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "xm",
+          "score": 1
+        },
+        {
+          "model_slug": "x1",
+          "score": 0.5
+        },
+        {
+          "model_slug": "x2",
+          "score": 0.5
+        }
+      ]
+    },
+    {
+      "brand": "BYD",
+      "model": "SEAL 6",
+      "brand_key": "BYD",
+      "model_id": "2b91acc80c0aa9d5bc7a65ef3c43f13f",
+      "normalized_brand": "byd",
+      "normalized_model": "seal-6",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "byd",
+      "adac_model_slug": "seal-6",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/byd/seal-6/1generation/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "seal-6",
+          "score": 1
+        },
+        {
+          "model_slug": "seal",
+          "score": 0.88
+        },
+        {
+          "model_slug": "seal-u",
+          "score": 0.8333
+        }
+      ]
+    },
+    {
+      "brand": "BYD",
+      "model": "Seal U",
+      "brand_key": "BYD",
+      "model_id": "7cc8db44b4a7ee1da60c894ff54df093",
+      "normalized_brand": "byd",
+      "normalized_model": "seal-u",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "byd",
+      "adac_model_slug": "seal-u",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/byd/seal-u/1generation/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "seal-u",
+          "score": 1
+        },
+        {
+          "model_slug": "seal",
+          "score": 0.88
+        },
+        {
+          "model_slug": "seal-6",
+          "score": 0.8333
+        }
+      ]
+    },
+    {
+      "brand": "Citroen",
+      "model": "C5 Aircross",
+      "brand_key": "CITROEN",
+      "model_id": "7621d119b6479183ed9c50c4616fbeb9",
+      "normalized_brand": "citroen",
+      "normalized_model": "c5-aircross",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "citroen",
+      "adac_model_slug": "c5-aircross",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/citroen/c5-aircross/1generation-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/citroen/c5-aircross/1generation/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/citroen/c5-aircross/2generation/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "c5-aircross",
+          "score": 1
+        },
+        {
+          "model_slug": "c3-aircross",
+          "score": 0.9091
+        },
+        {
+          "model_slug": "c4-aircross",
+          "score": 0.9091
+        }
+      ]
+    },
+    {
+      "brand": "Citroën",
+      "model": "C5 X",
+      "brand_key": "CITROEN",
+      "model_id": "16d8ea796132c0d139421d8beabbec75",
+      "normalized_brand": "citroen",
+      "normalized_model": "c5-x",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "citroen",
+      "adac_model_slug": "c5-x",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/citroen/c5-x/1generation/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "c5-x",
+          "score": 1
+        },
+        {
+          "model_slug": "c5",
+          "score": 0.5
+        },
+        {
+          "model_slug": "cx",
+          "score": 0.5
+        }
+      ]
+    },
+    {
+      "brand": "Cupra",
+      "model": "Formentor",
+      "brand_key": "CUPRA",
+      "model_id": "ae6f9f81888eb2f015cde7ce469a22b0",
+      "normalized_brand": "cupra",
+      "normalized_model": "formentor",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "cupra",
+      "adac_model_slug": "formentor",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/cupra/formentor/1generation-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/cupra/formentor/1generation/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "formentor",
+          "score": 1
+        },
+        {
+          "model_slug": "born",
+          "score": 0.3333
+        },
+        {
+          "model_slug": "leon",
+          "score": 0.2222
+        }
+      ]
+    },
+    {
+      "brand": "Cupra",
+      "model": "Leon",
+      "brand_key": "CUPRA",
+      "model_id": "11501cc0b9e817a2877dc2b082f8f2f1",
+      "normalized_brand": "cupra",
+      "normalized_model": "leon",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "cupra",
+      "adac_model_slug": "leon",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/cupra/leon/1generation-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/cupra/leon/1generation/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "leon",
+          "score": 1
+        },
+        {
+          "model_slug": "born",
+          "score": 0.25
+        },
+        {
+          "model_slug": "formentor",
+          "score": 0.2222
+        }
+      ]
+    },
+    {
+      "brand": "Cupra",
+      "model": "Terramar",
+      "brand_key": "CUPRA",
+      "model_id": "fc05e52ebbefc07c21a9329c3b0290ea",
+      "normalized_brand": "cupra",
+      "normalized_model": "terramar",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "cupra",
+      "adac_model_slug": "terramar",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/cupra/terramar/1generation/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "terramar",
+          "score": 1
+        },
+        {
+          "model_slug": "raval",
+          "score": 0.375
+        },
+        {
+          "model_slug": "ateca",
+          "score": 0.25
+        }
+      ]
+    },
+    {
+      "brand": "DS",
+      "model": "DS 4",
+      "brand_key": "DS",
+      "model_id": "f898a78b1c3bfbb7d8bc2fd18885b746",
+      "normalized_brand": "ds",
+      "normalized_model": "ds-4",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "ds-automobiles",
+      "adac_model_slug": "ds-4",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/ds-automobiles/ds-4/2generation/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "ds-4",
+          "score": 1
+        },
+        {
+          "model_slug": "ds-3",
+          "score": 0.75
+        },
+        {
+          "model_slug": "ds-5",
+          "score": 0.75
+        }
+      ]
+    },
+    {
+      "brand": "DS",
+      "model": "DS 7",
+      "brand_key": "DS",
+      "model_id": "90f2e148c95bc7c765ec1e5ffc7d9dcf",
+      "normalized_brand": "ds",
+      "normalized_model": "ds-7",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "ds-automobiles",
+      "adac_model_slug": "ds-7",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/ds-automobiles/ds-7/1generation-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/ds-automobiles/ds-7/1generation/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "ds-7",
+          "score": 1
+        },
+        {
+          "model_slug": "ds-3",
+          "score": 0.75
+        },
+        {
+          "model_slug": "ds-4",
+          "score": 0.75
+        }
+      ]
+    },
+    {
+      "brand": "DS",
+      "model": "DS 9",
+      "brand_key": "DS",
+      "model_id": "1ff081ab15f1adef3feedfee7c956709",
+      "normalized_brand": "ds",
+      "normalized_model": "ds-9",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "ds-automobiles",
+      "adac_model_slug": "ds-9",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/ds-automobiles/ds-9/1generation/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "ds-9",
+          "score": 1
+        },
+        {
+          "model_slug": "ds-3",
+          "score": 0.75
+        },
+        {
+          "model_slug": "ds-4",
+          "score": 0.75
+        }
+      ]
+    },
+    {
+      "brand": "Ford",
+      "model": "EXPLORER",
+      "brand_key": "FORD",
+      "model_id": "89490512d501fb78b05b041acd66a915",
+      "normalized_brand": "ford",
+      "normalized_model": "explorer",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "ford",
+      "adac_model_slug": "explorer",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/ford/explorer/i/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "explorer",
+          "score": 1
+        },
+        {
+          "model_slug": "explorer-ev",
+          "score": 0.88
+        },
+        {
+          "model_slug": "escort",
+          "score": 0.375
+        }
+      ]
+    },
+    {
+      "brand": "Ford",
+      "model": "Kuga",
+      "brand_key": "FORD",
+      "model_id": "31b34b765962158c6cb2b686f5b4d2a5",
+      "normalized_brand": "ford",
+      "normalized_model": "kuga",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "ford",
+      "adac_model_slug": "kuga",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/ford/kuga/ii-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/ford/kuga/ii/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/ford/kuga/iii-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/ford/kuga/iii/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "kuga",
+          "score": 1
+        },
+        {
+          "model_slug": "ka",
+          "score": 0.5
+        },
+        {
+          "model_slug": "puma",
+          "score": 0.5
+        }
+      ]
+    },
+    {
+      "brand": "Ford",
+      "model": "TOURNEO CONNECT",
+      "brand_key": "FORD",
+      "model_id": "37c3ec3ea482b429cd29cdbbd6f3d914",
+      "normalized_brand": "ford",
+      "normalized_model": "tourneo-connect",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "ford",
+      "adac_model_slug": "tourneo-connect",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/ford/tourneo-connect/1generation-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/ford/tourneo-connect/1generation/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/ford/tourneo-connect/2generation-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/ford/tourneo-connect/2generation/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/ford/tourneo-connect/3generation/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "tourneo-connect",
+          "score": 1
+        },
+        {
+          "model_slug": "tourneo-courier",
+          "score": 0.6667
+        },
+        {
+          "model_slug": "tourneo-custom",
+          "score": 0.6
+        }
+      ]
+    },
+    {
+      "brand": "Ford",
+      "model": "TOURNEO CUSTOM",
+      "brand_key": "FORD",
+      "model_id": "52c7ad3a68998be693b9144b64517a24",
+      "normalized_brand": "ford",
+      "normalized_model": "tourneo-custom",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "ford",
+      "adac_model_slug": "tourneo-custom",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/ford/tourneo-custom/1generation-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/ford/tourneo-custom/1generation/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/ford/tourneo-custom/2generation/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "tourneo-custom",
+          "score": 1
+        },
+        {
+          "model_slug": "tourneo-courier",
+          "score": 0.6667
+        },
+        {
+          "model_slug": "tourneo-connect",
+          "score": 0.6
+        }
+      ]
+    },
+    {
+      "brand": "Ford",
+      "model": "TRANSIT CUSTOM",
+      "brand_key": "FORD",
+      "model_id": "1c1ead1bd9cf973b6bcd2c9dc390cd90",
+      "normalized_brand": "ford",
+      "normalized_model": "transit-custom",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "ford",
+      "adac_model_slug": "transit-custom",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/ford/transit-custom/1generation-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/ford/transit-custom/1generation/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/ford/transit-custom/2generation/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "transit-custom",
+          "score": 1
+        },
+        {
+          "model_slug": "transit",
+          "score": 0.88
+        },
+        {
+          "model_slug": "transit-courier",
+          "score": 0.6667
+        }
+      ]
+    },
+    {
+      "brand": "Honda",
+      "model": "CR-V",
+      "brand_key": "HONDA",
+      "model_id": "776afb3d4ea680148d97c5e6e8777263",
+      "normalized_brand": "honda",
+      "normalized_model": "cr-v",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "honda",
+      "adac_model_slug": "cr-v",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/honda/cr-v/1generation/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/honda/cr-v/4generation-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/honda/cr-v/5generation/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/honda/cr-v/6generation/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "cr-v",
+          "score": 1
+        },
+        {
+          "model_slug": "cr-z",
+          "score": 0.75
+        },
+        {
+          "model_slug": "fr-v",
+          "score": 0.75
+        }
+      ]
+    },
+    {
+      "brand": "Hyundai",
+      "model": "Ioniq",
+      "brand_key": "HYUNDAI",
+      "model_id": "profile_model_205",
+      "normalized_brand": "hyundai",
+      "normalized_model": "ioniq",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "hyundai",
+      "adac_model_slug": "ioniq",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/hyundai/ioniq/1generation/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "ioniq",
+          "score": 1
+        },
+        {
+          "model_slug": "ioniq-3",
+          "score": 0.88
+        },
+        {
+          "model_slug": "ioniq-5",
+          "score": 0.88
+        }
+      ]
+    },
+    {
+      "brand": "Hyundai",
+      "model": "Santa Fe",
+      "brand_key": "HYUNDAI",
+      "model_id": "2ab1d9f6fd13c5cf6c47978c09db5086",
+      "normalized_brand": "hyundai",
+      "normalized_model": "santa-fe",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "hyundai",
+      "adac_model_slug": "santa-fe",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/hyundai/santa-fe/1generation-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/hyundai/santa-fe/1generation/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/hyundai/santa-fe/4generation-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/hyundai/santa-fe/4generation/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/hyundai/santa-fe/5generation/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "santa-fe",
+          "score": 1
+        },
+        {
+          "model_slug": "sonata",
+          "score": 0.375
+        },
+        {
+          "model_slug": "staria",
+          "score": 0.375
+        }
+      ]
+    },
+    {
+      "brand": "Jaguar",
+      "model": "E-Pace",
+      "brand_key": "JAGUAR",
+      "model_id": "3824235da3c7846763544be74cee06e1",
+      "normalized_brand": "jaguar",
+      "normalized_model": "e-pace",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "jaguar",
+      "adac_model_slug": "e-pace",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/jaguar/e-pace/x540-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/jaguar/e-pace/x540/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "e-pace",
+          "score": 1
+        },
+        {
+          "model_slug": "f-pace",
+          "score": 0.8333
+        },
+        {
+          "model_slug": "i-pace",
+          "score": 0.8333
+        }
+      ]
+    },
+    {
+      "brand": "Jaguar",
+      "model": "F-Pace",
+      "brand_key": "JAGUAR",
+      "model_id": "2607e46565012a98f0036e2981e42785",
+      "normalized_brand": "jaguar",
+      "normalized_model": "f-pace",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "jaguar",
+      "adac_model_slug": "f-pace",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/jaguar/f-pace/x761-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/jaguar/f-pace/x761/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "f-pace",
+          "score": 1
+        },
+        {
+          "model_slug": "e-pace",
+          "score": 0.8333
+        },
+        {
+          "model_slug": "i-pace",
+          "score": 0.8333
+        }
+      ]
+    },
+    {
+      "brand": "Jeep",
+      "model": "Compass",
+      "brand_key": "JEEP",
+      "model_id": "128bb2468a72c8220df2a1ff6afeb4b0",
+      "normalized_brand": "jeep",
+      "normalized_model": "compass",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "jeep",
+      "adac_model_slug": "compass",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/jeep/compass/3generation/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/jeep/compass/mx-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/jeep/compass/mx/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/jeep/compass/pk-facelift/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "compass",
+          "score": 1
+        },
+        {
+          "model_slug": "cherokee",
+          "score": 0.125
+        },
+        {
+          "model_slug": "renegade",
+          "score": 0.125
+        }
+      ]
+    },
+    {
+      "brand": "Jeep",
+      "model": "GRAND CHEROKEE",
+      "brand_key": "JEEP",
+      "model_id": "75bf554a52d0ee4381be835b04fd8b38",
+      "normalized_brand": "jeep",
+      "normalized_model": "grand-cherokee",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "jeep",
+      "adac_model_slug": "grand-cherokee",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/jeep/grand-cherokee/wk2-facelift-2/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/jeep/grand-cherokee/wk2-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/jeep/grand-cherokee/zj/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "grand-cherokee",
+          "score": 1
+        },
+        {
+          "model_slug": "cherokee",
+          "score": 0.88
+        },
+        {
+          "model_slug": "wrangler",
+          "score": 0.3571
+        }
+      ]
+    },
+    {
+      "brand": "Jeep",
+      "model": "Renegade",
+      "brand_key": "JEEP",
+      "model_id": "c6b6a854f386bc5830d721d76277bea6",
+      "normalized_brand": "jeep",
+      "normalized_model": "renegade",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "jeep",
+      "adac_model_slug": "renegade",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/jeep/renegade/bu-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/jeep/renegade/bu/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "renegade",
+          "score": 1
+        },
+        {
+          "model_slug": "grand-cherokee",
+          "score": 0.2857
+        },
+        {
+          "model_slug": "avenger",
+          "score": 0.25
+        }
+      ]
+    },
+    {
+      "brand": "Jeep",
+      "model": "WRANGLER",
+      "brand_key": "JEEP",
+      "model_id": "7b9bc52aa4b2c718bd02d4dc0fb825c3",
+      "normalized_brand": "jeep",
+      "normalized_model": "wrangler",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "jeep",
+      "adac_model_slug": "wrangler",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/jeep/wrangler/jl-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/jeep/wrangler/jl/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/jeep/wrangler/tj/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "wrangler",
+          "score": 1
+        },
+        {
+          "model_slug": "avenger",
+          "score": 0.5
+        },
+        {
+          "model_slug": "grand-cherokee",
+          "score": 0.3571
+        }
+      ]
+    },
+    {
+      "brand": "Kia",
+      "model": "Ceed",
+      "brand_key": "KIA",
+      "model_id": "bdcf8bc084f27abd91c56ec7104037de",
+      "normalized_brand": "kia",
+      "normalized_model": "ceed",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "kia",
+      "adac_model_slug": "ceed",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/kia/ceed/cd-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/kia/ceed/cd/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/kia/ceed/ed/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/kia/ceed/jd-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/kia/ceed/jd/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "ceed",
+          "score": 1
+        },
+        {
+          "model_slug": "xceed",
+          "score": 0.88
+        },
+        {
+          "model_slug": "carens",
+          "score": 0.3333
+        }
+      ]
+    },
+    {
+      "brand": "Kia",
+      "model": "Niro",
+      "brand_key": "KIA",
+      "model_id": "9ac92296d1aee46f2ec0ae10ee68cf5a",
+      "normalized_brand": "kia",
+      "normalized_model": "niro",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "kia",
+      "adac_model_slug": "niro",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/kia/niro/de-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/kia/niro/de/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/kia/niro/sg2/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "niro",
+          "score": 1
+        },
+        {
+          "model_slug": "rio",
+          "score": 0.5
+        },
+        {
+          "model_slug": "opirus",
+          "score": 0.3333
+        }
+      ]
+    },
+    {
+      "brand": "Kia",
+      "model": "Sorento",
+      "brand_key": "KIA",
+      "model_id": "a5d4aaab086e3e3c3143f0e61343a298",
+      "normalized_brand": "kia",
+      "normalized_model": "sorento",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "kia",
+      "adac_model_slug": "sorento",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/kia/sorento/jc-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/kia/sorento/jc/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/kia/sorento/mq4-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/kia/sorento/mq4/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/kia/sorento/um-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/kia/sorento/um/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "sorento",
+          "score": 1
+        },
+        {
+          "model_slug": "carens",
+          "score": 0.4286
+        },
+        {
+          "model_slug": "picanto",
+          "score": 0.4286
+        }
+      ]
+    },
+    {
+      "brand": "Kia",
+      "model": "Sportage",
+      "brand_key": "KIA",
+      "model_id": "99320701e77303a0296b761cc3b52842",
+      "normalized_brand": "kia",
+      "normalized_model": "sportage",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "kia",
+      "adac_model_slug": "sportage",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/kia/sportage/je-facelift-2/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/kia/sportage/je/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/kia/sportage/nq5-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/kia/sportage/nq5/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/kia/sportage/ql-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/kia/sportage/ql/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/kia/sportage/sl/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "sportage",
+          "score": 1
+        },
+        {
+          "model_slug": "sorento",
+          "score": 0.375
+        },
+        {
+          "model_slug": "opirus",
+          "score": 0.25
+        }
+      ]
+    },
+    {
+      "brand": "Kia",
+      "model": "XCeed",
+      "brand_key": "KIA",
+      "model_id": "6819e0ea619c748f71e97e7496e6e0e9",
+      "normalized_brand": "kia",
+      "normalized_model": "xceed",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "kia",
+      "adac_model_slug": "xceed",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/kia/xceed/cd-facelift-2/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/kia/xceed/cd-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/kia/xceed/cd/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "xceed",
+          "score": 1
+        },
+        {
+          "model_slug": "ceed",
+          "score": 0.88
+        },
+        {
+          "model_slug": "ev2",
+          "score": 0.2
+        }
+      ]
+    },
+    {
+      "brand": "Land Rover",
+      "model": "Defender",
+      "brand_key": "LANDROVER",
+      "model_id": "7ad9db2fab7eab53c88893457fcf9d39",
+      "normalized_brand": "land-rover",
+      "normalized_model": "defender",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "land-rover",
+      "adac_model_slug": "defender",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/land-rover/defender/ii-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/land-rover/defender/ii/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "defender",
+          "score": 1
+        },
+        {
+          "model_slug": "freelander",
+          "score": 0.5
+        },
+        {
+          "model_slug": "discovery",
+          "score": 0.3333
+        }
+      ]
+    },
+    {
+      "brand": "Land Rover",
+      "model": "Discovery Sport",
+      "brand_key": "LANDROVER",
+      "model_id": "2b8db5a423c8ab7f0d158d7c6156141f",
+      "normalized_brand": "land-rover",
+      "normalized_model": "discovery-sport",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "land-rover",
+      "adac_model_slug": "discovery-sport",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/land-rover/discovery-sport/1generation-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/land-rover/discovery-sport/1generation/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "discovery-sport",
+          "score": 1
+        },
+        {
+          "model_slug": "discovery",
+          "score": 0.88
+        },
+        {
+          "model_slug": "range-rover-sport",
+          "score": 0.5294
+        }
+      ]
+    },
+    {
+      "brand": "Land Rover",
+      "model": "Range Rover",
+      "brand_key": "LANDROVER",
+      "model_id": "9af46ed03aa2e4271b911c5752a54006",
+      "normalized_brand": "land-rover",
+      "normalized_model": "range-rover",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "land-rover",
+      "adac_model_slug": "range-rover",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/land-rover/range-rover/iii/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/land-rover/range-rover/iv/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/land-rover/range-rover/v/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "range-rover",
+          "score": 1
+        },
+        {
+          "model_slug": "range-rover-evoque",
+          "score": 0.88
+        },
+        {
+          "model_slug": "range-rover-sport",
+          "score": 0.88
+        }
+      ]
+    },
+    {
+      "brand": "Land Rover",
+      "model": "Range Rover Evoque",
+      "brand_key": "LANDROVER",
+      "model_id": "6b6772cedd082759ae42e4b6b62a42c4",
+      "normalized_brand": "land-rover",
+      "normalized_model": "range-rover-evoque",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "land-rover",
+      "adac_model_slug": "range-rover-evoque",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/land-rover/range-rover-evoque/i-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/land-rover/range-rover-evoque/i/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/land-rover/range-rover-evoque/ii-facelift/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "range-rover-evoque",
+          "score": 1
+        },
+        {
+          "model_slug": "range-rover",
+          "score": 0.88
+        },
+        {
+          "model_slug": "range-rover-sport",
+          "score": 0.7222
+        }
+      ]
+    },
+    {
+      "brand": "Land Rover",
+      "model": "Range Rover Sport",
+      "brand_key": "LANDROVER",
+      "model_id": "bafc306b0d25ad4e42df15dae50cbc0a",
+      "normalized_brand": "land-rover",
+      "normalized_model": "range-rover-sport",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "land-rover",
+      "adac_model_slug": "range-rover-sport",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/land-rover/range-rover-sport/i-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/land-rover/range-rover-sport/ii-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/land-rover/range-rover-sport/iii/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "range-rover-sport",
+          "score": 1
+        },
+        {
+          "model_slug": "range-rover",
+          "score": 0.88
+        },
+        {
+          "model_slug": "range-rover-evoque",
+          "score": 0.7222
+        }
+      ]
+    },
+    {
+      "brand": "Land Rover",
+      "model": "Range Rover Velar",
+      "brand_key": "LANDROVER",
+      "model_id": "f0081965deb80b4827952ef397e5c897",
+      "normalized_brand": "land-rover",
+      "normalized_model": "range-rover-velar",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "land-rover",
+      "adac_model_slug": "range-rover-velar",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/land-rover/range-rover-velar/1generation-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/land-rover/range-rover-velar/1generation/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "range-rover-velar",
+          "score": 1
+        },
+        {
+          "model_slug": "range-rover",
+          "score": 0.88
+        },
+        {
+          "model_slug": "range-rover-evoque",
+          "score": 0.7222
+        }
+      ]
+    },
+    {
+      "brand": "Mazda",
+      "model": "MAZDA CX-60",
+      "brand_key": "MAZDA",
+      "model_id": "47bb02a8c84a8cafe373332ffa66c910",
+      "normalized_brand": "mazda",
+      "normalized_model": "mazda-cx-60",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "mazda",
+      "adac_model_slug": "cx-60",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mazda/cx-60/kh/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "cx-60",
+          "score": 1
+        },
+        {
+          "model_slug": "cx-30",
+          "score": 0.8
+        },
+        {
+          "model_slug": "cx-6e",
+          "score": 0.8
+        }
+      ]
+    },
+    {
+      "brand": "Mazda",
+      "model": "MAZDA CX-80",
+      "brand_key": "MAZDA",
+      "model_id": "db80b1cce9415be453f667b6651a93f6",
+      "normalized_brand": "mazda",
+      "normalized_model": "mazda-cx-80",
+      "match_status": "matched",
+      "match_score": 0.88,
+      "adac_brand_slug": "mazda",
+      "adac_model_slug": "cx-80",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mazda/cx-80/kl/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "cx-80",
+          "score": 0.88
+        },
+        {
+          "model_slug": "cx-30",
+          "score": 0.3636
+        },
+        {
+          "model_slug": "cx-60",
+          "score": 0.3636
+        }
+      ]
+    },
+    {
+      "brand": "Mazda",
+      "model": "MX-30",
+      "brand_key": "MAZDA",
+      "model_id": "2600d977ff8ba12cd009fe0c380c69ef",
+      "normalized_brand": "mazda",
+      "normalized_model": "mx-30",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "mazda",
+      "adac_model_slug": "mx-30",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mazda/mx-30/dr/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "mx-30",
+          "score": 1
+        },
+        {
+          "model_slug": "cx-30",
+          "score": 0.8
+        },
+        {
+          "model_slug": "cx-3",
+          "score": 0.6
+        }
+      ]
+    },
+    {
+      "brand": "Mercedes-Benz",
+      "model": "A-Class",
+      "brand_key": "MERCEDESBENZ",
+      "model_id": "f4d659e2564f60e5f8b8a7713105475f",
+      "normalized_brand": "mercedes-benz",
+      "normalized_model": "a-klasse",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "mercedes-benz",
+      "adac_model_slug": "a-klasse",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/a-klasse/168-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/a-klasse/169/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/a-klasse/176-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/a-klasse/176/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/a-klasse/177-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/a-klasse/177/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "a-klasse",
+          "score": 1
+        },
+        {
+          "model_slug": "b-klasse",
+          "score": 0.875
+        },
+        {
+          "model_slug": "c-klasse",
+          "score": 0.875
+        }
+      ]
+    },
+    {
+      "brand": "Mercedes-Benz",
+      "model": "AMG GT",
+      "brand_key": "MERCEDESBENZ",
+      "model_id": "b8ac1988a2670d06a0806d7a45c338d0",
+      "normalized_brand": "mercedes-benz",
+      "normalized_model": "amg-gt",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "mercedes-benz",
+      "adac_model_slug": "amg-gt",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/amg-gt/190-facelift-2/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/amg-gt/190/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/amg-gt/192/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "amg-gt",
+          "score": 1
+        },
+        {
+          "model_slug": "amg-gt-4-tuerer-coupe",
+          "score": 0.88
+        },
+        {
+          "model_slug": "clk-gtr",
+          "score": 0.4286
+        }
+      ]
+    },
+    {
+      "brand": "Mercedes-Benz",
+      "model": "B-Class",
+      "brand_key": "MERCEDESBENZ",
+      "model_id": "101505bdfee7029843f8a99896c7a94f",
+      "normalized_brand": "mercedes-benz",
+      "normalized_model": "b-klasse",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "mercedes-benz",
+      "adac_model_slug": "b-klasse",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/b-klasse/245-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/b-klasse/245/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/b-klasse/246-242-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/b-klasse/247-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/b-klasse/247/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "b-klasse",
+          "score": 1
+        },
+        {
+          "model_slug": "a-klasse",
+          "score": 0.875
+        },
+        {
+          "model_slug": "c-klasse",
+          "score": 0.875
+        }
+      ]
+    },
+    {
+      "brand": "Mercedes-Benz",
+      "model": "C-Class",
+      "brand_key": "MERCEDESBENZ",
+      "model_id": "ff48bb11671773900d8a461103953cbb",
+      "normalized_brand": "mercedes-benz",
+      "normalized_model": "c-klasse",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "mercedes-benz",
+      "adac_model_slug": "c-klasse",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/c-klasse/203-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/c-klasse/203/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/c-klasse/204-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/c-klasse/204/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/c-klasse/205-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/c-klasse/205/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/c-klasse/206/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/c-klasse/520/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "c-klasse",
+          "score": 1
+        },
+        {
+          "model_slug": "cl-klasse",
+          "score": 0.8889
+        },
+        {
+          "model_slug": "a-klasse",
+          "score": 0.875
+        }
+      ]
+    },
+    {
+      "brand": "Mercedes-Benz",
+      "model": "CLA",
+      "brand_key": "MERCEDESBENZ",
+      "model_id": "b392821b2ee272f8435328bb8d6ebdd4",
+      "normalized_brand": "mercedes-benz",
+      "normalized_model": "cla",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "mercedes-benz",
+      "adac_model_slug": "cla",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/cla/117-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/cla/117/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/cla/118-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/cla/118/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/cla/174-178/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "cla",
+          "score": 1
+        },
+        {
+          "model_slug": "cle",
+          "score": 0.6667
+        },
+        {
+          "model_slug": "cls",
+          "score": 0.6667
+        }
+      ]
+    },
+    {
+      "brand": "Mercedes-Benz",
+      "model": "CLE",
+      "brand_key": "MERCEDESBENZ",
+      "model_id": "faaf4f2183e22269a66dd07cc7dac2c6",
+      "normalized_brand": "mercedes-benz",
+      "normalized_model": "cle",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "mercedes-benz",
+      "adac_model_slug": "cle",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/cle/236/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "cle",
+          "score": 1
+        },
+        {
+          "model_slug": "cla",
+          "score": 0.6667
+        },
+        {
+          "model_slug": "cls",
+          "score": 0.6667
+        }
+      ]
+    },
+    {
+      "brand": "Mercedes-Benz",
+      "model": "E-Class",
+      "brand_key": "MERCEDESBENZ",
+      "model_id": "1fd7082a30d6ca119f16ee4695050f71",
+      "normalized_brand": "mercedes-benz",
+      "normalized_model": "e-klasse",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "mercedes-benz",
+      "adac_model_slug": "e-klasse",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/e-klasse/207-212-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/e-klasse/207-212/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/e-klasse/211-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/e-klasse/211/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/e-klasse/213-238-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/e-klasse/213-238/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/e-klasse/214/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "e-klasse",
+          "score": 1
+        },
+        {
+          "model_slug": "a-klasse",
+          "score": 0.875
+        },
+        {
+          "model_slug": "b-klasse",
+          "score": 0.875
+        }
+      ]
+    },
+    {
+      "brand": "Mercedes-Benz",
+      "model": "GLA",
+      "brand_key": "MERCEDESBENZ",
+      "model_id": "86bd48c1a18d267d849fe3d6e7b0dcf8",
+      "normalized_brand": "mercedes-benz",
+      "normalized_model": "gla",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "mercedes-benz",
+      "adac_model_slug": "gla",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/gla/156-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/gla/156/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/gla/244-248/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/gla/247-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/gla/247/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "gla",
+          "score": 1
+        },
+        {
+          "model_slug": "cla",
+          "score": 0.6667
+        },
+        {
+          "model_slug": "glb",
+          "score": 0.6667
+        }
+      ]
+    },
+    {
+      "brand": "Mercedes-Benz",
+      "model": "GLC",
+      "brand_key": "MERCEDESBENZ",
+      "model_id": "15e1cf26f47f318110964582cdcc8cab",
+      "normalized_brand": "mercedes-benz",
+      "normalized_model": "glc",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "mercedes-benz",
+      "adac_model_slug": "glc",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/glc/253-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/glc/253/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/glc/254/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/glc/540/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "glc",
+          "score": 1
+        },
+        {
+          "model_slug": "gla",
+          "score": 0.6667
+        },
+        {
+          "model_slug": "glb",
+          "score": 0.6667
+        }
+      ]
+    },
+    {
+      "brand": "Mercedes-Benz",
+      "model": "GLE",
+      "brand_key": "MERCEDESBENZ",
+      "model_id": "7a3444f109878e97ad381bef90762676",
+      "normalized_brand": "mercedes-benz",
+      "normalized_model": "gle",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "mercedes-benz",
+      "adac_model_slug": "gle",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/gle/166-292/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/gle/167-facelift-2/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/gle/167-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/gle/167/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "gle",
+          "score": 1
+        },
+        {
+          "model_slug": "cle",
+          "score": 0.6667
+        },
+        {
+          "model_slug": "gla",
+          "score": 0.6667
+        }
+      ]
+    },
+    {
+      "brand": "Mercedes-Benz",
+      "model": "S-Class",
+      "brand_key": "MERCEDESBENZ",
+      "model_id": "e75ee172012b3d23e2b6777a656fe932",
+      "normalized_brand": "mercedes-benz",
+      "normalized_model": "s-klasse",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "mercedes-benz",
+      "adac_model_slug": "s-klasse",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/s-klasse/217-222-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/s-klasse/217-222/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/s-klasse/220-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/s-klasse/221-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/s-klasse/221/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/s-klasse/223-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mercedes-benz/s-klasse/223/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "s-klasse",
+          "score": 1
+        },
+        {
+          "model_slug": "sl-klasse",
+          "score": 0.8889
+        },
+        {
+          "model_slug": "a-klasse",
+          "score": 0.875
+        }
+      ]
+    },
+    {
+      "brand": "MG",
+      "model": "EHS",
+      "brand_key": "MG",
+      "model_id": "65739579680c780473d2c9ecc8dc0edd",
+      "normalized_brand": "mg",
+      "normalized_model": "ehs",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "mg",
+      "adac_model_slug": "hs-ehs",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mg/hs-ehs/1generation-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mg/hs-ehs/1generation/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mg/hs-ehs/2generation/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "hs-ehs",
+          "score": 1
+        },
+        {
+          "model_slug": "cyberster",
+          "score": 0.2222
+        },
+        {
+          "model_slug": "zs",
+          "score": 0.1667
+        }
+      ]
+    },
+    {
+      "brand": "MG",
+      "model": "HS",
+      "brand_key": "MG",
+      "model_id": "ea837840fcf1734fb29448b0257b732d",
+      "normalized_brand": "mg",
+      "normalized_model": "hs",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "mg",
+      "adac_model_slug": "hs-ehs",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mg/hs-ehs/1generation-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mg/hs-ehs/1generation/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mg/hs-ehs/2generation/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "hs-ehs",
+          "score": 1
+        },
+        {
+          "model_slug": "cyberster",
+          "score": 0.2222
+        },
+        {
+          "model_slug": "zs",
+          "score": 0.1667
+        }
+      ]
+    },
+    {
+      "brand": "Mini",
+      "model": "Countryman",
+      "brand_key": "MINI",
+      "model_id": "251fdf3eca60c6f436d892d2690f06d2",
+      "normalized_brand": "mini",
+      "normalized_model": "countryman",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "mini",
+      "adac_model_slug": "countryman",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mini/countryman/f60-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mini/countryman/f60/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mini/countryman/r60/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mini/countryman/u25/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "countryman",
+          "score": 1
+        },
+        {
+          "model_slug": "clubman",
+          "score": 0.5
+        },
+        {
+          "model_slug": "aceman",
+          "score": 0.3
+        }
+      ]
+    },
+    {
+      "brand": "Mitsubishi",
+      "model": "ASX",
+      "brand_key": "MITSUBISHI",
+      "model_id": "150d434e151a3137735ab55c6cc30eb6",
+      "normalized_brand": "mitsubishi",
+      "normalized_model": "asx",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "mitsubishi",
+      "adac_model_slug": "asx",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mitsubishi/asx/1generation-facelift-2/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mitsubishi/asx/1generation-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mitsubishi/asx/2generation-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mitsubishi/asx/2generation/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "asx",
+          "score": 1
+        },
+        {
+          "model_slug": "carisma",
+          "score": 0.2857
+        },
+        {
+          "model_slug": "space-star",
+          "score": 0.2
+        }
+      ]
+    },
+    {
+      "brand": "Mitsubishi",
+      "model": "Eclipse Cross",
+      "brand_key": "MITSUBISHI",
+      "model_id": "807610e6d19cef258fd68a8a939b8696",
+      "normalized_brand": "mitsubishi",
+      "normalized_model": "eclipse-cross",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "mitsubishi",
+      "adac_model_slug": "eclipse-cross",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mitsubishi/eclipse-cross/1generation-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mitsubishi/eclipse-cross/1generation/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mitsubishi/eclipse-cross/2generation/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "eclipse-cross",
+          "score": 1
+        },
+        {
+          "model_slug": "eclipse",
+          "score": 0.88
+        },
+        {
+          "model_slug": "lancer",
+          "score": 0.2308
+        }
+      ]
+    },
+    {
+      "brand": "Mitsubishi",
+      "model": "Outlander",
+      "brand_key": "MITSUBISHI",
+      "model_id": "profile_model_239",
+      "normalized_brand": "mitsubishi",
+      "normalized_model": "outlander",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "mitsubishi",
+      "adac_model_slug": "outlander",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mitsubishi/outlander/1generation/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mitsubishi/outlander/2generation/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mitsubishi/outlander/3generation-facelift-2/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mitsubishi/outlander/3generation-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mitsubishi/outlander/3generation/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mitsubishi/outlander/4generation/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "outlander",
+          "score": 1
+        },
+        {
+          "model_slug": "lancer",
+          "score": 0.5556
+        },
+        {
+          "model_slug": "galant",
+          "score": 0.3333
+        }
+      ]
+    },
+    {
+      "brand": "Opel",
+      "model": "Astra",
+      "brand_key": "OPEL",
+      "model_id": "ac24b040011908e97c6f62d005f32289",
+      "normalized_brand": "opel",
+      "normalized_model": "astra",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "opel",
+      "adac_model_slug": "astra",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/opel/astra/g/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/opel/astra/h-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/opel/astra/h/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/opel/astra/j-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/opel/astra/j/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/opel/astra/k-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/opel/astra/k/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/opel/astra/l-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/opel/astra/l/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "astra",
+          "score": 1
+        },
+        {
+          "model_slug": "antara",
+          "score": 0.6667
+        },
+        {
+          "model_slug": "ampera",
+          "score": 0.5
+        }
+      ]
+    },
+    {
+      "brand": "Opel",
+      "model": "Grandland",
+      "brand_key": "OPEL",
+      "model_id": "c68ed28b2004aa8ed509142d911f3fb0",
+      "normalized_brand": "opel",
+      "normalized_model": "grandland",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "opel",
+      "adac_model_slug": "grandland",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/opel/grandland/1generation-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/opel/grandland/1generation/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/opel/grandland/2generation/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "grandland",
+          "score": 1
+        },
+        {
+          "model_slug": "crossland",
+          "score": 0.5556
+        },
+        {
+          "model_slug": "adam",
+          "score": 0.3333
+        }
+      ]
+    },
+    {
+      "brand": "Peugeot",
+      "model": "3008",
+      "brand_key": "PEUGEOT",
+      "model_id": "316108c205984eecfaefc2a24ec3fb2a",
+      "normalized_brand": "peugeot",
+      "normalized_model": "3008",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "peugeot",
+      "adac_model_slug": "3008",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/peugeot/3008/1generation-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/peugeot/3008/1generation/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/peugeot/3008/2generation-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/peugeot/3008/2generation/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/peugeot/3008/3generation/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "3008",
+          "score": 1
+        },
+        {
+          "model_slug": "2008",
+          "score": 0.75
+        },
+        {
+          "model_slug": "308",
+          "score": 0.75
+        }
+      ]
+    },
+    {
+      "brand": "Peugeot",
+      "model": "308",
+      "brand_key": "PEUGEOT",
+      "model_id": "bb4d3a6c3a797a7102025eb705302f02",
+      "normalized_brand": "peugeot",
+      "normalized_model": "308",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "peugeot",
+      "adac_model_slug": "308",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/peugeot/308/1generation-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/peugeot/308/1generation/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/peugeot/308/2generation-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/peugeot/308/2generation/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/peugeot/308/3generation-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/peugeot/308/3generation/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "308",
+          "score": 1
+        },
+        {
+          "model_slug": "3008",
+          "score": 0.75
+        },
+        {
+          "model_slug": "108",
+          "score": 0.6667
+        }
+      ]
+    },
+    {
+      "brand": "Peugeot",
+      "model": "408",
+      "brand_key": "PEUGEOT",
+      "model_id": "b02302770f08b2ee7e107f27effdd6a1",
+      "normalized_brand": "peugeot",
+      "normalized_model": "408",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "peugeot",
+      "adac_model_slug": "408",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/peugeot/408/1generation-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/peugeot/408/1generation/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "408",
+          "score": 1
+        },
+        {
+          "model_slug": "4008",
+          "score": 0.75
+        },
+        {
+          "model_slug": "108",
+          "score": 0.6667
+        }
+      ]
+    },
+    {
+      "brand": "Peugeot",
+      "model": "5008",
+      "brand_key": "PEUGEOT",
+      "model_id": "b7d7ef16f881bf98fc1dddc66b7f9e01",
+      "normalized_brand": "peugeot",
+      "normalized_model": "5008",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "peugeot",
+      "adac_model_slug": "5008",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/peugeot/5008/1generation/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/peugeot/5008/2generation-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/peugeot/5008/2generation/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/peugeot/5008/3generation/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "5008",
+          "score": 1
+        },
+        {
+          "model_slug": "2008",
+          "score": 0.75
+        },
+        {
+          "model_slug": "3008",
+          "score": 0.75
+        }
+      ]
+    },
+    {
+      "brand": "Peugeot",
+      "model": "508",
+      "brand_key": "PEUGEOT",
+      "model_id": "5b83e61b9b4c84fd9baa984ae71239ea",
+      "normalized_brand": "peugeot",
+      "normalized_model": "508",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "peugeot",
+      "adac_model_slug": "508",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/peugeot/508/1generation/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/peugeot/508/2generation-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/peugeot/508/2generation/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "508",
+          "score": 1
+        },
+        {
+          "model_slug": "5008",
+          "score": 0.75
+        },
+        {
+          "model_slug": "108",
+          "score": 0.6667
+        }
+      ]
+    },
+    {
+      "brand": "Porsche",
+      "model": "Cayenne",
+      "brand_key": "PORSCHE",
+      "model_id": "3fe804766e8af94be4ea74a1e3a70503",
+      "normalized_brand": "porsche",
+      "normalized_model": "cayenne",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "porsche",
+      "adac_model_slug": "cayenne",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/porsche/cayenne/955/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/porsche/cayenne/958/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/porsche/cayenne/9ya-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/porsche/cayenne/9ya/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/porsche/cayenne/k1/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "cayenne",
+          "score": 1
+        },
+        {
+          "model_slug": "cayman",
+          "score": 0.5714
+        },
+        {
+          "model_slug": "taycan",
+          "score": 0.4286
+        }
+      ]
+    },
+    {
+      "brand": "Porsche",
+      "model": "Panamera",
+      "brand_key": "PORSCHE",
+      "model_id": "3f90830f005602e912a8f58934d28515",
+      "normalized_brand": "porsche",
+      "normalized_model": "panamera",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "porsche",
+      "adac_model_slug": "panamera",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/porsche/panamera/970/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/porsche/panamera/971-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/porsche/panamera/972/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "panamera",
+          "score": 1
+        },
+        {
+          "model_slug": "boxster",
+          "score": 0.25
+        },
+        {
+          "model_slug": "cayman",
+          "score": 0.25
+        }
+      ]
+    },
+    {
+      "brand": "Renault",
+      "model": "Captur",
+      "brand_key": "RENAULT",
+      "model_id": "a12bea197f6569d64b3e2b6fb3144da2",
+      "normalized_brand": "renault",
+      "normalized_model": "captur",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "renault",
+      "adac_model_slug": "captur",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/renault/captur/i-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/renault/captur/ii-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/renault/captur/ii/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "captur",
+          "score": 1
+        },
+        {
+          "model_slug": "master",
+          "score": 0.5
+        },
+        {
+          "model_slug": "latitude",
+          "score": 0.375
+        }
+      ]
+    },
+    {
+      "brand": "Renault",
+      "model": "Megane",
+      "brand_key": "RENAULT",
+      "model_id": "560210a7622b26b7479754294a46f845",
+      "normalized_brand": "renault",
+      "normalized_model": "megane",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "renault",
+      "adac_model_slug": "megane",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/renault/megane/i-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/renault/megane/ii-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/renault/megane/ii/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/renault/megane/iii-facelift-2/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/renault/megane/iii-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/renault/megane/iii/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/renault/megane/iv-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/renault/megane/iv/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/renault/megane/v/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "megane",
+          "score": 1
+        },
+        {
+          "model_slug": "fregate",
+          "score": 0.5714
+        },
+        {
+          "model_slug": "arkana",
+          "score": 0.3333
+        }
+      ]
+    },
+    {
+      "brand": "Renault",
+      "model": "RAFALE",
+      "brand_key": "RENAULT",
+      "model_id": "1ef69061f4c73967b8cce4a624fdc0d7",
+      "normalized_brand": "renault",
+      "normalized_model": "rafale",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "renault",
+      "adac_model_slug": "rafale",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/renault/rafale/1generation/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "rafale",
+          "score": 1
+        },
+        {
+          "model_slug": "caravelle",
+          "score": 0.4444
+        },
+        {
+          "model_slug": "fregate",
+          "score": 0.4286
+        }
+      ]
+    },
+    {
+      "brand": "Seat",
+      "model": "Leon",
+      "brand_key": "SEAT",
+      "model_id": "04f12e0ee404383706c5a935394eba55",
+      "normalized_brand": "seat",
+      "normalized_model": "leon",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "seat",
+      "adac_model_slug": "leon",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/seat/leon/1m/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/seat/leon/1p-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/seat/leon/1p/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/seat/leon/5f-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/seat/leon/5f/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/seat/leon/kl/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "leon",
+          "score": 1
+        },
+        {
+          "model_slug": "arona",
+          "score": 0.4
+        },
+        {
+          "model_slug": "toledo",
+          "score": 0.3333
+        }
+      ]
+    },
+    {
+      "brand": "Skoda",
+      "model": "Octavia",
+      "brand_key": "SKODA",
+      "model_id": "c32ca05fba76042cd63da38433d978ee",
+      "normalized_brand": "skoda",
+      "normalized_model": "octavia",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "skoda",
+      "adac_model_slug": "octavia",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/skoda/octavia/1generation-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/skoda/octavia/2generation-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/skoda/octavia/2generation/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/skoda/octavia/3generation-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/skoda/octavia/3generation/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/skoda/octavia/4generation-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/skoda/octavia/4generation/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "octavia",
+          "score": 1
+        },
+        {
+          "model_slug": "fabia",
+          "score": 0.4286
+        },
+        {
+          "model_slug": "scala",
+          "score": 0.4286
+        }
+      ]
+    },
+    {
+      "brand": "Skoda",
+      "model": "Superb",
+      "brand_key": "SKODA",
+      "model_id": "2eb41759b9e7538b1c4477c26719c526",
+      "normalized_brand": "skoda",
+      "normalized_model": "superb",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "skoda",
+      "adac_model_slug": "superb",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/skoda/superb/1generation-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/skoda/superb/1generation/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/skoda/superb/2generation/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/skoda/superb/3generation-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/skoda/superb/3generation/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/skoda/superb/4generation/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "superb",
+          "score": 1
+        },
+        {
+          "model_slug": "peaq",
+          "score": 0.3333
+        },
+        {
+          "model_slug": "epiq",
+          "score": 0.1667
+        }
+      ]
+    },
+    {
+      "brand": "Škoda",
+      "model": "Kodiaq",
+      "brand_key": "SKODA",
+      "model_id": "fae2fd298ed1ed5177ef8338e4ab4c31",
+      "normalized_brand": "skoda",
+      "normalized_model": "kodiaq",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "skoda",
+      "adac_model_slug": "kodiaq",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/skoda/kodiaq/1generation-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/skoda/kodiaq/1generation/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/skoda/kodiaq/2generation/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "kodiaq",
+          "score": 1
+        },
+        {
+          "model_slug": "kamiq",
+          "score": 0.5
+        },
+        {
+          "model_slug": "enyaq",
+          "score": 0.3333
+        }
+      ]
+    },
+    {
+      "brand": "Škoda",
+      "model": "Superb",
+      "brand_key": "SKODA",
+      "model_id": "2eb41759b9e7538b1c4477c26719c526",
+      "normalized_brand": "skoda",
+      "normalized_model": "superb",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "skoda",
+      "adac_model_slug": "superb",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/skoda/superb/1generation-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/skoda/superb/1generation/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/skoda/superb/2generation/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/skoda/superb/3generation-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/skoda/superb/3generation/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/skoda/superb/4generation/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "superb",
+          "score": 1
+        },
+        {
+          "model_slug": "peaq",
+          "score": 0.3333
+        },
+        {
+          "model_slug": "epiq",
+          "score": 0.1667
+        }
+      ]
+    },
+    {
+      "brand": "Toyota",
+      "model": "C-HR",
+      "brand_key": "TOYOTA",
+      "model_id": "188ea6c741566c401ffbf4fde727c0b2",
+      "normalized_brand": "toyota",
+      "normalized_model": "c-hr",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "toyota",
+      "adac_model_slug": "c-hr",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/toyota/c-hr/x10-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/toyota/c-hr/x10/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/toyota/c-hr/x20/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "c-hr",
+          "score": 1
+        },
+        {
+          "model_slug": "c-hrplus",
+          "score": 0.88
+        },
+        {
+          "model_slug": "camry",
+          "score": 0.4
+        }
+      ]
+    },
+    {
+      "brand": "Toyota",
+      "model": "Prius",
+      "brand_key": "TOYOTA",
+      "model_id": "4f11dd06c00cc872eb02d3892056b467",
+      "normalized_brand": "toyota",
+      "normalized_model": "prius",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "toyota",
+      "adac_model_slug": "prius",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/toyota/prius/nhw11/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/toyota/prius/xw6/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/toyota/prius/zvw30-zvw35-facelift/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "prius",
+          "score": 1
+        },
+        {
+          "model_slug": "priusplus",
+          "score": 0.88
+        },
+        {
+          "model_slug": "auris",
+          "score": 0.4
+        }
+      ]
+    },
+    {
+      "brand": "Toyota",
+      "model": "RAV4",
+      "brand_key": "TOYOTA",
+      "model_id": "ce4cb85b908f3987c10bc2398659b389",
+      "normalized_brand": "toyota",
+      "normalized_model": "rav4",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "toyota",
+      "adac_model_slug": "rav4",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/toyota/rav4/xa3/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/toyota/rav4/xa4-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/toyota/rav4/xa5/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/toyota/rav4/xa6/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "rav4",
+          "score": 1
+        },
+        {
+          "model_slug": "previa",
+          "score": 0.3333
+        },
+        {
+          "model_slug": "proace",
+          "score": 0.3333
+        }
+      ]
+    },
+    {
+      "brand": "Volkswagen",
+      "model": "Caddy",
+      "brand_key": "VOLKSWAGEN",
+      "model_id": "73714b8214000282b4ed8ae958fdb855",
+      "normalized_brand": "volkswagen",
+      "normalized_model": "caddy",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "vw-nutzfahrzeuge",
+      "adac_model_slug": "caddy",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/vw-nutzfahrzeuge/caddy/iii-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/vw-nutzfahrzeuge/caddy/iii/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/vw-nutzfahrzeuge/caddy/iv/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/vw-nutzfahrzeuge/caddy/v-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/vw-nutzfahrzeuge/caddy/v/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "caddy",
+          "score": 1
+        },
+        {
+          "model_slug": "crafter",
+          "score": 0.2857
+        },
+        {
+          "model_slug": "taro",
+          "score": 0.2
+        }
+      ]
+    },
+    {
+      "brand": "Volkswagen",
+      "model": "CALIFORNIA",
+      "brand_key": "VOLKSWAGEN",
+      "model_id": "4627c33f1d7e67464968ff21e7acdabf",
+      "normalized_brand": "volkswagen",
+      "normalized_model": "california",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "vw-nutzfahrzeuge",
+      "adac_model_slug": "transporter",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/vw-nutzfahrzeuge/transporter/t4-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/vw-nutzfahrzeuge/transporter/t5-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/vw-nutzfahrzeuge/transporter/t5/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/vw-nutzfahrzeuge/transporter/t6/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/vw-nutzfahrzeuge/transporter/t61-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/vw-nutzfahrzeuge/transporter/t7-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/vw-nutzfahrzeuge/transporter/t7/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "transporter",
+          "score": 1
+        },
+        {
+          "model_slug": "crafter",
+          "score": 0.4545
+        },
+        {
+          "model_slug": "grand-california",
+          "score": 0.3125
+        }
+      ]
+    },
+    {
+      "brand": "Volkswagen",
+      "model": "Golf",
+      "brand_key": "VOLKSWAGEN",
+      "model_id": "493308eb1d045927cafa7803f423241a",
+      "normalized_brand": "volkswagen",
+      "normalized_model": "golf",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "vw",
+      "adac_model_slug": "golf",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/vw/golf/ii/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/vw/golf/iii/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/vw/golf/iv/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/vw/golf/v/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/vw/golf/vi/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/vw/golf/vii-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/vw/golf/vii/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/vw/golf/viii-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/vw/golf/viii/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "golf",
+          "score": 1
+        },
+        {
+          "model_slug": "polo",
+          "score": 0.5
+        },
+        {
+          "model_slug": "id-polo",
+          "score": 0.2857
+        }
+      ]
+    },
+    {
+      "brand": "Volkswagen",
+      "model": "MULTIVAN",
+      "brand_key": "VOLKSWAGEN",
+      "model_id": "026f937b452e3b24784fd884652a56ac",
+      "normalized_brand": "volkswagen",
+      "normalized_model": "multivan",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "vw-nutzfahrzeuge",
+      "adac_model_slug": "transporter",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/vw-nutzfahrzeuge/transporter/t4-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/vw-nutzfahrzeuge/transporter/t5-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/vw-nutzfahrzeuge/transporter/t5/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/vw-nutzfahrzeuge/transporter/t6/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/vw-nutzfahrzeuge/transporter/t61-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/vw-nutzfahrzeuge/transporter/t7-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/vw-nutzfahrzeuge/transporter/t7/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "transporter",
+          "score": 1
+        },
+        {
+          "model_slug": "crafter",
+          "score": 0.4545
+        },
+        {
+          "model_slug": "grand-california",
+          "score": 0.3125
+        }
+      ]
+    },
+    {
+      "brand": "Volkswagen",
+      "model": "Passat",
+      "brand_key": "VOLKSWAGEN",
+      "model_id": "01375fb86d85ab20c7ebd310aa288384",
+      "normalized_brand": "volkswagen",
+      "normalized_model": "passat",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "vw",
+      "adac_model_slug": "passat",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/vw/passat/b2-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/vw/passat/b3/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/vw/passat/b4/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/vw/passat/b5-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/vw/passat/b5/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/vw/passat/b6/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/vw/passat/b7/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/vw/passat/b8-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/vw/passat/b8/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/vw/passat/b9/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "passat",
+          "score": 1
+        },
+        {
+          "model_slug": "phaeton",
+          "score": 0.2857
+        },
+        {
+          "model_slug": "eos",
+          "score": 0.1667
+        }
+      ]
+    },
+    {
+      "brand": "Volkswagen",
+      "model": "TAYRON",
+      "brand_key": "VOLKSWAGEN",
+      "model_id": "2fc18d721abb945f8cf6889f7c8200f4",
+      "normalized_brand": "volkswagen",
+      "normalized_model": "tayron",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "vw",
+      "adac_model_slug": "tayron",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/vw/tayron/1generation/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "tayron",
+          "score": 1
+        },
+        {
+          "model_slug": "t-roc",
+          "score": 0.5
+        },
+        {
+          "model_slug": "taigo",
+          "score": 0.5
+        }
+      ]
+    },
+    {
+      "brand": "Volkswagen",
+      "model": "Tiguan",
+      "brand_key": "VOLKSWAGEN",
+      "model_id": "6f33d06c0fcf1f9a6a6fd12e39e1cefc",
+      "normalized_brand": "volkswagen",
+      "normalized_model": "tiguan",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "vw",
+      "adac_model_slug": "tiguan",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/vw/tiguan/i-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/vw/tiguan/i/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/vw/tiguan/ii-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/vw/tiguan/ii/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/vw/tiguan/iii/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "tiguan",
+          "score": 1
+        },
+        {
+          "model_slug": "touran",
+          "score": 0.5
+        },
+        {
+          "model_slug": "sharan",
+          "score": 0.3333
+        }
+      ]
+    },
+    {
+      "brand": "Volkswagen",
+      "model": "Touareg",
+      "brand_key": "VOLKSWAGEN",
+      "model_id": "0c6a18d29b0b033e59f33ba744eeee58",
+      "normalized_brand": "volkswagen",
+      "normalized_model": "touareg",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "vw",
+      "adac_model_slug": "touareg",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/vw/touareg/i-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/vw/touareg/i/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/vw/touareg/ii-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/vw/touareg/iii-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/vw/touareg/iii/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "touareg",
+          "score": 1
+        },
+        {
+          "model_slug": "touran",
+          "score": 0.5714
+        },
+        {
+          "model_slug": "sharan",
+          "score": 0.2857
+        }
+      ]
+    },
+    {
+      "brand": "Volvo",
+      "model": "S60",
+      "brand_key": "VOLVO",
+      "model_id": "156f7a554fe6f60944f0d07edfaa6b33",
+      "normalized_brand": "volvo",
+      "normalized_model": "s60",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "volvo",
+      "adac_model_slug": "s60-v60",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/volvo/s60-v60/1generation-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/volvo/s60-v60/1generation/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/volvo/s60-v60/2generation-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/volvo/s60-v60/2generation/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/volvo/s60-v60/3generation/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "s60-v60",
+          "score": 1
+        },
+        {
+          "model_slug": "s90-v90",
+          "score": 0.7143
+        },
+        {
+          "model_slug": "340-360",
+          "score": 0.5714
+        }
+      ]
+    },
+    {
+      "brand": "Volvo",
+      "model": "S90",
+      "brand_key": "VOLVO",
+      "model_id": "260c6933b873ba1c4ff9d7f5e95febd1",
+      "normalized_brand": "volvo",
+      "normalized_model": "s90",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "volvo",
+      "adac_model_slug": "s90-v90",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/volvo/s90-v90/1generation/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/volvo/s90-v90/2generation-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/volvo/s90-v90/2generation/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "s90-v90",
+          "score": 1
+        },
+        {
+          "model_slug": "s60-v60",
+          "score": 0.7143
+        },
+        {
+          "model_slug": "s40-v40-v50",
+          "score": 0.4545
+        }
+      ]
+    },
+    {
+      "brand": "Volvo",
+      "model": "V60",
+      "brand_key": "VOLVO",
+      "model_id": "09432cd49e8a3b82ed68f05a5dd38301",
+      "normalized_brand": "volvo",
+      "normalized_model": "v60",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "volvo",
+      "adac_model_slug": "s60-v60",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/volvo/s60-v60/1generation-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/volvo/s60-v60/1generation/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/volvo/s60-v60/2generation-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/volvo/s60-v60/2generation/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/volvo/s60-v60/3generation/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "s60-v60",
+          "score": 1
+        },
+        {
+          "model_slug": "s90-v90",
+          "score": 0.7143
+        },
+        {
+          "model_slug": "340-360",
+          "score": 0.5714
+        }
+      ]
+    },
+    {
+      "brand": "Volvo",
+      "model": "V90",
+      "brand_key": "VOLVO",
+      "model_id": "511367bb2a98ee6fb43f8e51698d9690",
+      "normalized_brand": "volvo",
+      "normalized_model": "v90",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "volvo",
+      "adac_model_slug": "s90-v90",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/volvo/s90-v90/1generation/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/volvo/s90-v90/2generation-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/volvo/s90-v90/2generation/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "s90-v90",
+          "score": 1
+        },
+        {
+          "model_slug": "s60-v60",
+          "score": 0.7143
+        },
+        {
+          "model_slug": "s40-v40-v50",
+          "score": 0.4545
+        }
+      ]
+    },
+    {
+      "brand": "Volvo",
+      "model": "XC40",
+      "brand_key": "VOLVO",
+      "model_id": "eaa23afeb6efdfcfa9bc1dde85ecc175",
+      "normalized_brand": "volvo",
+      "normalized_model": "xc40",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "volvo",
+      "adac_model_slug": "xc40",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/volvo/xc40/1generation-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/volvo/xc40/1generation/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "xc40",
+          "score": 1
+        },
+        {
+          "model_slug": "c40",
+          "score": 0.75
+        },
+        {
+          "model_slug": "ec40",
+          "score": 0.75
+        }
+      ]
+    },
+    {
+      "brand": "Volvo",
+      "model": "XC60",
+      "brand_key": "VOLVO",
+      "model_id": "286660376a44a1f9e57723057165e201",
+      "normalized_brand": "volvo",
+      "normalized_model": "xc60",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "volvo",
+      "adac_model_slug": "xc60",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/volvo/xc60/1generation-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/volvo/xc60/2generation-facelift-2/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/volvo/xc60/2generation-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/volvo/xc60/2generation/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "xc60",
+          "score": 1
+        },
+        {
+          "model_slug": "xc40",
+          "score": 0.75
+        },
+        {
+          "model_slug": "xc90",
+          "score": 0.75
+        }
+      ]
+    },
+    {
+      "brand": "Volvo",
+      "model": "XC90",
+      "brand_key": "VOLVO",
+      "model_id": "7d2f3d8e0bfe6bc522f831d04ee8b7aa",
+      "normalized_brand": "volvo",
+      "normalized_model": "xc90",
+      "match_status": "matched",
+      "match_score": 1,
+      "adac_brand_slug": "volvo",
+      "adac_model_slug": "xc90",
+      "generation_urls": [
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/volvo/xc90/1generation-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/volvo/xc90/2generation-facelift-2/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/volvo/xc90/2generation-facelift/",
+        "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/volvo/xc90/2generation/"
+      ],
+      "alternatives": [
+        {
+          "model_slug": "xc90",
+          "score": 1
+        },
+        {
+          "model_slug": "xc40",
+          "score": 0.75
+        },
+        {
+          "model_slug": "xc60",
+          "score": 0.75
+        }
+      ]
+    }
+  ]
+}

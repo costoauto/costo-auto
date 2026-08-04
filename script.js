@@ -29,6 +29,10 @@ const state = {
   requestSequence: 0,
   calculationTimer: null,
   comparisonActive: false,
+  versions: {
+    primary: new Map(),
+    comparison: new Map(),
+  },
   results: {
     primary: null,
     comparison: null,
@@ -313,6 +317,14 @@ function formatVersionLabel(vehicle, showYear = true) {
   const yearPrefix = yearLabel ? `${yearLabel} · ` : '';
   const powerCv = Number(vehicle.power_cv);
   const roundedCv = Number.isFinite(powerCv) ? Math.round(powerCv) : null;
+  const systemPowerCv = Number(vehicle.system_power_cv);
+  const roundedSystemCv = Number.isFinite(systemPowerCv)
+    ? Math.round(systemPowerCv)
+    : null;
+  const thermalPowerCv = Number(vehicle.thermal_power_cv);
+  const roundedThermalCv = Number.isFinite(thermalPowerCv)
+    ? Math.round(thermalPowerCv)
+    : null;
   const fuel = vehicle.fuel_type;
   const commercialVariant = formatCommercialVariant(vehicle.commercial_name);
   const withCommercialVariant = (label) => (
@@ -320,9 +332,22 @@ function formatVersionLabel(vehicle, showYear = true) {
   );
 
   if (vehicle.hybrid_type === 'plug_in_hybrid') {
-    const details = roundedCv
-      ? `Plug-in ${fuelLabels[fuel] || ''} · ${roundedCv} CV termici`
-      : `Plug-in ${fuelLabels[fuel] || ''}`.trim();
+    let powerLabel = '';
+    if (roundedSystemCv && roundedThermalCv) {
+      powerLabel =
+        `${roundedSystemCv} CV (${roundedThermalCv} CV termici)`;
+    } else if (roundedSystemCv) {
+      powerLabel = `${roundedSystemCv} CV`;
+    } else if (roundedCv) {
+      // Il dato EEA non ha semantica uniforme per tutte le PHEV:
+      // senza una fonte verificata non lo definiamo "termico".
+      powerLabel = `${roundedCv} CV`;
+    }
+
+    const details = [
+      `Plug-in ${fuelLabels[fuel] || ''}`.trim(),
+      powerLabel,
+    ].filter(Boolean).join(' · ');
     return withCommercialVariant(`${yearPrefix}${details}`);
   }
 
@@ -791,6 +816,37 @@ function updatePrimarySummary(payload = state.results.primary) {
   elements.primarySummaryVersion.textContent = version;
 }
 
+function getSelectedVersion(slot) {
+  const selectedId = vehicleControls[slot].version.value;
+  return state.versions[slot].get(selectedId) || null;
+}
+
+function applySelectedVersion(payload, selectedVersion) {
+  if (!payload || !selectedVersion) {
+    return payload;
+  }
+
+  return {
+    ...payload,
+    vehicle: {
+      ...payload.vehicle,
+      display_variant_id: selectedVersion.display_variant_id,
+      year_from: selectedVersion.year_from,
+      year_to: selectedVersion.year_to,
+      display_year: selectedVersion.display_year,
+      commercial_name: selectedVersion.commercial_name,
+      system_power_kw: selectedVersion.system_power_kw,
+      system_power_cv: selectedVersion.system_power_cv,
+      thermal_power_kw: selectedVersion.thermal_power_kw,
+      thermal_power_cv: selectedVersion.thermal_power_cv,
+      power_data_status: selectedVersion.power_data_status,
+      power_data_confidence: selectedVersion.power_data_confidence,
+      power_data_source: selectedVersion.power_data_source,
+      power_data_source_url: selectedVersion.power_data_source_url,
+    },
+  };
+}
+
 function setComparisonModeUi(active) {
   elements.vehicleTitle.textContent = active ? 'Confronto auto' : 'Auto';
   elements.primaryVehicleSummary.hidden = !active;
@@ -850,6 +906,7 @@ async function handleBrandChange(slot) {
   const controls = vehicleControls[slot];
   state.requestSequence += 1;
   state.results[slot] = null;
+  state.versions[slot] = new Map();
   elements.viewComparison.hidden = true;
   if (slot === 'primary') {
     elements.addComparison.disabled = true;
@@ -895,6 +952,7 @@ async function handleModelChange(slot) {
   const controls = vehicleControls[slot];
   state.requestSequence += 1;
   state.results[slot] = null;
+  state.versions[slot] = new Map();
   elements.viewComparison.hidden = true;
   if (slot === 'primary') {
     elements.addComparison.disabled = true;
@@ -927,12 +985,19 @@ async function handleModelChange(slot) {
         && yearFrom <= yearTo;
     });
 
+    state.versions[slot] = new Map(
+      versions.map((item) => [
+        String(item.display_variant_id || item.vehicle_cluster_id),
+        item,
+      ]),
+    );
+
     replaceOptions(
       controls.version,
       'Seleziona versione',
       versions,
       (item) => ({
-        value: item.vehicle_cluster_id,
+        value: item.display_variant_id || item.vehicle_cluster_id,
         label: formatVersionLabel(item, showYears),
       }),
     );
@@ -968,19 +1033,24 @@ async function updateResult() {
   renderLoading();
 
   try {
+    const primaryVersion = getSelectedVersion('primary');
+    const comparisonVersion = getSelectedVersion('comparison');
     const commonInputs = {
       annualKm: Number(elements.km.value),
       ownershipYears: Number(elements.years.value),
       regionCode: elements.region.value || 'italia',
     };
     const primaryRequest = window.AutoTcoApi.estimate({
-      vehicleClusterId: elements.version.value,
+      vehicleClusterId:
+        primaryVersion?.vehicle_cluster_id || elements.version.value,
       ...commonInputs,
     });
     const comparisonRequest = state.comparisonActive
       && elements.versionCompare.value
       ? window.AutoTcoApi.estimate({
-        vehicleClusterId: elements.versionCompare.value,
+        vehicleClusterId:
+          comparisonVersion?.vehicle_cluster_id
+          || elements.versionCompare.value,
         ...commonInputs,
       })
       : Promise.resolve(null);
@@ -990,9 +1060,15 @@ async function updateResult() {
     ]);
 
     if (sequence === state.requestSequence) {
-      state.results.primary = primaryPayload;
-      state.results.comparison = comparisonPayload;
-      updatePrimarySummary(primaryPayload);
+      state.results.primary = applySelectedVersion(
+        primaryPayload,
+        primaryVersion,
+      );
+      state.results.comparison = applySelectedVersion(
+        comparisonPayload,
+        comparisonVersion,
+      );
+      updatePrimarySummary(state.results.primary);
       renderCurrentResults();
     }
   } catch (error) {
