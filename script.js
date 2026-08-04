@@ -1043,6 +1043,8 @@ async function updateResult() {
     const primaryRequest = window.AutoTcoApi.estimate({
       vehicleClusterId:
         primaryVersion?.vehicle_cluster_id || elements.version.value,
+      displayVariantId:
+        primaryVersion?.display_variant_id || elements.version.value,
       ...commonInputs,
     });
     const comparisonRequest = state.comparisonActive
@@ -1050,6 +1052,9 @@ async function updateResult() {
       ? window.AutoTcoApi.estimate({
         vehicleClusterId:
           comparisonVersion?.vehicle_cluster_id
+          || elements.versionCompare.value,
+        displayVariantId:
+          comparisonVersion?.display_variant_id
           || elements.versionCompare.value,
         ...commonInputs,
       })

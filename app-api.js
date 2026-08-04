@@ -56,9 +56,16 @@
       return payload.items;
     },
 
-    async estimate({ vehicleClusterId, annualKm, ownershipYears, regionCode }) {
-      return rpc('auto_tco_estimate', {
+    async estimate({
+      vehicleClusterId,
+      displayVariantId,
+      annualKm,
+      ownershipYears,
+      regionCode,
+    }) {
+      return rpc('auto_tco_estimate_variant', {
         p_vehicle_cluster_id: vehicleClusterId,
+        p_display_variant_id: displayVariantId || vehicleClusterId,
         p_annual_km: annualKm,
         p_ownership_years: ownershipYears,
         p_region_code: regionCode,
