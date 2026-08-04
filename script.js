@@ -54,7 +54,7 @@ const vehicleControls = {
 
 const costDescriptions = Object.freeze({
   maintenance:
-    'Stima di tagliandi, materiali di consumo e usura prevedibile basata su chilometri, età, alimentazione e potenza. Sono esclusi pneumatici e interventi straordinari.',
+    'Stima di tagliandi, materiali di consumo e usura prevedibile. Sono esclusi pneumatici, revisione, incidenti, batteria di trazione e guasti straordinari non prevedibili.',
   depreciation:
     'Perdita di valore stimata confrontando il valore attuale con quello previsto alla fine del periodo.',
   fuelOrEnergy:
