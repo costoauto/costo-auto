@@ -6,3 +6,4 @@ node_modules/
 .DS_Store
 Thumbs.db
 scripts/.cache/
+audit_*_output.txt

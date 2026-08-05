@@ -122,8 +122,9 @@ CREATE INDEX ON audit_public_years_v1 (
 );
 ANALYZE audit_public_years_v1;
 
--- Prima e ultima osservazione EEA dello stesso modello. E' un controllo
--- prudenziale: non viene usato da solo per dichiarare errato un anno.
+-- Prima e ultima osservazione EEA dello stesso modello. Sono informazioni
+-- diagnostiche, non date di lancio: un modello puo essere stato presentato o
+-- commercializzato prima di comparire nelle immatricolazioni EEA disponibili.
 CREATE TEMP TABLE audit_model_year_evidence_v1
 ON COMMIT DROP
 AS
@@ -308,6 +309,10 @@ SELECT
     CASE
       WHEN year_source = 'eea_type_variant_continuity'
         AND matched_range_id IS NULL
+        AND NOT (
+          hybrid_type = 'plug_in_hybrid'
+          AND power_data_status = 'verified'
+        )
         THEN 'tvv_range_without_matching_source'
     END,
     -- Un intervallo TVV e gia sostenuto dalla continuita di omologazione.
@@ -348,16 +353,10 @@ SELECT
         AND COALESCE(year_confidence, 'low')
           IN ('medium', 'medium_low', 'low')
         THEN 'long_interval_with_weak_source'
-    END,
-    CASE
-      WHEN year_source NOT IN (
-          'curated_commercial_catalog',
-          'original_database'
-        )
-        AND model_first_eea_year >= 2010
-        AND year_from < model_first_eea_year
-        THEN 'starts_before_first_model_evidence'
     END
+    -- Non segnala come errore un anno precedente alla prima osservazione EEA.
+    -- Verifiche su fonti ufficiali hanno confermato, tra gli altri: Stelvio
+    -- 2016, Tipo 2015, Ghibli 2013, Levante 2016 e Taycan gia dal 2019.
   ) AS anomaly_codes
 FROM audit_year_evidence_v1 AS evidence
 LEFT JOIN LATERAL (
@@ -389,9 +388,7 @@ SELECT
     WHEN anomaly_codes ~ (
       'interval_without_year_evidence|continuity_gap_over_three_years'
     ) THEN 'alta'
-    WHEN anomaly_codes ~ (
-      'long_interval_with_weak_source|starts_before_first_model_evidence'
-    )
+    WHEN anomaly_codes LIKE '%long_interval_with_weak_source%'
       THEN 'media'
     ELSE 'nessuna'
   END AS priority
