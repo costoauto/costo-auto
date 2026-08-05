@@ -253,7 +253,7 @@ SELECT
     CASE WHEN power_kw <= 0 OR power_cv <= 0
       THEN 'nonpositive_declared_power' END,
     CASE WHEN power_kw > 0 AND power_cv > 0
-        AND abs(power_cv - power_kw * 1.359621617) > 3.0
+        AND abs(power_cv - power_kw * 1.359621617) > 5.0
       THEN 'declared_kw_cv_mismatch' END,
     CASE WHEN fuel_type = 'electric'
         AND COALESCE(hybrid_type, 'none') NOT IN ('none', 'electric')
@@ -389,8 +389,8 @@ SELECT
   ) AS certain_anomaly_codes,
   concat_ws(
     ', ',
-    CASE WHEN COALESCE(system_power_kw, power_kw) < 20
-        OR COALESCE(system_power_kw, power_kw) > 1000
+    CASE WHEN COALESCE(system_power_cv, power_cv) < 20
+        OR COALESCE(system_power_cv, power_cv) > 1500
       THEN 'power_outside_review_range' END,
     CASE WHEN fuel_type = 'electric'
         AND electric_consumption_kwh_100km IS NOT NULL

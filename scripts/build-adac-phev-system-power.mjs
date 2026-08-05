@@ -173,7 +173,7 @@ function parseGenerationRows(html, modelMatch, generationUrl) {
       /strom/i.test(fuel)
       && /(super|benzin|diesel)/i.test(fuel);
     const phevCommercialName =
-      /(plug.?in|phev|e[- ]?hybrid|twin engine|recharge|4xe|dm-i|activehybrid|hybrid4|e-tense)/i
+      /(plug.?in|phev|e[- ]?hybrid|twin engine|recharge|4xe|dm-i|e-tense)/i
         .test(title)
       || (
         modelMatch.brand === 'BMW'
@@ -197,6 +197,7 @@ function parseGenerationRows(html, modelMatch, generationUrl) {
       detail_url: new URL(href, 'https://www.adac.de').href,
       adac_title: title,
       adac_fuel: fuel,
+      phev_commercial_name: phevCommercialName,
       system_power_kw: numberBefore(power, 'kW'),
       system_power_cv: numberBefore(power, 'PS'),
       list_price_eur: numberBefore(
@@ -339,8 +340,9 @@ const detailByUrl = new Map(detailEntries);
 const enrichedRows = rawRows.map((row) => {
   const representative = representativeByGroup.get(mechanicalGroupKey(row));
   const detail = detailByUrl.get(representative.detail_url);
-  return {
+  const enriched = {
     ...row,
+    technical_source_name: sourceLabel,
     technical_source_url: representative.detail_url,
     system_power_kw:
       detail.detail_system_power_kw ?? row.system_power_kw,
@@ -356,9 +358,66 @@ const enrichedRows = rawRows.map((row) => {
       detail.electric_consumption_kwh_100km,
     electric_range_wltp_km: detail.electric_range_wltp_km,
   };
+
+  // Due schede ADAC hanno coppie kW/PS internamente incoerenti. In questi
+  // casi prevalgono le schede tecniche ufficiali BMW, che riportano entrambe
+  // le unita e consentono una correzione deterministica e documentata.
+  if (
+    enriched.brand === 'BMW'
+    && enriched.model === '2 Series'
+    && enriched.year_from === 2020
+    && enriched.year_to === 2021
+    && enriched.system_power_cv === 220
+  ) {
+    return {
+      ...enriched,
+      thermal_power_kw: 92,
+      thermal_power_cv: 125,
+      technical_source_name: 'BMW Group PressClub, dati tecnici ufficiali',
+      technical_source_url:
+        'https://www.press.bmwgroup.com/italy/article/detail/T0304384IT/',
+    };
+  }
+
+  if (
+    enriched.brand === 'BMW'
+    && enriched.model === '7 Series'
+    && enriched.year_from >= 2023
+    && enriched.system_power_cv === 571
+  ) {
+    return {
+      ...enriched,
+      system_power_kw: 420,
+      system_power_cv: 571,
+      technical_source_name: 'BMW Group PressClub, dati tecnici ufficiali',
+      technical_source_url:
+        'https://www.press.bmwgroup.com/global/article/detail/T0404080EN/',
+    };
+  }
+
+  return enriched;
 });
 const detailParseFailures = enrichedRows.filter((row) =>
   !row.system_power_cv || !row.thermal_power_cv);
+
+// Le pagine ADAC usano spesso "benzina/elettrico" anche per le full hybrid.
+// Una riga entra nel catalogo PHEV soltanto se porta almeno una prova positiva:
+// nome commerciale esplicitamente plug-in, dato elettrico/autonomia, consumo a
+// batteria scarica oppure consumo ponderato tipico dell'omologazione PHEV.
+function hasPhevEvidence(row) {
+  return Boolean(
+    row.phev_commercial_name
+    || row.thermal_consumption_empty_battery_l_100km != null
+    || row.electric_consumption_kwh_100km != null
+    || row.electric_range_wltp_km != null
+    || (
+      row.weighted_thermal_consumption_l_100km != null
+      && row.weighted_thermal_consumption_l_100km <= 3.5
+    )
+  );
+}
+
+const verifiedPhevRows = enrichedRows.filter(hasPhevEvidence);
 
 function keyForDeduplication(row) {
   return [
@@ -374,7 +433,7 @@ function keyForDeduplication(row) {
 }
 
 const grouped = new Map();
-for (const row of enrichedRows) {
+for (const row of verifiedPhevRows) {
   if (
     !row.system_power_cv
     || !row.thermal_power_cv
@@ -427,7 +486,7 @@ const catalogRows = [...grouped.values()]
     list_price_eur: Number.isFinite(row.list_price_eur)
       ? row.list_price_eur
       : null,
-    source_name: sourceLabel,
+    source_name: row.technical_source_name || sourceLabel,
     source_url: row.source_urls[0],
     source_urls: row.source_urls,
     matching_adac_versions: row.matching_adac_versions,
@@ -499,6 +558,7 @@ const output = {
   counts: {
     generation_pages: generationJobs.length,
     raw_phev_rows: rawRows.length,
+    rows_with_positive_phev_evidence: verifiedPhevRows.length,
     unique_detail_pages: uniqueDetailUrls.length,
     curated_power_rows: catalogRows.length,
     detail_parse_failures: detailParseFailures.length,
