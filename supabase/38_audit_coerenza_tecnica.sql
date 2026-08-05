@@ -212,18 +212,24 @@ SELECT
       payload #>> '{calculation_details,fuel_or_energy,method}', ''
     ),
     NULLIF(energy_input.thermal_method, ''),
-    NULLIF(energy_input.electric_method, '')
+    NULLIF(energy_input.electric_method, ''),
+    NULLIF(profile.energy_input_source, ''),
+    NULLIF(profile.source_type, '')
   ) AS energy_method,
   NULLIF(
     payload #>> '{calculation_details,fuel_or_energy,source_name}', ''
   ) AS energy_source_name,
   COALESCE(
     NULLIF(payload #>> '{quality,energy_variant_confidence}', ''),
-    NULLIF(energy_input.confidence, '')
+    NULLIF(energy_input.confidence, ''),
+    NULLIF(profile.energy_input_confidence, ''),
+    NULLIF(profile.confidence, '')
   ) AS energy_confidence
 FROM audit_technical_results_v1 AS result
 LEFT JOIN mvp.vehicle_cluster_energy_inputs_v1 AS energy_input
-  ON energy_input.vehicle_cluster_id = result.vehicle_cluster_id;
+  ON energy_input.vehicle_cluster_id = result.vehicle_cluster_id
+LEFT JOIN mvp.vehicle_profiles AS profile
+  ON profile.id = result.vehicle_profile_id;
 
 CREATE INDEX ON audit_technical_parsed_v1 (
   public_model_id,
@@ -250,16 +256,26 @@ SELECT
         AND abs(power_cv - power_kw * 1.359621617) > 3.0
       THEN 'declared_kw_cv_mismatch' END,
     CASE WHEN fuel_type = 'electric'
-        AND COALESCE(hybrid_type, 'none') <> 'none'
+        AND COALESCE(hybrid_type, 'none') NOT IN ('none', 'electric')
       THEN 'electric_with_hybrid_type' END,
     CASE WHEN fuel_type = 'electric'
         AND powertrain_type IS DISTINCT FROM 'electric'
       THEN 'electric_powertrain_mismatch' END,
     CASE WHEN hybrid_type = 'plug_in_hybrid'
-        AND fuel_type NOT IN ('petrol', 'diesel')
+        AND fuel_type NOT IN (
+          'petrol',
+          'diesel',
+          'petrol/electric',
+          'diesel/electric'
+        )
       THEN 'plugin_invalid_thermal_fuel' END,
     CASE WHEN hybrid_type = 'hybrid'
-        AND fuel_type NOT IN ('petrol', 'diesel')
+        AND fuel_type NOT IN (
+          'petrol',
+          'diesel',
+          'petrol/electric',
+          'diesel/electric'
+        )
       THEN 'hybrid_invalid_thermal_fuel' END,
     CASE WHEN hybrid_type = 'plug_in_hybrid'
         AND powertrain_type IS DISTINCT FROM 'plug_in_hybrid'
@@ -388,19 +404,37 @@ SELECT
         AND electric_consumption_kwh_100km IS NOT NULL
         AND electric_consumption_kwh_100km NOT BETWEEN 5 AND 50
       THEN 'plugin_electric_consumption_outlier' END,
-    CASE WHEN fuel_type <> 'electric'
+    CASE WHEN fuel_type IN (
+          'petrol',
+          'diesel',
+          'petrol/electric',
+          'diesel/electric',
+          'lpg',
+          'e85'
+        )
         AND hybrid_type <> 'plug_in_hybrid'
         AND thermal_consumption_per_100km IS NOT NULL
         AND thermal_consumption_per_100km NOT BETWEEN 2 AND 35
       THEN 'thermal_consumption_outlier' END,
+    CASE WHEN fuel_type = 'ng'
+        AND thermal_consumption_per_100km IS NOT NULL
+        AND thermal_consumption_per_100km NOT BETWEEN 1 AND 15
+      THEN 'natural_gas_consumption_outlier' END,
+    CASE WHEN fuel_type = 'hydrogen'
+        AND thermal_consumption_per_100km IS NOT NULL
+        AND thermal_consumption_per_100km NOT BETWEEN 0.3 AND 5
+      THEN 'hydrogen_consumption_outlier' END,
     CASE WHEN energy_monthly_eur IS NOT NULL
         AND energy_monthly_eur > 800
-      THEN 'monthly_energy_cost_outlier' END,
+      THEN 'monthly_energy_cost_outlier' END
+  ) AS review_codes,
+  concat_ws(
+    ', ',
     CASE WHEN energy_method IS NULL
       THEN 'energy_method_missing' END,
     CASE WHEN energy_confidence IS NULL
       THEN 'energy_confidence_missing' END
-  ) AS review_codes
+  ) AS provenance_codes
 FROM audit_technical_parsed_v1 AS parsed;
 
 CREATE INDEX ON audit_technical_classified_v1 (
@@ -420,6 +454,9 @@ SELECT
   count(*) FILTER (
     WHERE review_codes <> ''
   )::integer AS versioni_da_esaminare,
+  count(*) FILTER (
+    WHERE provenance_codes <> ''
+  )::integer AS versioni_con_provenienza_energia_incompleta,
   count(*) FILTER (
     WHERE request_error IS NOT NULL
   )::integer AS richieste_fallite,
@@ -503,7 +540,8 @@ SELECT
   energy_monthly_eur,
   energy_method,
   energy_confidence,
-  review_codes
+  review_codes,
+  provenance_codes
 FROM audit_technical_classified_v1
 WHERE review_codes <> ''
 ORDER BY brand, model, year_from, version_label
@@ -537,8 +575,8 @@ SELECT
     WHERE certain_anomaly_codes <> ''
   )::integer AS con_errori_certi,
   count(*) FILTER (
-    WHERE review_codes <> ''
-  )::integer AS da_esaminare
+    WHERE provenance_codes <> ''
+  )::integer AS provenienza_incompleta
 FROM audit_technical_classified_v1
 GROUP BY energy_method, energy_confidence
 ORDER BY versioni DESC, metodo_energia, affidabilita;
