@@ -7,3 +7,5 @@ node_modules/
 Thumbs.db
 scripts/.cache/
 audit_*_output.txt
+audit_*.txt
+verifica_*.txt
