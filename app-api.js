@@ -7,12 +7,13 @@
     throw new Error('Configurazione del servizio dati mancante');
   }
 
-  async function rpc(functionName, parameters = {}) {
+  async function rpc(functionName, parameters = {}, options = {}) {
     const response = await fetch(
       `${supabaseUrl}/rest/v1/rpc/${functionName}`,
       {
         method: 'POST',
         body: JSON.stringify(parameters),
+        signal: options.signal,
         headers: {
           apikey: publishableKey,
           'Content-Type': 'application/json',
@@ -62,14 +63,19 @@
       annualKm,
       ownershipYears,
       regionCode,
+      signal,
     }) {
-      return rpc('auto_tco_estimate_variant', {
-        p_vehicle_cluster_id: vehicleClusterId,
-        p_display_variant_id: displayVariantId || vehicleClusterId,
-        p_annual_km: annualKm,
-        p_ownership_years: ownershipYears,
-        p_region_code: regionCode,
-      });
+      return rpc(
+        'auto_tco_estimate_variant',
+        {
+          p_vehicle_cluster_id: vehicleClusterId,
+          p_display_variant_id: displayVariantId || vehicleClusterId,
+          p_annual_km: annualKm,
+          p_ownership_years: ownershipYears,
+          p_region_code: regionCode,
+        },
+        { signal },
+      );
     },
   });
 })(window);

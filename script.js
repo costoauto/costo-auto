@@ -28,6 +28,7 @@ const elements = {
 const state = {
   requestSequence: 0,
   calculationTimer: null,
+  calculationController: null,
   comparisonActive: false,
   versions: {
     primary: new Map(),
@@ -377,6 +378,23 @@ function clearLoadingState() {
   elements.result.classList.remove('isUpdating');
 }
 
+function cancelScheduledCalculation() {
+  window.clearTimeout(state.calculationTimer);
+  state.calculationTimer = null;
+}
+
+function cancelActiveCalculation() {
+  if (state.calculationController) {
+    state.calculationController.abort();
+    state.calculationController = null;
+  }
+}
+
+function cancelPendingCalculation() {
+  cancelScheduledCalculation();
+  cancelActiveCalculation();
+}
+
 function formatEuro(value) {
   if (value === null || value === undefined || Number.isNaN(Number(value))) {
     return 'Non disponibile';
@@ -556,7 +574,11 @@ function getFuelOrEnergyDescription(payload, regionLabel) {
     return baseDescription;
   }
 
-  return `${baseDescription} Prezzo${prices.length > 1 ? 'i' : ''} utilizzat${prices.length > 1 ? 'i' : 'o'}: ${prices.join('; ')}.`;
+  const priceLabel = prices.length > 1
+    ? 'Prezzi utilizzati'
+    : 'Prezzo utilizzato';
+
+  return `${baseDescription} ${priceLabel}: ${prices.join('; ')}.`;
 }
 
 function getInsuranceDescription(payload, regionLabel) {
@@ -929,6 +951,7 @@ function renderCurrentResults() {
 
 async function handleBrandChange(slot) {
   const controls = vehicleControls[slot];
+  cancelPendingCalculation();
   state.requestSequence += 1;
   state.results[slot] = null;
   state.versions[slot] = new Map();
@@ -975,6 +998,7 @@ async function handleBrandChange(slot) {
 
 async function handleModelChange(slot) {
   const controls = vehicleControls[slot];
+  cancelPendingCalculation();
   state.requestSequence += 1;
   state.results[slot] = null;
   state.versions[slot] = new Map();
@@ -1033,6 +1057,7 @@ async function handleModelChange(slot) {
 }
 
 function handleVersionChange(slot) {
+  cancelPendingCalculation();
   state.results[slot] = null;
   elements.viewComparison.hidden = true;
 
@@ -1046,14 +1071,19 @@ function handleVersionChange(slot) {
 }
 
 async function updateResult() {
+  cancelScheduledCalculation();
   updateSliderLabels();
 
   if (!elements.version.value) {
+    cancelActiveCalculation();
     state.results.primary = null;
     renderCurrentResults();
     return;
   }
 
+  cancelActiveCalculation();
+  const controller = new AbortController();
+  state.calculationController = controller;
   const sequence = ++state.requestSequence;
   renderLoading();
 
@@ -1070,6 +1100,7 @@ async function updateResult() {
         primaryVersion?.vehicle_cluster_id || elements.version.value,
       displayVariantId:
         primaryVersion?.display_variant_id || elements.version.value,
+      signal: controller.signal,
       ...commonInputs,
     });
     const comparisonRequest = state.comparisonActive
@@ -1081,6 +1112,7 @@ async function updateResult() {
         displayVariantId:
           comparisonVersion?.display_variant_id
           || elements.versionCompare.value,
+        signal: controller.signal,
         ...commonInputs,
       })
       : Promise.resolve(null);
@@ -1102,16 +1134,22 @@ async function updateResult() {
       renderCurrentResults();
     }
   } catch (error) {
-    if (sequence === state.requestSequence) {
+    if (error.name !== 'AbortError' && sequence === state.requestSequence) {
       renderError(error.message);
+    }
+  } finally {
+    if (state.calculationController === controller) {
+      state.calculationController = null;
     }
   }
 }
 
 function scheduleCalculation() {
   updateSliderLabels();
-  window.clearTimeout(state.calculationTimer);
-  state.calculationTimer = window.setTimeout(updateResult, 140);
+  cancelActiveCalculation();
+  renderLoading();
+  cancelScheduledCalculation();
+  state.calculationTimer = window.setTimeout(updateResult, 250);
 }
 
 function openComparison() {
@@ -1124,6 +1162,7 @@ function openComparison() {
 }
 
 function closeComparison() {
+  cancelPendingCalculation();
   state.requestSequence += 1;
   state.comparisonActive = false;
   state.results.comparison = null;
