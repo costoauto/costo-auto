@@ -31,9 +31,13 @@ sostituita con un valore inventato.
 
 ## Configurazione Supabase
 
-Eseguire una sola volta `supabase/01_public_api.sql` nel SQL Editor del progetto,
-quindi abilitare la Data API lasciando disattivata l’esposizione automatica delle
-nuove tabelle.
+Il database online corrente deriva dal database Auto TCO già popolato e dalle
+migrazioni numerate presenti in `supabase/`. Non è ancora supportata la creazione
+di un ambiente completo eseguendo soltanto `01_public_api.sql`: la procedura di
+riproduzione da database vuoto è prevista dal piano in `docs/PROJECT_PLAN.md`.
+
+La Data API deve esporre soltanto lo schema `public`; l'esposizione automatica
+delle nuove tabelle deve restare disattivata.
 
 Le sole funzioni accessibili al ruolo anonimo sono:
 
@@ -41,7 +45,11 @@ Le sole funzioni accessibili al ruolo anonimo sono:
 - `public.auto_tco_models(text)`;
 - `public.auto_tco_versions(text)`;
 - `public.auto_tco_regions()`;
-- `public.auto_tco_estimate_variant(text, text, integer, integer, text)`.
+- `public.auto_tco_estimate_selection(text, text, text, integer, integer, text)`.
+
+Gli endpoint di calcolo precedenti non validano l'intera relazione fra modello,
+versione mostrata e profilo tecnico e non devono essere concessi al ruolo
+`anon`.
 
 Il browser invia soltanto gli identificativi pubblici della versione e gli
 input scelti dall’utente. Formule, fonti di costo e tabelle tecniche rimangono

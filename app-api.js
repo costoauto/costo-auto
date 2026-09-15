@@ -21,7 +21,21 @@
       },
     );
 
-    const payload = await response.json().catch(() => ({}));
+    let payload;
+
+    try {
+      payload = await response.json();
+    } catch (error) {
+      if (error.name === 'AbortError' || options.signal?.aborted) {
+        throw error;
+      }
+
+      if (response.ok) {
+        throw new Error('Risposta non valida dal servizio dati');
+      }
+
+      payload = {};
+    }
 
     if (!response.ok) {
       throw new Error(
@@ -32,32 +46,56 @@
     return payload;
   }
 
+  function getItems(payload) {
+    if (!payload || !Array.isArray(payload.items)) {
+      throw new Error('Risposta incompleta dal servizio dati');
+    }
+
+    return payload.items;
+  }
+
+  function getEstimate(payload) {
+    if (
+      !payload
+      || typeof payload !== 'object'
+      || Array.isArray(payload)
+      || !payload.vehicle
+      || !payload.monthly_costs
+      || !payload.quality
+    ) {
+      throw new Error('Calcolo incompleto ricevuto dal servizio dati');
+    }
+
+    return payload;
+  }
+
   global.AutoTcoApi = Object.freeze({
     async getBrands() {
       const payload = await rpc('auto_tco_brands');
-      return payload.items;
+      return getItems(payload);
     },
 
     async getModels(brandKey) {
       const payload = await rpc('auto_tco_models', {
         p_brand_key: brandKey,
       });
-      return payload.items;
+      return getItems(payload);
     },
 
     async getVersions(modelId) {
       const payload = await rpc('auto_tco_versions', {
         p_model_id: modelId,
       });
-      return payload.items;
+      return getItems(payload);
     },
 
     async getRegions() {
       const payload = await rpc('auto_tco_regions');
-      return payload.items;
+      return getItems(payload);
     },
 
     async estimate({
+      modelCatalogId,
       vehicleClusterId,
       displayVariantId,
       annualKm,
@@ -65,9 +103,10 @@
       regionCode,
       signal,
     }) {
-      return rpc(
-        'auto_tco_estimate_variant',
+      const payload = await rpc(
+        'auto_tco_estimate_selection',
         {
+          p_model_catalog_id: modelCatalogId,
           p_vehicle_cluster_id: vehicleClusterId,
           p_display_variant_id: displayVariantId || vehicleClusterId,
           p_annual_km: annualKm,
@@ -76,6 +115,8 @@
         },
         { signal },
       );
+
+      return getEstimate(payload);
     },
   });
 })(window);

@@ -27,6 +27,10 @@ const elements = {
 
 const state = {
   requestSequence: 0,
+  catalogRequestSequence: {
+    primary: { models: 0, versions: 0 },
+    comparison: { models: 0, versions: 0 },
+  },
   calculationTimer: null,
   calculationController: null,
   comparisonActive: false,
@@ -375,7 +379,7 @@ function formatVersionLabel(vehicle, showYear = true) {
 }
 
 function clearLoadingState() {
-  elements.result.classList.remove('isUpdating');
+  elements.result.classList.remove('isUpdating', 'isComparisonUpdating');
 }
 
 function cancelScheduledCalculation() {
@@ -466,11 +470,15 @@ function renderLoading() {
 
   clearLoadingState();
 
-  if (
-    elements.result.querySelector('.resultHeader')
-    || elements.result.querySelector('.comparisonHeader')
-  ) {
+  const hasResult = elements.result.querySelector('.resultHeader');
+  const hasComparison = elements.result.querySelector('.comparisonHeader');
+
+  if (hasResult || hasComparison) {
     elements.result.classList.add('isUpdating');
+    elements.result.classList.toggle(
+      'isComparisonUpdating',
+      Boolean(hasComparison),
+    );
     const label = elements.result.querySelector('.totalLabel');
 
     if (label) {
@@ -877,10 +885,19 @@ function applySelectedVersion(payload, selectedVersion) {
     ...payload,
     vehicle: {
       ...payload.vehicle,
+      model_catalog_id: selectedVersion.model_catalog_id,
       display_variant_id: selectedVersion.display_variant_id,
+      vehicle_cluster_id: selectedVersion.vehicle_cluster_id,
+      brand: selectedVersion.brand,
+      model: selectedVersion.model,
+      version_label: selectedVersion.version_label,
       year_from: selectedVersion.year_from,
       year_to: selectedVersion.year_to,
       display_year: selectedVersion.display_year,
+      fuel_type: selectedVersion.fuel_type,
+      hybrid_type: selectedVersion.hybrid_type,
+      power_kw: selectedVersion.power_kw,
+      power_cv: selectedVersion.power_cv,
       commercial_name: selectedVersion.commercial_name,
       system_power_kw: selectedVersion.system_power_kw,
       system_power_cv: selectedVersion.system_power_cv,
@@ -951,6 +968,9 @@ function renderCurrentResults() {
 
 async function handleBrandChange(slot) {
   const controls = vehicleControls[slot];
+  const catalogSequence = state.catalogRequestSequence[slot];
+  const modelsRequest = ++catalogSequence.models;
+  catalogSequence.versions += 1;
   cancelPendingCalculation();
   state.requestSequence += 1;
   state.results[slot] = null;
@@ -974,7 +994,10 @@ async function handleBrandChange(slot) {
     const selectedBrand = controls.brand.value;
     const models = await window.AutoTcoApi.getModels(selectedBrand);
 
-    if (controls.brand.value !== selectedBrand) {
+    if (
+      modelsRequest !== catalogSequence.models
+      || controls.brand.value !== selectedBrand
+    ) {
       return;
     }
 
@@ -991,6 +1014,10 @@ async function handleBrandChange(slot) {
       }),
     );
   } catch (error) {
+    if (modelsRequest !== catalogSequence.models) {
+      return;
+    }
+
     resetSelect(controls.model, 'Modelli non disponibili');
     renderError(error.message);
   }
@@ -998,6 +1025,8 @@ async function handleBrandChange(slot) {
 
 async function handleModelChange(slot) {
   const controls = vehicleControls[slot];
+  const catalogSequence = state.catalogRequestSequence[slot];
+  const versionsRequest = ++catalogSequence.versions;
   cancelPendingCalculation();
   state.requestSequence += 1;
   state.results[slot] = null;
@@ -1020,7 +1049,10 @@ async function handleModelChange(slot) {
     const selectedModel = controls.model.value;
     const versions = await window.AutoTcoApi.getVersions(selectedModel);
 
-    if (controls.model.value !== selectedModel) {
+    if (
+      versionsRequest !== catalogSequence.versions
+      || controls.model.value !== selectedModel
+    ) {
       return;
     }
 
@@ -1051,6 +1083,10 @@ async function handleModelChange(slot) {
       }),
     );
   } catch (error) {
+    if (versionsRequest !== catalogSequence.versions) {
+      return;
+    }
+
     resetSelect(controls.version, 'Versioni non disponibili');
     renderError(error.message);
   }
@@ -1096,6 +1132,8 @@ async function updateResult() {
       regionCode: elements.region.value || 'italia',
     };
     const primaryRequest = window.AutoTcoApi.estimate({
+      modelCatalogId:
+        primaryVersion?.model_catalog_id || elements.model.value,
       vehicleClusterId:
         primaryVersion?.vehicle_cluster_id || elements.version.value,
       displayVariantId:
@@ -1106,6 +1144,8 @@ async function updateResult() {
     const comparisonRequest = state.comparisonActive
       && elements.versionCompare.value
       ? window.AutoTcoApi.estimate({
+        modelCatalogId:
+          comparisonVersion?.model_catalog_id || elements.modelCompare.value,
         vehicleClusterId:
           comparisonVersion?.vehicle_cluster_id
           || elements.versionCompare.value,
@@ -1164,8 +1204,11 @@ function openComparison() {
 function closeComparison() {
   cancelPendingCalculation();
   state.requestSequence += 1;
+  state.catalogRequestSequence.comparison.models += 1;
+  state.catalogRequestSequence.comparison.versions += 1;
   state.comparisonActive = false;
   state.results.comparison = null;
+  state.versions.comparison = new Map();
   setComparisonModeUi(false);
   elements.comparisonVehicle.hidden = true;
   elements.addComparison.hidden = false;
@@ -1175,6 +1218,11 @@ function closeComparison() {
   resetSelect(elements.modelCompare, 'Prima seleziona una marca');
   resetSelect(elements.versionCompare, 'Prima seleziona un modello');
   renderCurrentResults();
+
+  if (elements.version.value) {
+    scheduleCalculation();
+  }
+
   elements.addComparison.focus();
 }
 
