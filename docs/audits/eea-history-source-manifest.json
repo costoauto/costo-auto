@@ -1,0 +1,539 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-15T15:04:30.104Z",
+  "source": "EEA CO2 monitoring data for cars, Italy",
+  "country": "IT",
+  "input_directory": "../eea_history_input",
+  "canonical_edition_policy": {
+    "order": [
+      "F",
+      "P"
+    ],
+    "description": "Usa l edizione finale F; usa P solo quando F non e disponibile."
+  },
+  "totals": {
+    "source_files": 15,
+    "final_years": 13,
+    "provisional_years": 2,
+    "mixed_edition_files": 12,
+    "all_rows_before_selection": 386633,
+    "canonical_rows": 229917,
+    "excluded_rows": 156716,
+    "all_registrations_before_selection": 18251891,
+    "canonical_registrations": 11343030,
+    "excluded_registrations": 6908861,
+    "overlapping_final_provisional_observations": 121187,
+    "overlapping_observations_with_different_counts": 4115,
+    "excluded_rows_percent": 40.53,
+    "excluded_registrations_percent": 37.85
+  },
+  "years": [
+    {
+      "year": 2010,
+      "file": "eea-italy-2010-tvv.json",
+      "source_url": "https://www.eea.europa.eu/en/datahub/datahubitem-view/fa8b1229-3db6-495d-b18e-9c9b3267c02b",
+      "downloaded_at": "2026-07-21T18:54:03.312Z",
+      "sha256": "1508d1ac191739429a03ba2da431fdf222ecfec27ba64b120b3de5dac506e261",
+      "bytes": 4257321,
+      "available_statuses": [
+        "F",
+        "P"
+      ],
+      "selected_status": "F",
+      "selected_quality": "final",
+      "selection_rule": "final_preferred",
+      "status_stats": {
+        "F": {
+          "rows": 6939,
+          "unique_observations": 6939,
+          "registrations": 13925
+        },
+        "P": {
+          "rows": 5819,
+          "unique_observations": 5819,
+          "registrations": 13925
+        }
+      },
+      "selected_rows": 6939,
+      "selected_registrations": 13925,
+      "rows_excluded_from_other_editions": 5819,
+      "registrations_excluded_from_other_editions": 13925,
+      "final_provisional_overlap": {
+        "observations": 4808,
+        "observations_with_different_registration_counts": 134
+      }
+    },
+    {
+      "year": 2011,
+      "file": "eea-italy-2011-tvv.json",
+      "source_url": "https://www.eea.europa.eu/en/datahub/datahubitem-view/fa8b1229-3db6-495d-b18e-9c9b3267c02b",
+      "downloaded_at": "2026-07-21T18:54:05.977Z",
+      "sha256": "c53a133c536c1533ee70754af40870463c325da27c3ffae28cef607ff7a16e61",
+      "bytes": 7022790,
+      "available_statuses": [
+        "F",
+        "P"
+      ],
+      "selected_status": "F",
+      "selected_quality": "final",
+      "selection_rule": "final_preferred",
+      "status_stats": {
+        "F": {
+          "rows": 10169,
+          "unique_observations": 10169,
+          "registrations": 19834
+        },
+        "P": {
+          "rows": 10688,
+          "unique_observations": 10650,
+          "registrations": 19834
+        }
+      },
+      "selected_rows": 10169,
+      "selected_registrations": 19834,
+      "rows_excluded_from_other_editions": 10688,
+      "registrations_excluded_from_other_editions": 19834,
+      "final_provisional_overlap": {
+        "observations": 8401,
+        "observations_with_different_registration_counts": 176
+      }
+    },
+    {
+      "year": 2012,
+      "file": "eea-italy-2012-tvv.json",
+      "source_url": "https://www.eea.europa.eu/en/datahub/datahubitem-view/fa8b1229-3db6-495d-b18e-9c9b3267c02b",
+      "downloaded_at": "2026-07-21T18:54:08.685Z",
+      "sha256": "7484ade3519f985963214ee488d155b59c8b3f1f8bb91065fb1040e00972c424",
+      "bytes": 6373601,
+      "available_statuses": [
+        "F",
+        "P"
+      ],
+      "selected_status": "F",
+      "selected_quality": "final",
+      "selection_rule": "final_preferred",
+      "status_stats": {
+        "F": {
+          "rows": 9437,
+          "unique_observations": 9437,
+          "registrations": 19550
+        },
+        "P": {
+          "rows": 9562,
+          "unique_observations": 9562,
+          "registrations": 19550
+        }
+      },
+      "selected_rows": 9437,
+      "selected_registrations": 19550,
+      "rows_excluded_from_other_editions": 9562,
+      "registrations_excluded_from_other_editions": 19550,
+      "final_provisional_overlap": {
+        "observations": 8044,
+        "observations_with_different_registration_counts": 39
+      }
+    },
+    {
+      "year": 2013,
+      "file": "eea-italy-2013-tvv.json",
+      "source_url": "https://www.eea.europa.eu/en/datahub/datahubitem-view/fa8b1229-3db6-495d-b18e-9c9b3267c02b",
+      "downloaded_at": "2026-07-21T18:54:11.039Z",
+      "sha256": "e7f3985faa56f7a7bcd0b5f40e94f5a792b5b697738f76a80080463d04dc129e",
+      "bytes": 6918992,
+      "available_statuses": [
+        "F",
+        "P"
+      ],
+      "selected_status": "F",
+      "selected_quality": "final",
+      "selection_rule": "final_preferred",
+      "status_stats": {
+        "F": {
+          "rows": 10236,
+          "unique_observations": 10236,
+          "registrations": 32750
+        },
+        "P": {
+          "rows": 10343,
+          "unique_observations": 10343,
+          "registrations": 32750
+        }
+      },
+      "selected_rows": 10236,
+      "selected_registrations": 32750,
+      "rows_excluded_from_other_editions": 10343,
+      "registrations_excluded_from_other_editions": 32750,
+      "final_provisional_overlap": {
+        "observations": 8198,
+        "observations_with_different_registration_counts": 30
+      }
+    },
+    {
+      "year": 2014,
+      "file": "eea-italy-2014-tvv.json",
+      "source_url": "https://www.eea.europa.eu/en/datahub/datahubitem-view/fa8b1229-3db6-495d-b18e-9c9b3267c02b",
+      "downloaded_at": "2026-07-21T18:54:13.196Z",
+      "sha256": "ea3af503b76ea87155b684d9d9af469712add74d704e224f8bd4f93ac9be94e7",
+      "bytes": 6462923,
+      "available_statuses": [
+        "F",
+        "P"
+      ],
+      "selected_status": "F",
+      "selected_quality": "final",
+      "selection_rule": "final_preferred",
+      "status_stats": {
+        "F": {
+          "rows": 9602,
+          "unique_observations": 9602,
+          "registrations": 23443
+        },
+        "P": {
+          "rows": 9606,
+          "unique_observations": 9606,
+          "registrations": 23443
+        }
+      },
+      "selected_rows": 9602,
+      "selected_registrations": 23443,
+      "rows_excluded_from_other_editions": 9606,
+      "registrations_excluded_from_other_editions": 23443,
+      "final_provisional_overlap": {
+        "observations": 7358,
+        "observations_with_different_registration_counts": 81
+      }
+    },
+    {
+      "year": 2015,
+      "file": "eea-italy-2015-tvv.json",
+      "source_url": "https://www.eea.europa.eu/en/datahub/datahubitem-view/fa8b1229-3db6-495d-b18e-9c9b3267c02b",
+      "downloaded_at": "2026-07-21T18:54:16.120Z",
+      "sha256": "23a34419735576481826e1b3e668584ba2d07c9f1c38fdcaab0d4674d2a19fa2",
+      "bytes": 7814180,
+      "available_statuses": [
+        "F",
+        "P"
+      ],
+      "selected_status": "F",
+      "selected_quality": "final",
+      "selection_rule": "final_preferred",
+      "status_stats": {
+        "F": {
+          "rows": 12140,
+          "unique_observations": 12140,
+          "registrations": 23788
+        },
+        "P": {
+          "rows": 10995,
+          "unique_observations": 10995,
+          "registrations": 22004
+        }
+      },
+      "selected_rows": 12140,
+      "selected_registrations": 23788,
+      "rows_excluded_from_other_editions": 10995,
+      "registrations_excluded_from_other_editions": 22004,
+      "final_provisional_overlap": {
+        "observations": 9465,
+        "observations_with_different_registration_counts": 278
+      }
+    },
+    {
+      "year": 2016,
+      "file": "eea-italy-2016-tvv.json",
+      "source_url": "https://www.eea.europa.eu/en/datahub/datahubitem-view/fa8b1229-3db6-495d-b18e-9c9b3267c02b",
+      "downloaded_at": "2026-07-21T18:54:18.910Z",
+      "sha256": "89a8a894f803d54d836ded6b0ad9102a6ea169e2daba29ecc2153815bfca2173",
+      "bytes": 8887652,
+      "available_statuses": [
+        "F",
+        "P"
+      ],
+      "selected_status": "F",
+      "selected_quality": "final",
+      "selection_rule": "final_preferred",
+      "status_stats": {
+        "F": {
+          "rows": 13083,
+          "unique_observations": 13083,
+          "registrations": 23591
+        },
+        "P": {
+          "rows": 13143,
+          "unique_observations": 13143,
+          "registrations": 23591
+        }
+      },
+      "selected_rows": 13083,
+      "selected_registrations": 23591,
+      "rows_excluded_from_other_editions": 13143,
+      "registrations_excluded_from_other_editions": 23591,
+      "final_provisional_overlap": {
+        "observations": 12698,
+        "observations_with_different_registration_counts": 51
+      }
+    },
+    {
+      "year": 2017,
+      "file": "eea-italy-2017-tvv.json",
+      "source_url": "https://www.eea.europa.eu/en/datahub/datahubitem-view/fa8b1229-3db6-495d-b18e-9c9b3267c02b",
+      "downloaded_at": "2026-07-21T19:00:46.893Z",
+      "sha256": "4fb5c0b8a7d5da090fc63542687d84cfee5fbe7bc2da7372a2978dc5fdef31d2",
+      "bytes": 9721905,
+      "available_statuses": [
+        "F",
+        "P"
+      ],
+      "selected_status": "F",
+      "selected_quality": "final",
+      "selection_rule": "final_preferred",
+      "status_stats": {
+        "F": {
+          "rows": 13601,
+          "unique_observations": 13601,
+          "registrations": 23225
+        },
+        "P": {
+          "rows": 13921,
+          "unique_observations": 13921,
+          "registrations": 23225
+        }
+      },
+      "selected_rows": 13601,
+      "selected_registrations": 23225,
+      "rows_excluded_from_other_editions": 13921,
+      "registrations_excluded_from_other_editions": 23225,
+      "final_provisional_overlap": {
+        "observations": 12288,
+        "observations_with_different_registration_counts": 210
+      }
+    },
+    {
+      "year": 2018,
+      "file": "eea-italy-2018-tvv.json",
+      "source_url": "https://www.eea.europa.eu/en/datahub/datahubitem-view/fa8b1229-3db6-495d-b18e-9c9b3267c02b",
+      "downloaded_at": "2026-07-21T19:00:52.117Z",
+      "sha256": "410c19ef9a230ff0c694157bc028a9df7bb76f1a0559bb2abf0d9e764fe0fa16",
+      "bytes": 10716201,
+      "available_statuses": [
+        "F",
+        "P"
+      ],
+      "selected_status": "F",
+      "selected_quality": "final",
+      "selection_rule": "final_preferred",
+      "status_stats": {
+        "F": {
+          "rows": 16176,
+          "unique_observations": 16170,
+          "registrations": 1975824
+        },
+        "P": {
+          "rows": 15448,
+          "unique_observations": 15448,
+          "registrations": 1975829
+        }
+      },
+      "selected_rows": 16176,
+      "selected_registrations": 1975824,
+      "rows_excluded_from_other_editions": 15448,
+      "registrations_excluded_from_other_editions": 1975829,
+      "final_provisional_overlap": {
+        "observations": 13545,
+        "observations_with_different_registration_counts": 1098
+      }
+    },
+    {
+      "year": 2019,
+      "file": "eea-italy-2019-tvv.json",
+      "source_url": "https://www.eea.europa.eu/en/datahub/datahubitem-view/fa8b1229-3db6-495d-b18e-9c9b3267c02b",
+      "downloaded_at": "2026-07-21T19:00:58.527Z",
+      "sha256": "04dbd862d0dffc08ecef77cb99a5a7b38cbd8f9c4544e55ea890ea687703aaa3",
+      "bytes": 12598638,
+      "available_statuses": [
+        "F",
+        "P"
+      ],
+      "selected_status": "F",
+      "selected_quality": "final",
+      "selection_rule": "final_preferred",
+      "status_stats": {
+        "F": {
+          "rows": 18504,
+          "unique_observations": 18504,
+          "registrations": 1917399
+        },
+        "P": {
+          "rows": 18572,
+          "unique_observations": 18572,
+          "registrations": 1917399
+        }
+      },
+      "selected_rows": 18504,
+      "selected_registrations": 1917399,
+      "rows_excluded_from_other_editions": 18572,
+      "registrations_excluded_from_other_editions": 1917399,
+      "final_provisional_overlap": {
+        "observations": 14741,
+        "observations_with_different_registration_counts": 534
+      }
+    },
+    {
+      "year": 2020,
+      "file": "eea-italy-2020-tvv.json",
+      "source_url": "https://www.eea.europa.eu/en/datahub/datahubitem-view/fa8b1229-3db6-495d-b18e-9c9b3267c02b",
+      "downloaded_at": "2026-07-21T19:01:04.147Z",
+      "sha256": "d89eb7395f11bb1f97267c4ee70424a14ae23377400b275fe5c7733780efb98a",
+      "bytes": 13694916,
+      "available_statuses": [
+        "F",
+        "P"
+      ],
+      "selected_status": "F",
+      "selected_quality": "final",
+      "selection_rule": "final_preferred",
+      "status_stats": {
+        "F": {
+          "rows": 20067,
+          "unique_observations": 20064,
+          "registrations": 1380818
+        },
+        "P": {
+          "rows": 19968,
+          "unique_observations": 19968,
+          "registrations": 1380839
+        }
+      },
+      "selected_rows": 20067,
+      "selected_registrations": 1380818,
+      "rows_excluded_from_other_editions": 19968,
+      "registrations_excluded_from_other_editions": 1380839,
+      "final_provisional_overlap": {
+        "observations": 15320,
+        "observations_with_different_registration_counts": 709
+      }
+    },
+    {
+      "year": 2021,
+      "file": "eea-italy-2021-tvv.json",
+      "source_url": "https://www.eea.europa.eu/en/datahub/datahubitem-view/fa8b1229-3db6-495d-b18e-9c9b3267c02b",
+      "downloaded_at": "2026-07-21T19:01:09.815Z",
+      "sha256": "a53a93600a9aaa381e11d237457c6d06914c6a2053b5c6653fd06119adce67a0",
+      "bytes": 14298780,
+      "available_statuses": [
+        "F",
+        "P"
+      ],
+      "selected_status": "F",
+      "selected_quality": "final",
+      "selection_rule": "final_preferred",
+      "status_stats": {
+        "F": {
+          "rows": 23124,
+          "unique_observations": 23124,
+          "registrations": 1456503
+        },
+        "P": {
+          "rows": 18651,
+          "unique_observations": 18651,
+          "registrations": 1456472
+        }
+      },
+      "selected_rows": 23124,
+      "selected_registrations": 1456503,
+      "rows_excluded_from_other_editions": 18651,
+      "registrations_excluded_from_other_editions": 1456472,
+      "final_provisional_overlap": {
+        "observations": 6321,
+        "observations_with_different_registration_counts": 775
+      }
+    },
+    {
+      "year": 2022,
+      "file": "eea-italy-2022-tvv.json",
+      "source_url": "https://www.eea.europa.eu/en/datahub/datahubitem-view/fa8b1229-3db6-495d-b18e-9c9b3267c02b",
+      "downloaded_at": "2026-07-21T19:01:13.360Z",
+      "sha256": "5c8880f89d3412268378783b478c6d8864d6c89de349aa2b91119367484a8cb3",
+      "bytes": 7010854,
+      "available_statuses": [
+        "P"
+      ],
+      "selected_status": "P",
+      "selected_quality": "provisional",
+      "selection_rule": "provisional_used_because_final_missing",
+      "status_stats": {
+        "P": {
+          "rows": 20348,
+          "unique_observations": 20348,
+          "registrations": 1312627
+        }
+      },
+      "selected_rows": 20348,
+      "selected_registrations": 1312627,
+      "rows_excluded_from_other_editions": 0,
+      "registrations_excluded_from_other_editions": 0,
+      "final_provisional_overlap": {
+        "observations": 0,
+        "observations_with_different_registration_counts": 0
+      }
+    },
+    {
+      "year": 2023,
+      "file": "eea-italy-2023-tvv.json",
+      "source_url": "https://www.eea.europa.eu/en/datahub/datahubitem-view/fa8b1229-3db6-495d-b18e-9c9b3267c02b",
+      "downloaded_at": "2026-07-21T19:32:12.874Z",
+      "sha256": "0db074f267b0fcf86ceddadbf3dc2713d755c2ab11a4462c56ca3ac356b8c98c",
+      "bytes": 7555835,
+      "available_statuses": [
+        "F"
+      ],
+      "selected_status": "F",
+      "selected_quality": "final",
+      "selection_rule": "final_preferred",
+      "status_stats": {
+        "F": {
+          "rows": 21878,
+          "unique_observations": 21878,
+          "registrations": 1564369
+        }
+      },
+      "selected_rows": 21878,
+      "selected_registrations": 1564369,
+      "rows_excluded_from_other_editions": 0,
+      "registrations_excluded_from_other_editions": 0,
+      "final_provisional_overlap": {
+        "observations": 0,
+        "observations_with_different_registration_counts": 0
+      }
+    },
+    {
+      "year": 2024,
+      "file": "eea-italy-2024-tvv.json",
+      "source_url": "https://www.eea.europa.eu/en/datahub/datahubitem-view/fa8b1229-3db6-495d-b18e-9c9b3267c02b",
+      "downloaded_at": "2026-07-21T19:32:15.842Z",
+      "sha256": "2ce7404adbfa4d8fba3310671b6f327c1f9acf61be471d829f0ea7263e0704cd",
+      "bytes": 8494376,
+      "available_statuses": [
+        "P"
+      ],
+      "selected_status": "P",
+      "selected_quality": "provisional",
+      "selection_rule": "provisional_used_because_final_missing",
+      "status_stats": {
+        "P": {
+          "rows": 24613,
+          "unique_observations": 24613,
+          "registrations": 1555384
+        }
+      },
+      "selected_rows": 24613,
+      "selected_registrations": 1555384,
+      "rows_excluded_from_other_editions": 0,
+      "registrations_excluded_from_other_editions": 0,
+      "final_provisional_overlap": {
+        "observations": 0,
+        "observations_with_different_registration_counts": 0
+      }
+    }
+  ]
+}

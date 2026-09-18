@@ -28,6 +28,12 @@ risposte sempre riferite alla selezione corrente; confini fiscali corretti.
 
 ## Passo 2 — Pipeline storica riproducibile
 
+Stato: **pipeline completata e staging privato caricato e verificato il 18
+settembre 2026; catalogo pubblico invariato**. La verifica correttiva ha contato
+4.646 versioni pubbliche, 15.060 osservazioni commerciali, 10.761 identità
+candidate, 185 quarantene, 2.263 intervalli TVV e zero candidati invalidi.
+Procedura e risultati: `docs/PASSO_2_PIPELINE_EEA.md`.
+
 - Usare una sola edizione EEA per paese e anno, evitando doppi conteggi P/F.
 - Separare dati grezzi, osservazioni normalizzate, identità commerciali e stime.
 - Rendere tracciabili generazione, motorizzazione, potenze, cambio/trazione,

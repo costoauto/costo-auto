@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-18T13:39:28.052Z",
+  "layer": "normalized_observations",
+  "input": "../eea_history_canonical",
+  "output": "../eea_history_normalized_v2",
+  "policy": {
+    "editions": "final_only",
+    "commercial_identity": "not_assigned_in_this_layer",
+    "missing_generation_transmission_traction": "kept_null_not_invented",
+    "power": "EEA engine power retained with explicit semantics",
+    "consumption_cycle": "not inferred when the source field is not explicit"
+  },
+  "totals": {
+    "files": 15,
+    "rows": 231817,
+    "rows_with_brand_and_model_key": 226778,
+    "rows_with_power": 224479,
+    "rows_with_thermal_consumption": 80304,
+    "rows_with_electric_consumption": 16347,
+    "rows_with_unknown_powertrain": 1713
+  },
+  "files": [
+    {
+      "year": 2010,
+      "file": "eea-italy-2010-normalized.json",
+      "rows": 6939,
+      "source_status": "F",
+      "source_data_sha256": "aa6e415adf1551b8640bfc975d3a48ec2b7b3399d0f74094e6749fd4be3c6cfb",
+      "normalized_sha256": "b94e64b5d573d297e1fa6c81643912c27b2a681309acb22db2434b302d3052ed"
+    },
+    {
+      "year": 2011,
+      "file": "eea-italy-2011-normalized.json",
+      "rows": 10169,
+      "source_status": "F",
+      "source_data_sha256": "10dd25ab0cb8789b12cac9e9bd83d73f4a20db771951cdf91d800a4bbd8d91f7",
+      "normalized_sha256": "6fe771010470eda35198fde4708b2c249c52dd50196b7ba2bf48c663e2ca6592"
+    },
+    {
+      "year": 2012,
+      "file": "eea-italy-2012-normalized.json",
+      "rows": 9437,
+      "source_status": "F",
+      "source_data_sha256": "c309903968aaa4411390274415b8bcafbb88f171641a478f9bf946fc437633a2",
+      "normalized_sha256": "0d2102480a4a256a739ae8c3f7e487c420fe4903d787bd3cee3dbf8ef34e3a3c"
+    },
+    {
+      "year": 2013,
+      "file": "eea-italy-2013-normalized.json",
+      "rows": 10236,
+      "source_status": "F",
+      "source_data_sha256": "91b1630f5f9844b9d8361eba61b23965b56cc58d122facc1c194a183b544ee72",
+      "normalized_sha256": "05c823d293591330876e4e8339054ca93749d78afe7d956ef14e3fd763267687"
+    },
+    {
+      "year": 2014,
+      "file": "eea-italy-2014-normalized.json",
+      "rows": 9602,
+      "source_status": "F",
+      "source_data_sha256": "e70cc7bc2fe36bca5bb55d0ad094ca5fc61f9ec4d09c08291b1e90c3f1c6cab6",
+      "normalized_sha256": "b16224e89683feeb175163b0af5713b8005833a95319dd9704e06f8944c2e940"
+    },
+    {
+      "year": 2015,
+      "file": "eea-italy-2015-normalized.json",
+      "rows": 12140,
+      "source_status": "F",
+      "source_data_sha256": "eb0e7a5b0131a2f130202ea6e6a4a882870fd53f0d44d7ef761e0fa9319451b0",
+      "normalized_sha256": "af456aa67050c80b7635ac5a22b2c1c0be5e84bd0d43c90ad5bcc30b2fda3022"
+    },
+    {
+      "year": 2016,
+      "file": "eea-italy-2016-normalized.json",
+      "rows": 13083,
+      "source_status": "F",
+      "source_data_sha256": "8095275bb8789b68a432ddf8a60a5e0f4f0d7b69fa25dabc529689e19d07320d",
+      "normalized_sha256": "dde73328c44c3a7f1f8615f3c31a3dcb55025fceb74a479c1659109554e4ff31"
+    },
+    {
+      "year": 2017,
+      "file": "eea-italy-2017-normalized.json",
+      "rows": 13601,
+      "source_status": "F",
+      "source_data_sha256": "798162675782c8a7b0abd153633b02d4518e666fa591bae742f6234456b8a97b",
+      "normalized_sha256": "0c31cdf75986649938004249e7e9589b4edf4f4009e67d89f1b67b868e1e0e99"
+    },
+    {
+      "year": 2018,
+      "file": "eea-italy-2018-normalized.json",
+      "rows": 16176,
+      "source_status": "F",
+      "source_data_sha256": "84d2f1268759a6406765463f30a60f3dcfeb2ec4805c923ceb7ba847fa757216",
+      "normalized_sha256": "63d92778946a0289edeb4d71c57c1c86c7839614da7fd753eba56bf2cee34644"
+    },
+    {
+      "year": 2019,
+      "file": "eea-italy-2019-normalized.json",
+      "rows": 18504,
+      "source_status": "F",
+      "source_data_sha256": "541ada213421d157fc809f95ee7fdbb48df4894b93362f2178fb28917674700d",
+      "normalized_sha256": "aa4de8f79791bf30fba628752365acdc57d288e2cac42a138a9166049accf7c6"
+    },
+    {
+      "year": 2020,
+      "file": "eea-italy-2020-normalized.json",
+      "rows": 20067,
+      "source_status": "F",
+      "source_data_sha256": "4989b97d918d95f8ce66ab1bb500b682491c172d1490e9bd3df0d838ba5579b2",
+      "normalized_sha256": "014c7d0f8ee7479d890aa211db6010dbc65494b8de400b38338ba01142c7979d"
+    },
+    {
+      "year": 2021,
+      "file": "eea-italy-2021-normalized.json",
+      "rows": 23124,
+      "source_status": "F",
+      "source_data_sha256": "9f576cff0609a7b8536f27181715d3c26f649ff48b9ca3dfed40173e2dfc1ab5",
+      "normalized_sha256": "95be26e53b01692c9e1bc07c76b3e31fda3f677b36542ca436a4e8ff0d9ed5c6"
+    },
+    {
+      "year": 2022,
+      "file": "eea-italy-2022-normalized.json",
+      "rows": 22306,
+      "source_status": "F",
+      "source_data_sha256": "834da5d95355204e7853569f9657b518ca4dac93c8079bbbdb7b442a235a5cd6",
+      "normalized_sha256": "75ef630ee1d4c2b272d50e91952ed32c09dc82ff3ca13d0b52f8dd4c0f07915e"
+    },
+    {
+      "year": 2023,
+      "file": "eea-italy-2023-normalized.json",
+      "rows": 21878,
+      "source_status": "F",
+      "source_data_sha256": "74d3a00024cedd515d6259dec4c232874faeed0c00df93fa8a799920329792ca",
+      "normalized_sha256": "53f1ab501a2e0894a96385692605fa8ddbade6a3a88b539390e812e7b6474fbe"
+    },
+    {
+      "year": 2024,
+      "file": "eea-italy-2024-normalized.json",
+      "rows": 24555,
+      "source_status": "F",
+      "source_data_sha256": "8ae0047a3554c8a6e66760cc2385d676e39e865c738be32390cddb330c81a645",
+      "normalized_sha256": "819366750a1d061dfd807df9e7953bb507d0e3d865e82164abb3278254bf649d"
+    }
+  ]
+}
