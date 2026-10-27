@@ -9,3 +9,4 @@ scripts/.cache/
 audit_*_output.txt
 audit_*.txt
 verifica_*.txt
+docs/audits/private/

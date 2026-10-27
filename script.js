@@ -357,9 +357,12 @@ function formatVersionLabel(vehicle, showYear = true) {
   }
 
   if (vehicle.hybrid_type === 'hybrid') {
-    const details = roundedCv
-      ? `Ibrida ${fuelLabels[fuel] || ''} · ${roundedCv} CV termici`
-      : `Ibrida ${fuelLabels[fuel] || ''}`.trim();
+    // A hybrid's commercial output can be system power: do not label it thermal by default.
+    const powerLabel = roundedSystemCv > 0 && roundedThermalCv > 0
+      ? `${roundedSystemCv} CV (${roundedThermalCv} CV termici)`
+      : (roundedCv > 0 ? `${roundedCv} CV` : '');
+    const details = [`Ibrida ${fuelLabels[fuel] || ''}`.trim(), powerLabel]
+      .filter(Boolean).join(' · ');
     return withCommercialVariant(`${yearPrefix}${details}`);
   }
 
@@ -532,9 +535,14 @@ function translateMissingComponent(component) {
   return labels[component] || component;
 }
 
-function getDepreciationDescription(costs, quality) {
+function getDepreciationDescription(costs, quality, descriptions = {}) {
   if (costs.depreciation_eur === null || costs.depreciation_eur === undefined) {
     return 'Non disponibile: mancano riferimenti sufficientemente affidabili.';
+  }
+
+  if (quality.scenario_year_method === 'coherent_existing_display_year') {
+    return descriptions.depreciation
+      || 'Stima con anno della versione e curva interna; il prezzo del singolo allestimento non è ancora verificato.';
   }
 
   if (quality.depreciation_price_method) {
@@ -623,7 +631,7 @@ function renderResult(payload) {
     : costs.available_subtotal_eur;
   const regionLabel = elements.region.selectedOptions[0]?.textContent || '';
   const years = Number(inputs.ownership_years);
-  const depreciationDescription = getDepreciationDescription(costs, quality);
+  const depreciationDescription = getDepreciationDescription(costs, quality, descriptions);
   const fuelOrEnergyDescription = getFuelOrEnergyDescription(
     payload,
     regionLabel,
